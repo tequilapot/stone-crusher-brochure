@@ -1,0 +1,256 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-border: var(--border);
+  --font-display: 'Montserrat', sans-serif;
+  --font-sans: 'Inter', sans-serif;
+}
+
+:root {
+  /* Brand colors:
+     Navy: #0A2342 (Primary Navy)
+     Yellow: #F4B400 (Accent Yellow)
+     Background: #FFFFFF
+     Light Gray: #F8F9FB
+     Border: #E6E8EC
+     Text: #1A1A1A
+  */
+  --primary: #F4B400;
+  --primary-foreground: #1A1A1A;
+  --background: #FFFFFF;
+  --foreground: #1A1A1A;
+  --border: #E6E8EC;
+  --navy: #0A2342;
+  --light-gray: #F8F9FB;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    letter-spacing: normal;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 4rem;
+      padding-right: 4rem;
+      max-width: 1280px;
+    }
+  }
+}
+
+/* ═══════════════════════════════════════════
+   SREW PREMIUM BROCHURE — BRAND SYSTEM
+   Navy (#0A1628) · Blue (#1B3A6B) · Yellow (#F5C518) · Grey (#F0F0F0) · White (#FFFFFF)
+   ═══════════════════════════════════════════ */
+
+/* ═══════════════════════════════════════════
+   SREW PREMIUM BROCHURE — BRAND SYSTEM
+   Navy (#0A2342) · Yellow (#F4B400) · Light Gray (#F8F9FB) · White (#FFFFFF)
+   ═══════════════════════════════════════════ */
+
+/* Section background helpers */
+.navy-section {
+  background-color: var(--navy);
+  color: #FFFFFF;
+}
+
+.grey-section {
+  background-color: var(--light-gray);
+  color: var(--foreground);
+}
+
+/* Premium card — 1px border, soft shadow, 4px radius */
+.premium-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  transition: box-shadow 0.2s ease;
+}
+
+.premium-card-navy {
+  background: var(--navy);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  padding: 20px;
+}
+
+/* Editorial divider */
+.editorial-divider {
+  border-top: 1px solid var(--border);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+/* Section accent line (Vertical yellow line for section headers) */
+.section-accent {
+  width: 3px;
+  height: 24px;
+  background-color: var(--primary);
+  display: inline-block;
+  margin-right: 12px;
+}
+
+/* Typography styles */
+.section-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+
+.data-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--foreground);
+}
+
+.stat-number {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900; /* Black */
+  color: var(--navy);
+}
+
+/* Spec table styling */
+.editorial-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.editorial-table th {
+  background-color: var(--primary);
+  color: var(--navy);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.75rem;
+  padding: 12px 16px;
+  text-align: left;
+  border: 1px solid var(--border);
+}
+.editorial-table td {
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: var(--foreground);
+}
+.editorial-table tr:nth-child(even) {
+  background-color: var(--light-gray);
+}
+.editorial-table tr:nth-child(odd) {
+  background-color: #FFFFFF;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #F0F0F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #B0B0B0;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Print-friendly A4 Layout Rules */
+.page-a4 {
+  width: 297mm;
+  height: 210mm;
+  position: relative;
+  overflow: hidden;
+  background-color: white;
+  margin: 2rem auto;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  break-after: page;
+  page-break-after: always;
+}
+
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 0;
+  }
+  
+  html, body {
+    width: 297mm;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: white;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page-a4 {
+    margin: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+}
