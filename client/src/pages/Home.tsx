@@ -23,7 +23,7 @@ const CoverPage = () => (
  className="absolute inset-0 z-0 bg-[#E5E7EB]"
  style={{ clipPath: 'polygon(0 0, 100% 0, 100% 60%, 0 85%)' }}
  >
- <img src="/images/hero-background.jpg" alt="Industrial Plant" className="w-full h-full object-cover grayscale opacity-90" />
+ <img src="/images/hero-background.jpg" alt="Industrial Plant" className="w-full h-full object-cover grayscale opacity-90 border-none outline-none ring-0 shadow-none" />
  <div className="absolute inset-0 bg-[#0F172A]/20 "></div>
  </div>
 
@@ -66,7 +66,7 @@ const CoverPage = () => (
  <img
  src="/images/srew%20projects-logo.png"
  alt="SREW PROJECTS"
- className="w-64 object-contain relative z-50"
+ className="w-64 object-contain relative z-50 border-none outline-none ring-0 shadow-none"
  onError={(e) => { e.currentTarget.style.display = 'none'; }}
  />
  </div>
@@ -112,7 +112,7 @@ const AboutPage = () => (
  <img
  src="/images/Products/image.png"
  alt="SREW Manufacturing Facility"
- className="w-[105%] h-[105%] object-cover grayscale opacity-90 transition-transform duration-700 group-hover:scale-105"
+ className="w-[105%] h-[105%] object-cover grayscale opacity-90 transition-transform duration-700 group-hover:scale-105 border-none outline-none ring-0 shadow-none"
  onError={(e) => { e.currentTarget.style.display = 'none'; }}
  />
  </div>
@@ -159,7 +159,7 @@ const AboutPage = () => (
  <img
  src={c.logo}
  alt={c.name}
- className="max-h-10 max-w-[90%] object-contain transition-all duration-300 group-hover:scale-105"
+ className="max-h-10 max-w-[90%] object-contain transition-all duration-300 group-hover:scale-105 border-none outline-none ring-0 shadow-none"
  onError={(e) => {
  e.currentTarget.style.display = 'none';
  }}
@@ -232,7 +232,7 @@ const ProductCatalogPage1 = () => {
  <img
  src={p.image}
  alt={p.name}
- className="w-[110%] h-[110%] object-contain relative z-10"
+ className="w-[110%] h-[110%] object-contain relative z-10 border-none outline-none ring-0 shadow-none"
  onError={(e) => {
  e.currentTarget.style.display = 'none';
  }}
@@ -271,7 +271,7 @@ const ProductCatalogPage2 = () => {
  <img
  src={p.image}
  alt={p.name}
- className="w-[110%] h-[110%] object-contain relative z-10"
+ className="w-[110%] h-[110%] object-contain relative z-10 border-none outline-none ring-0 shadow-none"
  onError={(e) => {
  e.currentTarget.style.display = 'none';
  }}
@@ -310,7 +310,7 @@ const ProductCatalogPage3 = () => {
  <img
  src={p.image}
  alt={p.name}
- className="w-[110%] h-[110%] object-contain relative z-10"
+ className="w-[110%] h-[110%] object-contain relative z-10 border-none outline-none ring-0 shadow-none"
  onError={(e) => {
  e.currentTarget.style.display = 'none';
  }}
@@ -368,7 +368,7 @@ const ProjectProfilePage1 = () => {
  <img
  src="/images/Projects/image.png"
  alt="Main Project View"
- className="w-full h-full object-contain opacity-90 transition-transform duration-500 group-hover:scale-105"
+ className="w-full h-full object-contain opacity-90 transition-transform duration-500 group-hover:scale-105 border-none outline-none ring-0 shadow-none"
  onError={(e) => { e.currentTarget.style.display = 'none'; }}
  />
  <div className="absolute inset-0 bg-gradient-to-t from-[rgba(15,23,42,0.85)] via-transparent to-transparent flex flex-col justify-end p-3">
@@ -387,7 +387,7 @@ const ProjectProfilePage1 = () => {
  <img
  src="/images/Products/srew-jaw-crusher.png"
  alt="Jaw Crusher"
- className="max-h-full object-contain transition-transform duration-300 group-hover:scale-105"
+ className="max-h-full object-contain transition-transform duration-300 group-hover:scale-105 border-none outline-none ring-0 shadow-none"
  />
  </div>
  <div className="w-[62%] flex flex-col justify-center pl-2">
@@ -405,7 +405,7 @@ const ProjectProfilePage1 = () => {
  <img
  src="/images/Products/srew-triple-shaft-vibrating-screen.png"
  alt="Vibrating Screen"
- className="max-h-full object-contain transition-transform duration-300 group-hover:scale-105"
+ className="max-h-full object-contain transition-transform duration-300 group-hover:scale-105 border-none outline-none ring-0 shadow-none"
  />
  </div>
  <div className="w-[62%] flex flex-col justify-center pl-2">
@@ -423,7 +423,7 @@ const ProjectProfilePage1 = () => {
  <img
  src="/images/Products/srew-sand-dryer.jpg"
  alt="Sand Dryer"
- className="max-h-full object-cover rounded-sm transition-transform duration-300 group-hover:scale-105"
+ className="max-h-full object-cover rounded-sm transition-transform duration-300 group-hover:scale-105 border-none outline-none ring-0 shadow-none"
  />
  </div>
  <div className="w-[62%] flex flex-col justify-center pl-2">
@@ -441,7 +441,7 @@ const ProjectProfilePage1 = () => {
  <img
  src="/images/Products/srew-belt-conveyor.png"
  alt="Belt Conveyor"
- className="max-h-full object-contain transition-transform duration-300 group-hover:scale-105"
+ className="max-h-full object-contain transition-transform duration-300 group-hover:scale-105 border-none outline-none ring-0 shadow-none"
  />
  </div>
  <div className="w-[62%] flex flex-col justify-center pl-2">
@@ -697,7 +697,7 @@ const FeaturedProjectsPage = () => {
  <img
  src={p.image}
  alt={p.title}
- className="w-full h-full object-contain opacity-90 transition-transform duration-700 group-hover:scale-105"
+ className="w-full h-full object-contain opacity-90 transition-transform duration-700 group-hover:scale-105 border-none outline-none ring-0 shadow-none"
  onError={(e) => { e.currentTarget.style.display = 'none'; }}
  />
  </div>
@@ -1086,7 +1086,7 @@ const CaseStudyPage1 = () => {
  <img
  src="/images/Projects/project2.jpg"
  alt="Main Project View"
- className="w-full h-full object-contain opacity-90 transition-transform duration-500 group-hover:scale-105"
+ className="w-full h-full object-contain opacity-90 transition-transform duration-500 group-hover:scale-105 border-none outline-none ring-0 shadow-none"
  onError={(e) => { e.currentTarget.style.display = 'none'; }}
  />
  <div className="absolute inset-0 bg-gradient-to-t from-[rgba(15,23,42,0.85)] via-transparent to-transparent flex flex-col justify-end p-3">
@@ -1105,7 +1105,7 @@ const CaseStudyPage1 = () => {
  <img
  src="/images/Products/srew-jaw-crusher.png"
  alt="Jaw Crusher"
- className="max-h-full object-contain transition-transform duration-300 group-hover:scale-105"
+ className="max-h-full object-contain transition-transform duration-300 group-hover:scale-105 border-none outline-none ring-0 shadow-none"
  />
  </div>
  <div className="w-[62%] flex flex-col justify-center pl-2">
@@ -1123,7 +1123,7 @@ const CaseStudyPage1 = () => {
  <img
  src="/images/Products/srew-triple-shaft-vibrating-screen.png"
  alt="Vibrating Screen"
- className="max-h-full object-contain transition-transform duration-300 group-hover:scale-105"
+ className="max-h-full object-contain transition-transform duration-300 group-hover:scale-105 border-none outline-none ring-0 shadow-none"
  />
  </div>
  <div className="w-[62%] flex flex-col justify-center pl-2">
@@ -1141,7 +1141,7 @@ const CaseStudyPage1 = () => {
  <img
  src="/images/Products/srew-sand-dryer.jpg"
  alt="Sand Dryer"
- className="max-h-full object-cover rounded-sm transition-transform duration-300 group-hover:scale-105"
+ className="max-h-full object-cover rounded-sm transition-transform duration-300 group-hover:scale-105 border-none outline-none ring-0 shadow-none"
  />
  </div>
  <div className="w-[62%] flex flex-col justify-center pl-2">
@@ -1159,7 +1159,7 @@ const CaseStudyPage1 = () => {
  <img
  src="/images/Products/srew-belt-conveyor.png"
  alt="Belt Conveyor"
- className="max-h-full object-contain transition-transform duration-300 group-hover:scale-105"
+ className="max-h-full object-contain transition-transform duration-300 group-hover:scale-105 border-none outline-none ring-0 shadow-none"
  />
  </div>
  <div className="w-[62%] flex flex-col justify-center pl-2">
@@ -1313,7 +1313,7 @@ const CaseStudyPage2 = () => {
  <img
  src="/images/Projects/project3.jpg"
  alt="Main Project View"
- className="w-full h-full object-contain opacity-90 transition-transform duration-500 group-hover:scale-105"
+ className="w-full h-full object-contain opacity-90 transition-transform duration-500 group-hover:scale-105 border-none outline-none ring-0 shadow-none"
  onError={(e) => { e.currentTarget.style.display = 'none'; }}
  />
  <div className="absolute inset-0 bg-gradient-to-t from-[rgba(15,23,42,0.85)] via-transparent to-transparent flex flex-col justify-end p-3">
@@ -1332,7 +1332,7 @@ const CaseStudyPage2 = () => {
  <img
  src="/images/Products/srew-jaw-crusher.png"
  alt="Jaw Crusher"
- className="max-h-full object-contain transition-transform duration-300 group-hover:scale-105"
+ className="max-h-full object-contain transition-transform duration-300 group-hover:scale-105 border-none outline-none ring-0 shadow-none"
  />
  </div>
  <div className="w-[62%] flex flex-col justify-center pl-2">
@@ -1350,7 +1350,7 @@ const CaseStudyPage2 = () => {
  <img
  src="/images/Products/srew-triple-shaft-vibrating-screen.png"
  alt="Vibrating Screen"
- className="max-h-full object-contain transition-transform duration-300 group-hover:scale-105"
+ className="max-h-full object-contain transition-transform duration-300 group-hover:scale-105 border-none outline-none ring-0 shadow-none"
  />
  </div>
  <div className="w-[62%] flex flex-col justify-center pl-2">
@@ -1368,7 +1368,7 @@ const CaseStudyPage2 = () => {
  <img
  src="/images/Products/srew-sand-dryer.jpg"
  alt="Sand Dryer"
- className="max-h-full object-cover rounded-sm transition-transform duration-300 group-hover:scale-105"
+ className="max-h-full object-cover rounded-sm transition-transform duration-300 group-hover:scale-105 border-none outline-none ring-0 shadow-none"
  />
  </div>
  <div className="w-[62%] flex flex-col justify-center pl-2">
@@ -1386,7 +1386,7 @@ const CaseStudyPage2 = () => {
  <img
  src="/images/Products/srew-belt-conveyor.png"
  alt="Belt Conveyor"
- className="max-h-full object-contain transition-transform duration-300 group-hover:scale-105"
+ className="max-h-full object-contain transition-transform duration-300 group-hover:scale-105 border-none outline-none ring-0 shadow-none"
  />
  </div>
  <div className="w-[62%] flex flex-col justify-center pl-2">
@@ -1540,7 +1540,7 @@ const CaseStudyPage3 = () => {
  <img
  src="/images/Products/image.png"
  alt="Main Project View"
- className="w-full h-full object-contain opacity-90 transition-transform duration-500 group-hover:scale-105"
+ className="w-full h-full object-contain opacity-90 transition-transform duration-500 group-hover:scale-105 border-none outline-none ring-0 shadow-none"
  onError={(e) => { e.currentTarget.style.display = 'none'; }}
  />
  <div className="absolute inset-0 bg-gradient-to-t from-[rgba(15,23,42,0.85)] via-transparent to-transparent flex flex-col justify-end p-3">
@@ -1559,7 +1559,7 @@ const CaseStudyPage3 = () => {
  <img
  src="/images/Products/srew-jaw-crusher.png"
  alt="Jaw Crusher"
- className="max-h-full object-contain transition-transform duration-300 group-hover:scale-105"
+ className="max-h-full object-contain transition-transform duration-300 group-hover:scale-105 border-none outline-none ring-0 shadow-none"
  />
  </div>
  <div className="w-[62%] flex flex-col justify-center pl-2">
@@ -1577,7 +1577,7 @@ const CaseStudyPage3 = () => {
  <img
  src="/images/Products/srew-triple-shaft-vibrating-screen.png"
  alt="Vibrating Screen"
- className="max-h-full object-contain transition-transform duration-300 group-hover:scale-105"
+ className="max-h-full object-contain transition-transform duration-300 group-hover:scale-105 border-none outline-none ring-0 shadow-none"
  />
  </div>
  <div className="w-[62%] flex flex-col justify-center pl-2">
@@ -1595,7 +1595,7 @@ const CaseStudyPage3 = () => {
  <img
  src="/images/Products/srew-sand-dryer.jpg"
  alt="Sand Dryer"
- className="max-h-full object-cover rounded-sm transition-transform duration-300 group-hover:scale-105"
+ className="max-h-full object-cover rounded-sm transition-transform duration-300 group-hover:scale-105 border-none outline-none ring-0 shadow-none"
  />
  </div>
  <div className="w-[62%] flex flex-col justify-center pl-2">
@@ -1613,7 +1613,7 @@ const CaseStudyPage3 = () => {
  <img
  src="/images/Products/srew-belt-conveyor.png"
  alt="Belt Conveyor"
- className="max-h-full object-contain transition-transform duration-300 group-hover:scale-105"
+ className="max-h-full object-contain transition-transform duration-300 group-hover:scale-105 border-none outline-none ring-0 shadow-none"
  />
  </div>
  <div className="w-[62%] flex flex-col justify-center pl-2">

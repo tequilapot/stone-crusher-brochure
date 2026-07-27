@@ -38,7 +38,7 @@ export default function ProjectSpreadSection() {
  <img 
  src="/images/recycling.jpg" 
  alt="Hyderabad C&D Recycling Plant Hero" 
- className="w-full h-full object-cover mix-blend-multiply"
+ className="w-full h-full object-cover mix-blend-multiply border-none outline-none ring-0 shadow-none"
  onError={(e) => { e.currentTarget.style.display = 'none' }}
  />
  {/* Fallback pattern if image is missing */}
@@ -49,13 +49,13 @@ export default function ProjectSpreadSection() {
 
  <div className="grid grid-cols-2 gap-4">
  <div className="bg-gray-100 border border-[#D9D9D9] p-1 aspect-square relative">
- <img src="/images/Projects/project4.jpg" alt="Detail 1" className="w-full h-full object-cover mix-blend-multiply" onError={(e) => { e.currentTarget.style.display = 'none' }} />
+ <img src="/images/Projects/project4.jpg" alt="Detail 1" className="w-full h-full object-cover mix-blend-multiply border-none outline-none ring-0 shadow-none" onError={(e) => { e.currentTarget.style.display = 'none' }} />
  <div className="absolute inset-0 bg-[#0B1F3A]/5 -z-10 flex items-center justify-center">
  <span className="text-[#0B1F3A]/20 text-[10px] uppercase font-bold">Process Feed</span>
  </div>
  </div>
  <div className="bg-gray-100 border border-[#D9D9D9] p-1 aspect-square relative">
- <img src="/images/Projects/project5.jpg" alt="Detail 2" className="w-full h-full object-cover mix-blend-multiply" onError={(e) => { e.currentTarget.style.display = 'none' }} />
+ <img src="/images/Projects/project5.jpg" alt="Detail 2" className="w-full h-full object-cover mix-blend-multiply border-none outline-none ring-0 shadow-none" onError={(e) => { e.currentTarget.style.display = 'none' }} />
  <div className="absolute inset-0 bg-[#0B1F3A]/5 -z-10 flex items-center justify-center">
  <span className="text-[#0B1F3A]/20 text-[10px] uppercase font-bold">Screening Unit</span>
  </div>

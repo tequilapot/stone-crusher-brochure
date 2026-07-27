@@ -6,7 +6,7 @@ export default function HeroSection() {
  <img
  src="/images/hero-background.jpg"
  alt="SREW industrial crushing plant"
- className="w-full h-full object-cover mix-blend-overlay opacity-50 grayscale"
+ className="w-full h-full object-cover mix-blend-overlay opacity-50 grayscale border-none outline-none ring-0 shadow-none"
  />
  {/* Navy to Transparent Gradient */}
  <div className="absolute inset-0 bg-gradient-to-r from-[#0B1F3A] via-[#0B1F3A]/95 to-transparent" />

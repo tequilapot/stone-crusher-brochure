@@ -308,7 +308,7 @@ export default function ProductsSection() {
  <img
  src={product.image}
  alt={product.name}
- className="w-full h-full object-contain "
+ className="w-full h-full object-contain  border-none outline-none ring-0 shadow-none"
  />
  </div>
  <div className="p-2 border-t border-[#D9D9D9]">
