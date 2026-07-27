@@ -364,7 +364,7 @@ const ProjectProfilePage1 = () => {
  {/* LEFT COLUMN - Stacked Large Equipment Banners */}
  <div className="flex flex-col gap-3 justify-between">
  {/* 01 / HERO IMAGE */}
- <div className="relative aspect-[16/9] w-full bg-[#0F172A] overflow-hidden border border-[#E5E7EB] shadow-sm group">
+ <div className="relative aspect-[16/9] w-full bg-white overflow-hidden border border-[#E5E7EB] shadow-sm group">
  <img
  src="/images/Projects/image.png"
  alt="Main Project View"
@@ -1082,7 +1082,7 @@ const CaseStudyPage1 = () => {
  {/* LEFT COLUMN - Stacked Large Equipment Banners */}
  <div className="flex flex-col gap-3 justify-between">
  {/* 01 / HERO IMAGE */}
- <div className="relative aspect-[16/9] w-full bg-[#0F172A] overflow-hidden border border-[#E5E7EB] shadow-sm group">
+ <div className="relative aspect-[16/9] w-full bg-white overflow-hidden border border-[#E5E7EB] shadow-sm group">
  <img
  src="/images/Projects/project2.jpg"
  alt="Main Project View"
@@ -1309,7 +1309,7 @@ const CaseStudyPage2 = () => {
  {/* LEFT COLUMN - Stacked Large Equipment Banners */}
  <div className="flex flex-col gap-3 justify-between">
  {/* 01 / HERO IMAGE */}
- <div className="relative aspect-[16/9] w-full bg-[#0F172A] overflow-hidden border border-[#E5E7EB] shadow-sm group">
+ <div className="relative aspect-[16/9] w-full bg-white overflow-hidden border border-[#E5E7EB] shadow-sm group">
  <img
  src="/images/Projects/project3.jpg"
  alt="Main Project View"
@@ -1536,7 +1536,7 @@ const CaseStudyPage3 = () => {
  {/* LEFT COLUMN - Stacked Large Equipment Banners */}
  <div className="flex flex-col gap-3 justify-between">
  {/* 01 / HERO IMAGE */}
- <div className="relative aspect-[16/9] w-full bg-[#0F172A] overflow-hidden border border-[#E5E7EB] shadow-sm group">
+ <div className="relative aspect-[16/9] w-full bg-white overflow-hidden border border-[#E5E7EB] shadow-sm group">
  <img
  src="/images/Products/image.png"
  alt="Main Project View"
