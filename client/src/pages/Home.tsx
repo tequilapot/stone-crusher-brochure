@@ -1743,7 +1743,7 @@ export default function Brochure() {
  if (!(window as any).html2pdf) {
  await new Promise((resolve, reject) => {
  const script = document.createElement('script');
- script.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js';
+ script.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js';
  script.onload = resolve;
  script.onerror = reject;
  document.head.appendChild(script);
