@@ -228,7 +228,7 @@ const ProductCatalogPage1 = () => {
  <div key={i} className="premium-card flex flex-col group relative">
  <div className="aspect-[4/3] w-full mb-5 flex items-center justify-center p-2 relative">
  {/* Floor Shadow */}
- <div className="absolute bottom-2 w-3/4 h-3 bg-black/10 blur-[6px] rounded-[100%]"></div>
+ <div className="absolute bottom-2 w-3/4 h-3 bg-[rgba(0,0,0,0.1)] rounded-[100%]"></div>
  <img
  src={p.image}
  alt={p.name}
@@ -267,7 +267,7 @@ const ProductCatalogPage2 = () => {
  {catalogProducts.slice(9, 18).map((p, i) => (
  <div key={i} className="premium-card flex flex-col group relative">
  <div className="aspect-[4/3] w-full mb-5 flex items-center justify-center p-2 relative">
- <div className="absolute bottom-2 w-3/4 h-3 bg-black/10 blur-[6px] rounded-[100%]"></div>
+ <div className="absolute bottom-2 w-3/4 h-3 bg-[rgba(0,0,0,0.1)] rounded-[100%]"></div>
  <img
  src={p.image}
  alt={p.name}
@@ -306,7 +306,7 @@ const ProductCatalogPage3 = () => {
  {catalogProducts.slice(18, 27).map((p, i) => (
  <div key={i} className="premium-card flex flex-col group relative">
  <div className="aspect-[4/3] w-full mb-5 flex items-center justify-center p-2 relative">
- <div className="absolute bottom-2 w-3/4 h-3 bg-black/10 blur-[6px] rounded-[100%]"></div>
+ <div className="absolute bottom-2 w-3/4 h-3 bg-[rgba(0,0,0,0.1)] rounded-[100%]"></div>
  <img
  src={p.image}
  alt={p.name}
@@ -368,15 +368,15 @@ const ProjectProfilePage1 = () => {
  <img
  src="/images/Projects/image.png"
  alt="Main Project View"
- className="w-full h-full object-cover opacity-90 transition-transform duration-500 group-hover:scale-105"
+ className="w-full h-full object-contain opacity-90 transition-transform duration-500 group-hover:scale-105"
  onError={(e) => { e.currentTarget.style.display = 'none'; }}
  />
- <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/85 via-transparent to-transparent flex flex-col justify-end p-3">
+ <div className="absolute inset-0 bg-gradient-to-t from-[rgba(15,23,42,0.85)] via-transparent to-transparent flex flex-col justify-end p-3">
  <div className="flex justify-between items-center text-white">
  <span className="text-[8.5px] font-bold uppercase tracking-wider bg-[#F2B233] text-[#0F172A] px-2 py-0.5 font-mono">
  01 / MAIN C&D PLANT VIEW
  </span>
- <span className="text-[9px] tracking-widest text-white/70 font-mono">FACILITY SPREAD</span>
+ <span className="text-[9px] tracking-widest text-[rgba(255,255,255,0.7)] font-mono">FACILITY SPREAD</span>
  </div>
  </div>
  </div>
@@ -463,7 +463,7 @@ const ProjectProfilePage1 = () => {
  <h3 className="text-xs font-bold text-[#0F172A] flex items-center uppercase tracking-[0.15em] border-l-4 border-[#F2B233] pl-3">
  ENGINEERING APPROACH & BUILD
  </h3>
- <span className="text-[8px] bg-yellow-100 text-[#0F172A] font-bold px-2 py-0.5 uppercase tracking-wider">SMART CITY DEV</span>
+ <span className="text-[8px] bg-[#FEF9C3] text-[#0F172A] font-bold px-2 py-0.5 uppercase tracking-wider">SMART CITY DEV</span>
  </div>
  <p className="text-[16px] text-[#4B5563] leading-relaxed font-light text-justify">
  Designed for Hyderabad's green smart city initiatives, this integrated C&D waste recycling plant features inline magnetic separators, a heavy-duty trommel classifier, a robust jaw crusher, and a custom LPG-fired Sand Dryer to produce dry manufactured sand.
@@ -473,7 +473,7 @@ const ProjectProfilePage1 = () => {
  </div>
 
  {/* Roadmap Timeline Process Flow */}
- <div className="mt-4 bg-[#F9FAFB]/80 p-5 border border-[#E5E7EB]">
+ <div className="mt-4 bg-[rgba(249,250,251,0.8)] p-5 border border-[#E5E7EB]">
  <div className="flex items-center mb-6">
  <svg className="w-5 h-5 text-[#0F172A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -567,14 +567,14 @@ const ProjectProfilePage2 = () => {
  return (
  <BrochurePage className="p-16 flex flex-col bg-white">
  <div className="text-[10px] font-bold tracking-[0.2em] text-[#9CA3AF] uppercase mb-16 flex items-center justify-between">
- <span className="w-16 h-[2px] bg-yellow-500"></span>
- <span className="text-yellow-500 text-3xl font-serif font-black">&</span>
- <span className="w-16 h-[2px] bg-yellow-500 opacity-0"></span>
+ <span className="w-16 h-[2px] bg-[#EAB308]"></span>
+ <span className="text-[#EAB308] text-3xl font-serif font-black">&</span>
+ <span className="w-16 h-[2px] bg-[#EAB308] opacity-0"></span>
  </div>
 
  <div className="flex-grow flex flex-col justify-center items-center">
  <div className="w-full max-w-4xl">
- <h3 className="text-xs font-bold text-yellow-500 uppercase tracking-[0.2em] mb-12 border-b border-[#F3F4F6] pb-4 border-l-4 border-[#F2B233] pl-3">
+ <h3 className="text-xs font-bold text-[#EAB308] uppercase tracking-[0.2em] mb-12 border-b border-[#F3F4F6] pb-4 border-l-4 border-[#F2B233] pl-3">
  SUPPLIED MACHINERY
  </h3>
 
@@ -587,13 +587,13 @@ const ProjectProfilePage2 = () => {
  "VIBRATING SCREEN",
  "PROCESSED AGGREGATES"
  ].map((item, i) => (
- <div key={i} className="bg-[#0F172A] text-white p-6 text-center text-[11px] font-bold uppercase tracking-[0.15em] flex items-center justify-center min-h-[100px] shadow-lg border-b-4 border-yellow-500 hover:-translate-y-1 transition-transform">
+ <div key={i} className="bg-[#0F172A] text-white p-6 text-center text-[11px] font-bold uppercase tracking-[0.15em] flex items-center justify-center min-h-[100px] shadow-lg border-b-4 border-[#EAB308] hover:-translate-y-1 transition-transform">
  {item}
  </div>
  ))}
  </div>
 
- <div className="bg-yellow-500 p-10 text-[#0F172A] shadow-xl relative ml-auto w-[80%]">
+ <div className="bg-[#EAB308] p-10 text-[#0F172A] shadow-xl relative ml-auto w-[80%]">
  {/* Decorative corner element */}
  <div className="absolute -top-3 -left-3 w-6 h-6 border-t-2 border-l-2 border-[#0F172A]"></div>
  <h3 className="text-sm font-black mb-6 uppercase tracking-wider border-b border-[#0F172A]/20 pb-4 border-l-4 border-[#F2B233] pl-3">
@@ -621,7 +621,7 @@ const SparePartsPage = () => {
  return (
  <BrochurePage className="p-16 flex flex-col bg-white">
  <div className="text-[10px] font-bold tracking-[0.2em] text-[#9CA3AF] uppercase mb-8 flex items-center">
- <span className="w-4 h-[2px] bg-yellow-500 mr-4"></span> 06 / SPARE PARTS & SERVICES
+ <span className="w-4 h-[2px] bg-[#EAB308] mr-4"></span> 06 / SPARE PARTS & SERVICES
  </div>
 
  <h2 className="text-[44px] font-black text-[#0F172A] mb-12 uppercase tracking-tight w-3/4 leading-[0.95] border-l-8 border-[#F2B233] pl-6">
@@ -635,21 +635,21 @@ const SparePartsPage = () => {
 
  <ul className="space-y-4">
  <li className="flex items-start">
- <span className="w-2 h-2 bg-yellow-500 mt-1.5 mr-3 rounded-full flex-shrink-0"></span>
+ <span className="w-2 h-2 bg-[#EAB308] mt-1.5 mr-3 rounded-full flex-shrink-0"></span>
  <div>
  <h4 className="font-bold text-[#0F172A] text-sm">Jaw Crusher Wear Parts</h4>
  <p className="text-xs text-[#6B7280]">Manganese jaw plates, cheek plates, toggle plates</p>
  </div>
  </li>
  <li className="flex items-start">
- <span className="w-2 h-2 bg-yellow-500 mt-1.5 mr-3 rounded-full flex-shrink-0"></span>
+ <span className="w-2 h-2 bg-[#EAB308] mt-1.5 mr-3 rounded-full flex-shrink-0"></span>
  <div>
  <h4 className="font-bold text-[#0F172A] text-sm">Cone & Impact Crusher Spares</h4>
  <p className="text-xs text-[#6B7280]">Mantles, bowl liners, blow bars, impact plates</p>
  </div>
  </li>
  <li className="flex items-start">
- <span className="w-2 h-2 bg-yellow-500 mt-1.5 mr-3 rounded-full flex-shrink-0"></span>
+ <span className="w-2 h-2 bg-[#EAB308] mt-1.5 mr-3 rounded-full flex-shrink-0"></span>
  <div>
  <h4 className="font-bold text-[#0F172A] text-sm">Screening Media</h4>
  <p className="text-xs text-[#6B7280]">High-tensile wire mesh, polyurethane screen panels</p>
@@ -662,8 +662,8 @@ const SparePartsPage = () => {
  <p className="text-[#4B5563] text-sm mb-6">Our dedicated service network spans across India, ensuring rapid deployment of maintenance crews and parts delivery to minimize your plant downtime.</p>
  <div className="bg-white p-6 shadow-sm border border-[#E5E7EB]">
  <div className="text-xs text-[#9CA3AF] font-bold tracking-widest mb-1">SERVICE HELPLINE</div>
- <div className="text-lg font-black text-yellow-600">+91 8790759460</div>
- <div className="text-lg font-black text-yellow-600">+91 7075061622</div>
+ <div className="text-lg font-black text-[#CA8A04]">+91 8790759460</div>
+ <div className="text-lg font-black text-[#CA8A04]">+91 7075061622</div>
  </div>
  </div>
  </div>
@@ -680,7 +680,7 @@ const FeaturedProjectsPage = () => {
  return (
  <BrochurePage className="p-16 flex flex-col bg-white">
  <div className="text-[10px] font-bold tracking-[0.2em] text-[#9CA3AF] uppercase mb-8 flex items-center">
- <span className="w-4 h-[2px] bg-yellow-500 mr-4"></span> 07 / FEATURED PROJECTS
+ <span className="w-4 h-[2px] bg-[#EAB308] mr-4"></span> 07 / FEATURED PROJECTS
  </div>
 
  <h2 className="text-[44px] font-black text-[#0F172A] mb-16 uppercase tracking-tight w-3/4 leading-[0.95] border-l-8 border-[#F2B233] pl-6">
@@ -697,7 +697,7 @@ const FeaturedProjectsPage = () => {
  <img
  src={p.image}
  alt={p.title}
- className="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105"
+ className="w-full h-full object-contain opacity-90 transition-transform duration-700 group-hover:scale-105"
  onError={(e) => { e.currentTarget.style.display = 'none'; }}
  />
  </div>
@@ -706,7 +706,7 @@ const FeaturedProjectsPage = () => {
  <p className="text-[17px] text-[#4B5563] mb-10 leading-relaxed font-light">{p.desc}</p>
  <div className="flex flex-wrap gap-3 mt-auto">
  {p.tags.map(tag => (
- <span key={tag} className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#0F172A] bg-yellow-100 px-4 py-2 border border-yellow-200">
+ <span key={tag} className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#0F172A] bg-[#FEF9C3] px-4 py-2 border border-[#FEF08A]">
  {tag}
  </span>
  ))}
@@ -967,11 +967,11 @@ const AIChatbot = () => {
  {/* Chatbot Toggle Button */}
  <button
  onClick={() => setIsOpen(true)}
- className={`fixed bottom-6 right-6 bg-[#0F172A] hover:bg-[#1E293B] text-yellow-500 p-4 rounded-full shadow-2xl transition-all duration-300 z-50 flex items-center justify-center ${isOpen ? 'scale-0 opacity-0' : 'scale-100 opacity-100'}`}
+ className={`fixed bottom-6 right-6 bg-[#0F172A] hover:bg-[#1E293B] text-[#EAB308] p-4 rounded-full shadow-2xl transition-all duration-300 z-50 flex items-center justify-center ${isOpen ? 'scale-0 opacity-0' : 'scale-100 opacity-100'}`}
  aria-label="Open AI Assistant"
  >
  <MessageCircle size={28} />
- <span className="absolute -top-2 -right-2 bg-yellow-500 text-[#0F172A] text-[10px] font-bold px-2 py-0.5 rounded-full border-2 border-white">
+ <span className="absolute -top-2 -right-2 bg-[#EAB308] text-[#0F172A] text-[10px] font-bold px-2 py-0.5 rounded-full border-2 border-white">
  AI
  </span>
  </button>
@@ -982,7 +982,7 @@ const AIChatbot = () => {
  {/* Header */}
  <div className="bg-[#0F172A] text-white p-4 flex justify-between items-center">
  <div className="flex items-center gap-3">
- <div className="bg-yellow-500 text-[#0F172A] p-1.5 rounded-full">
+ <div className="bg-[#EAB308] text-[#0F172A] p-1.5 rounded-full">
  <MessageCircle size={18} />
  </div>
  <div>
@@ -1004,7 +1004,7 @@ const AIChatbot = () => {
  : 'bg-white border border-[#E5E7EB] text-[#374151] rounded-bl-sm shadow-sm'
  }`}>
  {msg.role === 'model' && (
- <div className="flex items-center gap-1.5 mb-1.5 text-[10px] font-bold text-yellow-600 uppercase tracking-widest">
+ <div className="flex items-center gap-1.5 mb-1.5 text-[10px] font-bold text-[#CA8A04] uppercase tracking-widest">
  <MessageCircle size={10} /> AI
  </div>
  )}
@@ -1025,7 +1025,7 @@ const AIChatbot = () => {
 
  {/* Input Area */}
  <div className="p-3 border-t border-[#E5E7EB] bg-white">
- <div className="flex items-center bg-[#F3F4F6] rounded-full overflow-hidden border border-[#E5E7EB] focus-within:border-yellow-500 transition-colors">
+ <div className="flex items-center bg-[#F3F4F6] rounded-full overflow-hidden border border-[#E5E7EB] focus-within:border-[#EAB308] transition-colors">
  <input
  type="text"
  className="flex-grow bg-transparent px-4 py-2 text-sm focus:outline-none text-[#374151] placeholder-gray-400"
@@ -1038,7 +1038,7 @@ const AIChatbot = () => {
  <button
  onClick={handleSendMessage}
  disabled={isLoading || !input.trim()}
- className="bg-yellow-500 text-[#0F172A] p-2 m-1 rounded-full hover:bg-yellow-400 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+ className="bg-[#EAB308] text-[#0F172A] p-2 m-1 rounded-full hover:bg-[#FACC15] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
  >
  <Send size={16} />
  </button>
@@ -1086,15 +1086,15 @@ const CaseStudyPage1 = () => {
  <img
  src="/images/Projects/project2.jpg"
  alt="Main Project View"
- className="w-full h-full object-cover opacity-90 transition-transform duration-500 group-hover:scale-105"
+ className="w-full h-full object-contain opacity-90 transition-transform duration-500 group-hover:scale-105"
  onError={(e) => { e.currentTarget.style.display = 'none'; }}
  />
- <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/85 via-transparent to-transparent flex flex-col justify-end p-3">
+ <div className="absolute inset-0 bg-gradient-to-t from-[rgba(15,23,42,0.85)] via-transparent to-transparent flex flex-col justify-end p-3">
  <div className="flex justify-between items-center text-white">
  <span className="text-[8.5px] font-bold uppercase tracking-wider bg-[#F2B233] text-[#0F172A] px-2 py-0.5 font-mono">
  01 / 200 TPH PLANT VIEW
  </span>
- <span className="text-[9px] tracking-widest text-white/70 font-mono">WEST BENGAL PROJECT</span>
+ <span className="text-[9px] tracking-widest text-[rgba(255,255,255,0.7)] font-mono">WEST BENGAL PROJECT</span>
  </div>
  </div>
  </div>
@@ -1181,13 +1181,13 @@ const CaseStudyPage1 = () => {
  <h3 className="text-xs font-bold text-[#0F172A] flex items-center uppercase tracking-[0.15em] border-l-4 border-[#F2B233] pl-3">
  ENGINEERING APPROACH & BUILD
  </h3>
- <span className="text-[8px] bg-yellow-100 text-[#0F172A] font-bold px-2 py-0.5 uppercase tracking-wider">AGGREGATE PLANT</span>
+ <span className="text-[8px] bg-[#FEF9C3] text-[#0F172A] font-bold px-2 py-0.5 uppercase tracking-wider">AGGREGATE PLANT</span>
  </div>
  <p className="text-[17px] text-[#4B5563] leading-relaxed font-light text-justify">SREW Projects designed and commissioned a robust 200 TPH two-stage plant layout engineered specifically for space constraints. Deployed in a compact 3-acre layout, SREW configured a high-capacity grease-lubricated Jaw Crusher for heavy primary breaking, followed by a high-efficiency secondary Cone Crusher to shape aggregate materials to high density. Maintenance operations are streamlined using SREW integrated high-clearance steel walkways and modular vibration screen decks.</p>
  </div>
 
  {/* Roadmap Timeline Process Flow */}
- <div className="mt-4 bg-[#F9FAFB]/80 p-5 border border-[#E5E7EB]">
+ <div className="mt-4 bg-[rgba(249,250,251,0.8)] p-5 border border-[#E5E7EB]">
  <div className="flex items-center mb-6">
  <svg className="w-5 h-5 text-[#0F172A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -1313,15 +1313,15 @@ const CaseStudyPage2 = () => {
  <img
  src="/images/Projects/project3.jpg"
  alt="Main Project View"
- className="w-full h-full object-cover opacity-90 transition-transform duration-500 group-hover:scale-105"
+ className="w-full h-full object-contain opacity-90 transition-transform duration-500 group-hover:scale-105"
  onError={(e) => { e.currentTarget.style.display = 'none'; }}
  />
- <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/85 via-transparent to-transparent flex flex-col justify-end p-3">
+ <div className="absolute inset-0 bg-gradient-to-t from-[rgba(15,23,42,0.85)] via-transparent to-transparent flex flex-col justify-end p-3">
  <div className="flex justify-between items-center text-white">
  <span className="text-[8.5px] font-bold uppercase tracking-wider bg-[#F2B233] text-[#0F172A] px-2 py-0.5 font-mono">
  01 / 400 TPH MINING SETUP
  </span>
- <span className="text-[9px] tracking-widest text-white/70 font-mono">TELANGANA PROJECT</span>
+ <span className="text-[9px] tracking-widest text-[rgba(255,255,255,0.7)] font-mono">TELANGANA PROJECT</span>
  </div>
  </div>
  </div>
@@ -1408,13 +1408,13 @@ const CaseStudyPage2 = () => {
  <h3 className="text-xs font-bold text-[#0F172A] flex items-center uppercase tracking-[0.15em] border-l-4 border-[#F2B233] pl-3">
  ENGINEERING APPROACH & BUILD
  </h3>
- <span className="text-[8px] bg-yellow-100 text-[#0F172A] font-bold px-2 py-0.5 uppercase tracking-wider">MINING PLANT</span>
+ <span className="text-[8px] bg-[#FEF9C3] text-[#0F172A] font-bold px-2 py-0.5 uppercase tracking-wider">MINING PLANT</span>
  </div>
  <p className="text-[17px] text-[#4B5563] leading-relaxed font-light text-justify">Built to tackle extreme mining environments, SREW delivered a high-throughput 400 TPH plant for continuous 24/7 quarrying. Deployed in a massive site, SREW integrated dual-toggle heavy-duty primary Jaw Crushers with secondary Horizontal Impact Crushers (HSI) to process high-abrasion coal and stone burden. Employs SREW proprietary high-strength manganese liners to minimize maintenance down-time under harsh workloads.</p>
  </div>
 
  {/* Roadmap Timeline Process Flow */}
- <div className="mt-4 bg-[#F9FAFB]/80 p-5 border border-[#E5E7EB]">
+ <div className="mt-4 bg-[rgba(249,250,251,0.8)] p-5 border border-[#E5E7EB]">
  <div className="flex items-center mb-6">
  <svg className="w-5 h-5 text-[#0F172A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -1540,15 +1540,15 @@ const CaseStudyPage3 = () => {
  <img
  src="/images/Products/image.png"
  alt="Main Project View"
- className="w-full h-full object-cover opacity-90 transition-transform duration-500 group-hover:scale-105"
+ className="w-full h-full object-contain opacity-90 transition-transform duration-500 group-hover:scale-105"
  onError={(e) => { e.currentTarget.style.display = 'none'; }}
  />
- <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/85 via-transparent to-transparent flex flex-col justify-end p-3">
+ <div className="absolute inset-0 bg-gradient-to-t from-[rgba(15,23,42,0.85)] via-transparent to-transparent flex flex-col justify-end p-3">
  <div className="flex justify-between items-center text-white">
  <span className="text-[8.5px] font-bold uppercase tracking-wider bg-[#F2B233] text-[#0F172A] px-2 py-0.5 font-mono">
  01 / MOBILE UNIT VIEW
  </span>
- <span className="text-[9px] tracking-widest text-white/70 font-mono">ODISHA PROJECT</span>
+ <span className="text-[9px] tracking-widest text-[rgba(255,255,255,0.7)] font-mono">ODISHA PROJECT</span>
  </div>
  </div>
  </div>
@@ -1635,13 +1635,13 @@ const CaseStudyPage3 = () => {
  <h3 className="text-xs font-bold text-[#0F172A] flex items-center uppercase tracking-[0.15em] border-l-4 border-[#F2B233] pl-3">
  ENGINEERING APPROACH & BUILD
  </h3>
- <span className="text-[8px] bg-yellow-100 text-[#0F172A] font-bold px-2 py-0.5 uppercase tracking-wider">MOBILE INFRA</span>
+ <span className="text-[8px] bg-[#FEF9C3] text-[#0F172A] font-bold px-2 py-0.5 uppercase tracking-wider">MOBILE INFRA</span>
  </div>
  <p className="text-[17px] text-[#4B5563] leading-relaxed font-light text-justify">For linear road infrastructure projects requiring rapid site relocations, SREW engineered a robust, completely skid-mounted mobile crushing and screening unit. Dismountable in just days, this system contains a heavy-duty SREW primary jaw crusher, an integrated classification screen, and self-contained material transfer conveyors powered by a centralized on-chassis diesel generator.</p>
  </div>
 
  {/* Roadmap Timeline Process Flow */}
- <div className="mt-4 bg-[#F9FAFB]/80 p-5 border border-[#E5E7EB]">
+ <div className="mt-4 bg-[rgba(249,250,251,0.8)] p-5 border border-[#E5E7EB]">
  <div className="flex items-center mb-6">
  <svg className="w-5 h-5 text-[#0F172A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -1780,9 +1780,9 @@ export default function Brochure() {
 
  {/* Header Info */}
  <div className="max-w-[1200px] w-full mb-8 flex justify-between items-center text-[#6B7280]">
- <h1 className="text-xl font-bold text-[#0F172A] tracking-wider uppercase">SREW Projects <span className="text-yellow-500">|</span> Premium Brochure</h1>
+ <h1 className="text-xl font-bold text-[#0F172A] tracking-wider uppercase">SREW Projects <span className="text-[#EAB308]">|</span> Premium Brochure</h1>
  <div className="flex items-center gap-4 text-sm font-medium">
- <button onClick={handleDownloadPDF} disabled={isDownloading} className="flex items-center gap-2 hover:text-yellow-600 transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
+ <button onClick={handleDownloadPDF} disabled={isDownloading} className="flex items-center gap-2 hover:text-[#CA8A04] transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
  <Download size={16} /> {isDownloading ? 'Generating PDF...' : 'PDF Version'}
  </button>
  <span className="text-[#9CA3AF]">|</span>
