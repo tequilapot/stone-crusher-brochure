@@ -13,6 +13,8 @@ const allProducts = [
  icon: Cog,
  color: "#F5C518",
  image: "/images/Products/srew-jaw-crusher.png",
+  priceRange: "₹25 L - ₹1.5 Cr",
+  specRange: "Capacity: 50-500 TPH",
  },
  {
  name: "European Type Jaw Crusher",
@@ -21,6 +23,8 @@ const allProducts = [
  icon: Cog,
  color: "#F5C518",
  image: "/images/Products/srew-european-type-jaw-crusher.png",
+  priceRange: "₹25 L - ₹1.5 Cr",
+  specRange: "Capacity: 50-500 TPH",
  },
  {
  name: "Grease Jaw Crusher",
@@ -29,6 +33,8 @@ const allProducts = [
  icon: Cog,
  color: "#F5C518",
  image: "/images/Products/srew-grease-jaw-crusher.png",
+  priceRange: "₹25 L - ₹1.5 Cr",
+  specRange: "Capacity: 50-500 TPH",
  },
  {
  name: "Cone Crusher Plant",
@@ -37,6 +43,8 @@ const allProducts = [
  icon: Layers,
  color: "#F5C518",
  image: "/images/Products/srew-cone-crusher-plant.png",
+  priceRange: "₹25 L - ₹1.5 Cr",
+  specRange: "Capacity: 50-500 TPH",
  },
  {
  name: "Single-Cylinder Cone Crusher",
@@ -45,6 +53,8 @@ const allProducts = [
  icon: Layers,
  color: "#F5C518",
  image: "/images/Products/srew-single-cylinder-cone-crusher.png",
+  priceRange: "₹25 L - ₹1.5 Cr",
+  specRange: "Capacity: 50-500 TPH",
  },
  {
  name: "Multi-Cylinder Hydraulic Cone Crusher",
@@ -53,6 +63,8 @@ const allProducts = [
  icon: Layers,
  color: "#F5C518",
  image: "/images/Products/srew-multi-cylinder-hydraulic-cone-crusher.png",
+  priceRange: "₹25 L - ₹1.5 Cr",
+  specRange: "Capacity: 50-500 TPH",
  },
  {
  name: "Hydraulic Impact Crusher",
@@ -61,6 +73,8 @@ const allProducts = [
  icon: Flame,
  color: "#F5C518",
  image: "/images/Products/srew-hydraulic-impact-crusher.png",
+  priceRange: "₹25 L - ₹1.5 Cr",
+  specRange: "Capacity: 50-500 TPH",
  },
  {
  name: "Hammer Crusher",
@@ -69,6 +83,8 @@ const allProducts = [
  icon: Flame,
  color: "#F5C518",
  image: "/images/Products/srew-hammer-crusher.png",
+  priceRange: "₹25 L - ₹1.5 Cr",
+  specRange: "Capacity: 50-500 TPH",
  },
  {
  name: "Roller Crusher",
@@ -77,6 +93,8 @@ const allProducts = [
  icon: Flame,
  color: "#F5C518",
  image: "/images/Products/srew-roller-crusher.jpg",
+  priceRange: "₹25 L - ₹1.5 Cr",
+  specRange: "Capacity: 50-500 TPH",
  },
  {
  name: "Vertical Shaft Impactor (VSI)",
@@ -85,6 +103,8 @@ const allProducts = [
  icon: Flame,
  color: "#F5C518",
  image: "/images/Products/srew-vertical-shaft-crusher.png",
+  priceRange: "₹25 L - ₹1.5 Cr",
+  specRange: "Capacity: 50-500 TPH",
  },
  // ── Screening Equipment ──
  {
@@ -94,6 +114,8 @@ const allProducts = [
  icon: Grid3X3,
  color: "#1B3A6B",
  image: "/images/Products/srew-triple-shaft-vibrating-screen.png",
+  priceRange: "₹25 L - ₹1.5 Cr",
+  specRange: "Capacity: 50-500 TPH",
  },
  {
  name: "3 Deck Vibrating Screen",
@@ -102,6 +124,8 @@ const allProducts = [
  icon: Grid3X3,
  color: "#1B3A6B",
  image: "/images/Products/Vibrating-Screen-3-deck.png",
+  priceRange: "₹25 L - ₹1.5 Cr",
+  specRange: "Capacity: 50-500 TPH",
  },
  {
  name: "Damping Vibrating Screen",
@@ -110,6 +134,8 @@ const allProducts = [
  icon: Grid3X3,
  color: "#1B3A6B",
  image: "/images/Products/srew-Damping-vibrating-screen.png",
+  priceRange: "₹25 L - ₹1.5 Cr",
+  specRange: "Capacity: 50-500 TPH",
  },
  {
  name: "Triple Shaft Vibrating Screen",
@@ -118,6 +144,8 @@ const allProducts = [
  icon: Grid3X3,
  color: "#1B3A6B",
  image: "/images/Products/srew-triple-shaft-vibrating-screen.png",
+  priceRange: "₹25 L - ₹1.5 Cr",
+  specRange: "Capacity: 50-500 TPH",
  },
  // ── Sand Processing ──
  {
@@ -127,6 +155,8 @@ const allProducts = [
  icon: Droplets,
  color: "#F5C518",
  image: "/images/Products/srew-sand-washer.png",
+  priceRange: "₹25 L - ₹1.5 Cr",
+  specRange: "Capacity: 50-500 TPH",
  },
  {
  name: "Series Sand Washer",
@@ -135,6 +165,8 @@ const allProducts = [
  icon: Droplets,
  color: "#F5C518",
  image: "/images/Products/srew-series-sand-washer.png",
+  priceRange: "₹25 L - ₹1.5 Cr",
+  specRange: "Capacity: 50-500 TPH",
  },
  {
  name: "Fine Sand Recycling Machine",
@@ -143,6 +175,8 @@ const allProducts = [
  icon: Droplets,
  color: "#F5C518",
  image: "/images/Products/srew-fine-sand-recycling-machine.png",
+  priceRange: "₹25 L - ₹1.5 Cr",
+  specRange: "Capacity: 50-500 TPH",
  },
  {
  name: "Sand Dryer",
@@ -151,6 +185,8 @@ const allProducts = [
  icon: Droplets,
  color: "#F5C518",
  image: "/images/Products/srew-sand-dryer.jpg",
+  priceRange: "₹25 L - ₹1.5 Cr",
+  specRange: "Capacity: 50-500 TPH",
  },
  // ── Mobile Plants ──
  {
@@ -160,6 +196,8 @@ const allProducts = [
  icon: Truck,
  color: "#1B3A6B",
  image: "/images/Products/srew-mobile-crushing-plant.png",
+  priceRange: "₹25 L - ₹1.5 Cr",
+  specRange: "Capacity: 50-500 TPH",
  },
  {
  name: "Modular Mobile Crusher",
@@ -168,6 +206,8 @@ const allProducts = [
  icon: Truck,
  color: "#1B3A6B",
  image: "/images/Products/srew-modular-mobile-crusher.png",
+  priceRange: "₹25 L - ₹1.5 Cr",
+  specRange: "Capacity: 50-500 TPH",
  },
  {
  name: "Tire Mobile Crusher",
@@ -176,6 +216,8 @@ const allProducts = [
  icon: Truck,
  color: "#1B3A6B",
  image: "/images/Products/srew-tire-mobile-crusher.png",
+  priceRange: "₹25 L - ₹1.5 Cr",
+  specRange: "Capacity: 50-500 TPH",
  },
  // ── Conveyors & Handling ──
  {
@@ -185,6 +227,8 @@ const allProducts = [
  icon: ArrowDown,
  color: "#F5C518",
  image: "/images/Products/srew-belt-conveyor.png",
+  priceRange: "₹25 L - ₹1.5 Cr",
+  specRange: "Capacity: 50-500 TPH",
  },
  {
  name: "Loading Hopper",
@@ -193,6 +237,8 @@ const allProducts = [
  icon: ArrowDown,
  color: "#F5C518",
  image: "/images/Products/srew-hopper.jpg",
+  priceRange: "₹25 L - ₹1.5 Cr",
+  specRange: "Capacity: 50-500 TPH",
  },
  {
  name: "Silo Storage System",
@@ -201,6 +247,8 @@ const allProducts = [
  icon: ArrowDown,
  color: "#F5C518",
  image: "/images/Products/srew-silo.jpg",
+  priceRange: "₹25 L - ₹1.5 Cr",
+  specRange: "Capacity: 50-500 TPH",
  },
  // ── Other Equipment ──
  {
@@ -210,6 +258,8 @@ const allProducts = [
  icon: Wrench,
  color: "#1B3A6B",
  image: "/images/Products/srew-panel-board.jpg",
+  priceRange: "₹25 L - ₹1.5 Cr",
+  specRange: "Capacity: 50-500 TPH",
  },
  {
  name: "C&D Recycling Plant",
@@ -218,6 +268,8 @@ const allProducts = [
  icon: Wrench,
  color: "#1B3A6B",
  image: "/images/Products/srew-cd-recycling.jpg",
+  priceRange: "₹25 L - ₹1.5 Cr",
+  specRange: "Capacity: 50-500 TPH",
  },
 ];
 
@@ -315,8 +367,14 @@ export default function ProductsSection() {
  <h4 className="font-display font-bold text-[9px] text-[#0A1628] leading-tight mb-1" style={{ fontFamily: "'Montserrat', sans-serif" }}>
  {product.name}
  </h4>
- <p className="text-[8px] text-[#1B3A6B] tracking-wider font-semibold" style={{ fontFamily: "'Calibri', sans-serif" }}>
+ <p className="text-[7.5px] text-[#1B3A6B] tracking-wider font-bold mb-0.5" style={{ fontFamily: "'Calibri', sans-serif" }}>
  {product.spec}
+ </p>
+ <p className="text-[7px] text-[#4B5563] leading-tight mb-0.5">
+ {product.specRange}
+ </p>
+ <p className="text-[7px] text-[#0F172A] font-bold leading-tight">
+ Est. {product.priceRange}
  </p>
  </div>
  </div>

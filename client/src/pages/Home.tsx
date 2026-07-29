@@ -27,16 +27,16 @@ const CoverPage = () => (
 
  {/* Content Layer */}
  <div className="relative z-40 w-full h-full p-16 flex flex-col justify-end">
- <div className="w-[60%] pl-8 mb-4">
- <h2 className="text-[28px] text-[#0F172A] font-medium leading-[1.2] mb-1 tracking-wide">
+ <div className="w-[60%] ml-[20%] mb-12">
+ <h2 className="text-[34px] text-[#0F172A] font-medium leading-[1.1] mb-2 tracking-wide">
  TOGETHER,<br />
  WE BUILD
  </h2>
- <h1 className="text-[44px] font-black text-[#0F172A] leading-[1.05] mb-5 tracking-tight">
+ <h1 className="text-[48px] font-black text-[#0F172A] leading-[1.05] mb-6 tracking-tighter">
  STRONGER<br />
  FOUNDATIONS.
  </h1>
- <div className="w-16 h-[4px] bg-[#0F172A]"></div>
+ <div className="w-20 h-[5px] bg-[#0F172A]"></div>
  </div>
  </div>
  </BrochurePage>
