@@ -13,53 +13,50 @@ const BrochurePage = ({ children, className = '' }) => (
 );
 
 const CoverPage = () => (
- <BrochurePage className="relative overflow-hidden flex flex-col justify-between">
- {/* Base Layer: Full-screen image */}
- <img src="/images/hero-background.jpg" alt="Industrial Plant" className="absolute inset-0 w-full h-full object-cover grayscale opacity-90 border-none outline-none ring-0 shadow-none z-0" />
- 
- {/* SVG Overlay for reliable html2canvas rendering */}
+ <BrochurePage className="relative overflow-hidden">
+ {/* Layer 0: Grayscale photo — full bleed background */}
+ <img
+ src="/images/hero-background.jpg"
+ alt="Industrial Plant"
+ className="absolute inset-0 w-full h-full object-cover grayscale opacity-90 border-none outline-none ring-0 shadow-none z-0"
+ />
+
+ {/* Layer 1: SVG geometric overlays — Yellow band, White area, Navy area */}
  <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full z-10">
- {/* 1. Bottom Navy (Covers bottom of image) */}
- <polygon points="0,85 100,60 100,100 0,100" fill="#0F172A" />
- 
- {/* 2. Top-Left Navy */}
- <polygon points="0,0 20,0 0,15" fill="#0F172A" />
- 
- {/* 3. Top-Left White */}
- <polygon points="20,0 35,0 0,30 0,15" fill="#FFFFFF" />
- 
- {/* 4. Yellow Band */}
- <polygon points="35,0 55,0 75,100 15,100 0,85 0,30" fill="#F2B233" />
- 
- {/* 5. Bottom-Right White */}
- <polygon points="85,100 100,85 100,100" fill="#FFFFFF" />
+ {/* Yellow diagonal band */}
+ <polygon points="0,28 0,44 55,100 42,100" fill="#F2B233" />
+ {/* White bottom-left area */}
+ <polygon points="0,44 42,100 0,100" fill="#FFFFFF" />
+ {/* Navy bottom-right area */}
+ <polygon points="55,100 100,100 100,65" fill="#0F172A" />
  </svg>
 
- {/* Content Layer - Text */}
- <div className="absolute left-16 bottom-20 z-40">
- <h2 className="text-[28px] text-[#0F172A] font-medium leading-[1.2] mb-1 tracking-wide">
+ {/* Layer 2: Content — Text on white area, Logo on navy area */}
+ <div className="relative z-40 w-full h-full flex">
+
+ {/* Bottom-left text block — sits on the white area */}
+ <div className="absolute bottom-[8%] left-[5%] w-[38%]">
+ <p className="text-[20px] text-[#0F172A] font-medium leading-[1.3] mb-0 tracking-wide">
  TOGETHER,<br />
  WE BUILD
- </h2>
- <h1 className="text-[44px] font-black text-[#0F172A] leading-[1.05] mb-5 tracking-tight">
+ </p>
+ <p className="text-[32px] font-black text-[#0F172A] leading-[1.1] mb-4 tracking-tight">
  STRONGER<br />
  FOUNDATIONS.
- </h1>
- <div className="w-16 h-[4px] bg-[#0F172A]"></div>
+ </p>
+ <div className="w-14 h-[4px] bg-[#0F172A]"></div>
  </div>
 
- {/* Content Layer - Logo */}
- <div className="absolute right-16 bottom-28 z-40">
+ {/* Bottom-right SREW logo — sits on the navy area */}
+ <div className="absolute bottom-[10%] right-[6%] w-[28%] flex justify-center">
  <img
  src="/images/srew%20projects-logo.png"
  alt="SREW PROJECTS"
- className="w-72 object-contain border-none outline-none ring-0 shadow-none"
+ className="w-56 object-contain border-none outline-none ring-0 shadow-none"
  onError={(e) => { e.currentTarget.style.display = 'none'; }}
  />
  </div>
 
- <div className="absolute bottom-6 right-6 text-[9px] text-[#0F172A] font-bold tracking-[0.2em] uppercase z-50">
- <span>PAGE 01</span>
  </div>
  </BrochurePage>
 );
