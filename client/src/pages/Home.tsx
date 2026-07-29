@@ -3,7 +3,7 @@ import { Download, ChevronRight, Phone, Mail, Globe, MapPin, MessageCircle, X, S
 
 const A4_ASPECT_RATIO = 297 / 210; // Height / Width for A4 landscape
 
-const BrochurePage = ({ children, className = '' }) => (
+const BrochurePage = ({ children, className = '' }: { children: React.ReactNode, className?: string }) => (
  <div
  className={`bg-white w-full max-w-[1200px] shadow-2xl relative overflow-hidden mx-auto ${className}`}
  style={{ aspectRatio: `1 / ${A4_ASPECT_RATIO}` }} // Force A4 landscape aspect ratio
@@ -819,7 +819,7 @@ const AIChatbot = () => {
  ]);
  const [input, setInput] = useState('');
  const [isLoading, setIsLoading] = useState(false);
- const messagesEndRef = useRef(null);
+ const messagesEndRef = useRef<HTMLDivElement>(null);
 
  const scrollToBottom = () => {
  messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
