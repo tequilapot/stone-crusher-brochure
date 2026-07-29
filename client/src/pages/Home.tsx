@@ -52,15 +52,7 @@ const CoverPage = () => (
  <div className="w-10 h-[3px] bg-[#0F172A] mt-6"></div>
  </div>
 
- {/* Right Logo inside Dark Blue Area */}
- <div className="w-[100%] flex justify-end pb-8">
- <img
- src="/images/srew%20projects-logo.png"
- alt="SREW PROJECTS"
- className="w-64 object-contain relative z-50 border-none outline-none ring-0 shadow-none"
- onError={(e) => { e.currentTarget.style.display = 'none'; }}
- />
- </div>
+ {/* Right Logo removed as requested */}
  </div>
 
  <div className="absolute bottom-8 right-8 text-[9px] text-[#0F172A] font-bold tracking-[0.2em] uppercase z-50 ">
