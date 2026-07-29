@@ -6,7 +6,7 @@ const A4_ASPECT_RATIO = 297 / 210; // Height / Width for A4 landscape
 const BrochurePage = ({ children, className = '' }) => (
  <div
  className={`bg-white w-full max-w-[1200px] shadow-2xl relative overflow-hidden mx-auto ${className}`}
- style={{ aspectRatio: `1 / ${A4_ASPECT_RATIO}` }} // Force A4 landscape aspect ratio
+ style={{ aspectRatio: A4_ASPECT_RATIO }} // Force A4 landscape aspect ratio
  >
  {children}
  </div>
@@ -16,7 +16,7 @@ const CoverPage = () => (
  <BrochurePage className="relative overflow-hidden flex flex-col justify-between">
 
  {/* Layer 1: True Background */}
- <div className="absolute inset-0 bg-[#0F172A] z-[-1]"></div>
+ <div className="absolute inset-0 bg-[#0F172A] z-0"></div>
 
  {/* Layer 2: Top-right Grayscale Image */}
  <div
@@ -755,7 +755,7 @@ const BackCoverPage = () => {
  return (
  <BrochurePage className="relative overflow-hidden flex flex-col justify-between">
  {/* Layer 1: True Background for the page */}
- <div className="absolute inset-0 bg-white z-[-1]"></div>
+ <div className="absolute inset-0 bg-white z-0"></div>
 
  {/* Layer 2: Top-Left Dark Blue Triangle */}
  <div
