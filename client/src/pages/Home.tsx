@@ -35,7 +35,15 @@ const CoverPage = () => (
 
  {/* Content Layer */}
  <div className="relative z-40 w-full h-full p-16 flex flex-col justify-between">
- <div></div>
+ {/* Top Right Logo */}
+ <div className="w-full flex justify-end">
+ <img
+ src="/images/srew-logo-rbg.png"
+ alt="SREW PROJECTS"
+ className="h-16 md:h-20 w-auto object-contain relative z-50 border-none outline-none ring-0 shadow-none"
+ onError={(e) => { e.currentTarget.style.display = 'none'; }}
+ />
+ </div>
 
  <div className="flex justify-between items-end mb-8 relative">
  {/* Left Text centered inside Yellow Band */}
