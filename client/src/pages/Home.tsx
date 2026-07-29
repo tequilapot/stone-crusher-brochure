@@ -18,20 +18,18 @@ const CoverPage = () => (
  {/* Background Image Layer (Unclipped) */}
  <div className="absolute inset-0 z-0 bg-[#E5E7EB]">
  <img src="/images/hero-background.jpg" alt="Industrial Plant" className="w-full h-full object-cover object-[center_80%] grayscale opacity-90 border-none outline-none ring-0 shadow-none" />
- <div className="absolute inset-0 bg-[#0F172A]/20"></div>
+ <div className="absolute inset-0" style={{ backgroundColor: 'rgba(15, 23, 42, 0.2)' }}></div>
  </div>
 
- {/* Reliable SVG Overlay for html2canvas */}
- <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full z-10">
- {/* Dark Blue wedge to hide bottom of image (simulating original image clip-path) */}
- <polygon points="0,85 100,60 100,100 0,100" fill="#0F172A" />
- 
- {/* Top-Left Dark Blue Triangle */}
- <polygon points="0,0 45,0 0,25" fill="#0F172A" />
- 
- {/* Thick Diagonal Yellow Band (Perfectly Parallel, touching right edge) */}
- <polygon points="0,10 100,95 100,100 35.3,100 0,70" fill="#F2B233" />
- </svg>
+ {/* Reliable SVG Background for html2canvas (Data URI) */}
+ <div 
+ className="absolute inset-0 w-full h-full z-10" 
+ style={{ 
+ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,85 100,60 100,100 0,100' fill='%230F172A' /%3E%3Cpolygon points='0,0 45,0 0,25' fill='%230F172A' /%3E%3Cpolygon points='0,10 100,95 100,100 35.3,100 0,70' fill='%23F2B233' /%3E%3C/svg%3E")`,
+ backgroundSize: '100% 100%',
+ backgroundRepeat: 'no-repeat'
+ }}
+ ></div>
 
  {/* Content Layer */}
  <div className="relative z-40 w-full h-full p-16 flex flex-col justify-between">
@@ -740,12 +738,15 @@ const EngineeringExcellencePage = () => {
 const BackCoverPage = () => {
  return (
  <BrochurePage className="relative overflow-hidden flex flex-col justify-between">
- {/* Reliable SVG Background for html2canvas */}
- <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full z-10">
- <polygon points="0,0 40,0 0,35" fill="#0F172A" />
- <polygon points="40,0 100,0 100,80" fill="#F2B233" />
- <polygon points="100,80 100,100 65,100" fill="#0F172A" />
- </svg>
+ {/* Reliable SVG Background for html2canvas (Data URI) */}
+ <div 
+ className="absolute inset-0 w-full h-full z-10" 
+ style={{ 
+ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,0 40,0 0,35' fill='%230F172A' /%3E%3Cpolygon points='40,0 100,0 100,80' fill='%23F2B233' /%3E%3Cpolygon points='100,80 100,100 65,100' fill='%230F172A' /%3E%3C/svg%3E")`,
+ backgroundSize: '100% 100%',
+ backgroundRepeat: 'no-repeat'
+ }}
+ ></div>
 
  {/* Content Layer */}
  <div className="relative z-40 w-full h-full p-16 flex flex-col justify-center">
