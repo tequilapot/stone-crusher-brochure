@@ -452,14 +452,14 @@ const ProductCard = ({ p }: { p: typeof catalogProducts[0] }) => (
   <div className="bg-white rounded-sm border border-gray-200 shadow-[0_2px_4px_rgba(0,0,0,0.02)] flex flex-col h-full overflow-hidden">
     <div className="p-3 pb-0 flex-grow">
       <h4 className="font-black text-[#0A2342] text-[10px] mb-2 uppercase tracking-wide leading-tight">{p.name}</h4>
-      <div className="flex gap-2">
+      <div className="flex gap-1 items-center h-[90px]">
         {/* Image */}
-        <div className="w-[45%] flex items-center justify-center relative">
-          <div className="absolute bottom-2 w-[80%] h-1.5 bg-[rgba(0,0,0,0.06)] rounded-[100%]"></div>
-          <img src={p.image} alt={p.name} className="w-[120%] h-[120%] object-contain relative z-10 -ml-2" onError={(e) => { e.currentTarget.style.display = 'none'; }} />
+        <div className="w-[55%] h-full flex items-center justify-center relative">
+          <div className="absolute bottom-1 w-[80%] h-1.5 bg-[rgba(0,0,0,0.06)] rounded-[100%]"></div>
+          <img src={p.image} alt={p.name} className="absolute inset-0 w-full h-full object-contain scale-[1.3] origin-center z-10" onError={(e) => { e.currentTarget.style.display = 'none'; }} />
         </div>
         {/* Specs */}
-        <div className="w-[55%] flex flex-col gap-1.5 justify-center py-1">
+        <div className="w-[45%] flex flex-col gap-1.5 justify-center py-1 pl-2 z-20">
           {p.details.map((d, i) => (
             <div key={i}>
               <div className="text-[6.5px] font-black text-[#0A2342] uppercase tracking-wider mb-[1px]">{d.label}</div>
