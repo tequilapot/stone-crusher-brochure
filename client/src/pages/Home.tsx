@@ -13,52 +13,68 @@ const BrochurePage = ({ children, className = '' }) => (
 );
 
 const CoverPage = () => (
- <BrochurePage className="relative overflow-hidden">
- {/* Layer 0: Grayscale photo — full bleed background */}
- <img
- src="/images/hero-background.jpg"
- alt="Industrial Plant"
- className="absolute inset-0 w-full h-full object-cover grayscale opacity-90 border-none outline-none ring-0 shadow-none z-0"
- />
+ <BrochurePage className="relative overflow-hidden flex flex-col justify-between">
 
- {/* Layer 1: SVG geometric overlays matching brochure template exactly */}
- <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full z-10">
- {/* Navy top-left triangle */}
- <polygon points="0,0 40,0 0,55" fill="#0F172A" />
- {/* Yellow diagonal band (parallelogram) */}
- <polygon points="40,0 52,0 14,100 0,55" fill="#F2B233" />
- {/* White bottom-left triangle */}
- <polygon points="0,55 14,100 0,100" fill="#FFFFFF" />
- {/* Navy bottom-right area */}
- <polygon points="24,100 65,0 100,0 100,100" fill="#0F172A" />
- </svg>
+ {/* Layer 1: True Background */}
+ <div className="absolute inset-0 bg-[#0F172A] z-[-1]"></div>
 
- {/* Layer 2: Content */}
- <div className="relative z-40 w-full h-full flex">
-
- {/* Bottom-left text block — on the white area */}
- <div className="absolute bottom-[6%] left-[3%] w-[14%]">
- <p className="text-[14px] text-[#0F172A] font-medium leading-[1.3] mb-0 tracking-wide">
- TOGETHER,<br />
- WE BUILD
- </p>
- <p className="text-[22px] font-black text-[#0F172A] leading-[1.1] mb-3 tracking-tight">
- STRONGER<br />
- FOUNDATIONS.
- </p>
- <div className="w-10 h-[3px] bg-[#0F172A]"></div>
+ {/* Layer 2: Top-right Grayscale Image */}
+ <div
+ className="absolute inset-0 z-0 bg-[#E5E7EB]"
+ style={{ clipPath: 'polygon(0 0, 100% 0, 100% 60%, 0 85%)' }}
+ >
+ <img src="/images/hero-background.jpg" alt="Industrial Plant" className="w-full h-full object-cover grayscale opacity-90 border-none outline-none ring-0 shadow-none" />
+ <div className="absolute inset-0 bg-[#0F172A]/20 "></div>
  </div>
 
- {/* Bottom-right SREW logo — on the navy area */}
- <div className="absolute bottom-[6%] right-[4%] flex flex-col items-center">
+ {/* Layer 3: Top-Left Dark Blue Triangle (Spine continuation) */}
+ <div
+ className="absolute top-0 left-0 w-[45%] h-[25%] bg-[#0F172A] z-10"
+ style={{ clipPath: 'polygon(0 0, 100% 0, 0 100%)' }}
+ ></div>
+
+ {/* Layer 4: Diagonal Yellow Band */}
+ <div
+ className="absolute inset-0 z-20 bg-[#F2B233]"
+ style={{ clipPath: 'polygon(0 10%, 100% 95%, 60% 100%, 0 85%)' }}
+ ></div>
+
+ {/* Layer 5: Bottom-Right White Triangle */}
+ <div
+ className="absolute bottom-0 right-0 w-[30%] h-[15%] bg-white z-30"
+ style={{ clipPath: 'polygon(100% 0, 100% 100%, 0 100%)' }}
+ ></div>
+
+ {/* Content Layer */}
+ <div className="relative z-40 w-full h-full p-16 flex flex-col justify-between">
+ <div></div>
+
+ <div className="flex justify-between items-end mb-8 relative">
+ {/* Left Text centered inside Yellow Band */}
+ <div className="text-[#0F172A] flex flex-col justify-end absolute bottom-0 left-[38%] w-[40%] z-50">
+ <h1 className="text-[28px] md:text-[34px] leading-[1.15] tracking-tight mb-2 font-medium">
+ TOGETHER,<br />
+ WE BUILD<br />
+ <span className="font-black">STRONGER</span><br />
+ <span className="font-black">FOUNDATIONS.</span>
+ </h1>
+ <div className="w-10 h-[3px] bg-[#0F172A] mt-6"></div>
+ </div>
+
+ {/* Right Logo inside Dark Blue Area */}
+ <div className="w-[100%] flex justify-end pb-8">
  <img
  src="/images/srew%20projects-logo.png"
  alt="SREW PROJECTS"
- className="w-48 object-contain border-none outline-none ring-0 shadow-none"
+ className="w-64 object-contain relative z-50 border-none outline-none ring-0 shadow-none"
  onError={(e) => { e.currentTarget.style.display = 'none'; }}
  />
  </div>
+ </div>
 
+ <div className="absolute bottom-8 right-8 text-[9px] text-[#0F172A] font-bold tracking-[0.2em] uppercase z-50 ">
+ <span>PAGE 01</span>
+ </div>
  </div>
  </BrochurePage>
 );
@@ -163,384 +179,156 @@ const AboutPage = () => (
  </BrochurePage>
 );
 
-const SectionHeader = ({ title }: { title: string }) => (
-  <div className="flex items-center mb-4 mt-2 w-full">
-    <div className="bg-[#0A2342] text-white text-[12px] font-bold px-4 py-1.5 uppercase tracking-wide" style={{ clipPath: 'polygon(0 0, 100% 0, 96% 100%, 0 100%)' }}>
-      {title}
-    </div>
-    <div className="flex-grow h-[1px] bg-[#0A2342] -ml-2 z-[-1]"></div>
-    <div className="w-1.5 h-1.5 bg-[#0A2342] rounded-full ml-1"></div>
-  </div>
-);
-
 const catalogProducts = [
-  {
-    name: "JAW CRUSHER",
-    image: "/images/Products/srew-jaw-crusher.png",
-    price: "₹ 18L - 55L*",
-    details: [
-      { label: "APPLICATION", value: "Primary Crushing" },
-      { label: "CAPACITY", value: "30 - 400 TPH" },
-      { label: "FEED SIZE", value: "125 - 1200 mm" }
-    ]
-  },
-  {
-    name: "EUROPEAN JAW CRUSHER",
-    image: "/images/Products/srew-european-type-jaw-crusher.png",
-    price: "₹ 35L - 85L*",
-    details: [
-      { label: "APPLICATION", value: "Primary Crushing" },
-      { label: "CAPACITY", value: "80 - 500 TPH" },
-      { label: "FEED SIZE", value: "480 - 1200 mm" }
-    ]
-  },
-  {
-    name: "GREASE JAW CRUSHER",
-    image: "/images/Products/srew-grease-jaw-crusher.png",
-    price: "₹ 8L - 28L*",
-    details: [
-      { label: "APPLICATION", value: "Primary Crushing" },
-      { label: "CAPACITY", value: "20 - 150 TPH" },
-      { label: "FEED SIZE", value: "200 - 750 mm" }
-    ]
-  },
-  {
-    name: "CONE CRUSHER PLANT",
-    image: "/images/Products/srew-cone-crusher-plant.png",
-    price: "₹ 2.2Cr - 7Cr*",
-    details: [
-      { label: "APPLICATION", value: "Secondary, Tertiary" },
-      { label: "CAPACITY", value: "50 - 350 TPH" },
-      { label: "FEATURE", value: "2/3 Stage Plant" }
-    ]
-  },
-  {
-    name: "SINGLE CYLINDER CONE CRUSHER",
-    image: "/images/Products/srew-single-cylinder-cone-crusher.png",
-    price: "₹ 28L - 85L*",
-    details: [
-      { label: "APPLICATION", value: "Secondary, Tertiary" },
-      { label: "CAPACITY", value: "80 - 350 TPH" },
-      { label: "FEATURE", value: "Hydraulic System" }
-    ]
-  },
-  {
-    name: "MULTI CYLINDER CONE CRUSHER",
-    image: "/images/Products/srew-multi-cylinder-hydraulic-cone-crusher.png",
-    price: "₹ 45L - 1.2Cr*",
-    details: [
-      { label: "APPLICATION", value: "High Capacity" },
-      { label: "CAPACITY", value: "80 - 600 TPH" },
-      { label: "FEATURE", value: "PLC Control" }
-    ]
-  },
-  {
-    name: "HYDRAULIC IMPACT CRUSHER",
-    image: "/images/Products/srew-hydraulic-impact-crusher.png",
-    price: "₹ 14L - 48L*",
-    details: [
-      { label: "APPLICATION", value: "Secondary Crushing" },
-      { label: "CAPACITY", value: "50 - 350 TPH" },
-      { label: "FEED SIZE", value: "Up to 350 mm" }
-    ]
-  },
-  {
-    name: "HAMMER CRUSHER",
-    image: "/images/Products/srew-hammer-crusher.png",
-    price: "₹ 4.5L - 18L*",
-    details: [
-      { label: "APPLICATION", value: "Primary/Secondary" },
-      { label: "CAPACITY", value: "10 - 150 TPH" },
-      { label: "FEED SIZE", value: "Up to 150 mm" }
-    ]
-  },
-  {
-    name: "ROLLER CRUSHER",
-    image: "/images/Products/srew-roller-crusher.jpg",
-    price: "₹ 3.5L - 14L*",
-    details: [
-      { label: "APPLICATION", value: "Tertiary, Fine" },
-      { label: "CAPACITY", value: "15 - 100 TPH" },
-      { label: "OUTPUT", value: "2 - 50 mm" }
-    ]
-  },
-  {
-    name: "VERTICAL SHAFT IMPACTOR (VSI)",
-    image: "/images/Products/srew-vertical-shaft-crusher.png",
-    price: "₹ 16L - 48L*",
-    details: [
-      { label: "APPLICATION", value: "Sand Making" },
-      { label: "CAPACITY", value: "30 - 400 TPH" },
-      { label: "MATERIAL", value: "M-Sand, Aggregate" }
-    ]
-  },
-  {
-    name: "VIBRATING SCREEN",
-    image: "/images/Products/srew-triple-shaft-vibrating-screen.png",
-    price: "₹ 3.5L - 9L*",
-    details: [
-      { label: "APPLICATION", value: "Material Screening" },
-      { label: "LAYER", value: "2 Deck" },
-      { label: "SCREEN AREA", value: "6 - 20 m²" }
-    ]
-  },
-  {
-    name: "3 DECK VIBRATING SCREEN",
-    image: "/images/Products/Vibrating-Screen-3-deck.png",
-    price: "₹ 5L - 12L*",
-    details: [
-      { label: "APPLICATION", value: "Triple Classification" },
-      { label: "LAYER", value: "3 Deck" },
-      { label: "FEATURE", value: "3 Product Sizes" }
-    ]
-  },
-  {
-    name: "DAMPING VIBRATING SCREEN",
-    image: "/images/Products/srew-Damping-vibrating-screen.png",
-    price: "₹ 6L - 15L*",
-    details: [
-      { label: "APPLICATION", value: "Low Noise Screening" },
-      { label: "MOUNT", value: "Rubber Mount" },
-      { label: "FEATURE", value: "Reduced Vibration" }
-    ]
-  },
-  {
-    name: "TRIPLE SHAFT SCREEN",
-    image: "/images/Products/srew-triple-shaft-vibrating-screen.png",
-    price: "₹ 9L - 22L*",
-    details: [
-      { label: "APPLICATION", value: "Heavy-Duty Screening" },
-      { label: "CAPACITY", value: "100 - 500 TPH" },
-      { label: "FEATURE", value: "High Efficiency" }
-    ]
-  },
-  {
-    name: "SAND WASHER",
-    image: "/images/Products/srew-sand-washer.png",
-    price: "₹ 3.5L - 10L*",
-    details: [
-      { label: "APPLICATION", value: "Sand Washing" },
-      { label: "SCREW DIA", value: "750 - 1200 mm" },
-      { label: "FEATURE", value: "Water Efficient" }
-    ]
-  },
-  {
-    name: "SERIES SAND WASHER",
-    image: "/images/Products/srew-series-sand-washer.png",
-    price: "₹ 7L - 16L*",
-    details: [
-      { label: "APPLICATION", value: "Multi-Stage Washing" },
-      { label: "FEATURE", value: "Dual Screw" },
-      { label: "PERFORMANCE", value: "Deep Cleaning" }
-    ]
-  },
-  {
-    name: "FINE SAND RECYCLING",
-    image: "/images/Products/srew-fine-sand-recycling-machine.png",
-    price: "₹ 4L - 11L*",
-    details: [
-      { label: "APPLICATION", value: "Sand Recovery" },
-      { label: "RECOVERY RATE", value: "85 - 95%" },
-      { label: "FEATURE", value: "Max Sand Recovery" }
-    ]
-  },
-  {
-    name: "SAND DRYER",
-    image: "/images/Products/srew-sand-dryer.jpg",
-    price: "₹ 12L - 32L*",
-    details: [
-      { label: "APPLICATION", value: "Rotary Drying" },
-      { label: "FUEL", value: "LPG / Diesel" },
-      { label: "MOISTURE", value: "< 1%" }
-    ]
-  },
-  {
-    name: "MOBILE CRUSHING PLANT",
-    image: "/images/Products/srew-mobile-crushing-plant.png",
-    price: "₹ 85L - 2.8Cr*",
-    details: [
-      { label: "APPLICATION", value: "Turnkey Mobility" },
-      { label: "MOUNT", value: "Crawler Tracked" },
-      { label: "CAPACITY", value: "60 - 300 TPH" }
-    ]
-  },
-  {
-    name: "MODULAR MOBILE CRUSHER",
-    image: "/images/Products/srew-modular-mobile-crusher.png",
-    price: "₹ 55L - 1.8Cr*",
-    details: [
-      { label: "APPLICATION", value: "Semi-Mobile Setup" },
-      { label: "MOUNT", value: "Skid Mount" },
-      { label: "FEATURE", value: "Quick Deployment" }
-    ]
-  },
-  {
-    name: "TIRE MOBILE CRUSHER",
-    image: "/images/Products/srew-tire-mobile-crusher.png",
-    price: "₹ 48L - 1.5Cr*",
-    details: [
-      { label: "APPLICATION", value: "Highway Towable" },
-      { label: "MOUNT", value: "Wheel Mounted" },
-      { label: "FEATURE", value: "High Mobility" }
-    ]
-  },
-  {
-    name: "TRACKED SCREEN",
-    image: "/images/Products/srew-mobile-crushing-plant.png",
-    price: "₹ 32L - 95L*",
-    details: [
-      { label: "APPLICATION", value: "Mobile Screening" },
-      { label: "FEATURE", value: "Self Propelled" },
-      { label: "LAYER", value: "3 Deck" }
-    ]
-  },
-  {
-    name: "BELT CONVEYOR",
-    image: "/images/Products/srew-belt-conveyor.png",
-    price: "₹ 1.2L - 5L*",
-    details: [
-      { label: "APPLICATION", value: "Material Transport" },
-      { label: "BELT WIDTH", value: "500 - 1400 mm" },
-      { label: "LENGTH", value: "As per requirement" }
-    ]
-  },
-  {
-    name: "LOADING HOPPER",
-    image: "/images/Products/srew-hopper.jpg",
-    price: "₹ 15L - 45L*",
-    details: [
-      { label: "APPLICATION", value: "Feed System" },
-      { label: "CAPACITY", value: "5 - 25 m³" },
-      { label: "FEATURE", value: "Custom Volumes" }
-    ]
-  },
-  {
-    name: "SILO STORAGE SYSTEM",
-    image: "/images/Products/srew-silo.jpg",
-    price: "₹ 4L - 18L*",
-    details: [
-      { label: "APPLICATION", value: "Bulk Storage" },
-      { label: "CAPACITY", value: "50 - 500 Ton" },
-      { label: "MATERIAL", value: "Bolted Steel" }
-    ]
-  },
-  {
-    name: "CONTROL PANEL BOARD",
-    image: "/images/Products/srew-panel-board.jpg",
-    price: "₹ 1.8L - 6L*",
-    details: [
-      { label: "APPLICATION", value: "PLC Automation" },
-      { label: "CONTROL", value: "PLC / VFD" },
-      { label: "FEATURE", value: "Auto Interlock" }
-    ]
-  },
-  {
-    name: "C&D RECYCLING PLANT",
-    image: "/images/Products/srew-cd-recycling.jpg",
-    price: "₹ 65L - 2Cr*",
-    details: [
-      { label: "APPLICATION", value: "Construction Waste" },
-      { label: "CAPACITY", value: "50 - 200 TPH" },
-      { label: "TYPE", value: "Turnkey Solution" }
-    ]
-  }
+ { name: "Jaw Crusher", desc: "Primary, 30-400 TPH", image: "/images/Products/srew-jaw-crusher.png" },
+ { name: "European Type Jaw Crusher", desc: "Advanced, Hydraulic Wedge", image: "/images/Products/srew-european-type-jaw-crusher.png" },
+ { name: "Grease Jaw Crusher", desc: "Primary, Grease Lubricated", image: "/images/Products/srew-grease-jaw-crusher.png" },
+ { name: "Cone Crusher Plant", desc: "Secondary, Tertiary", image: "/images/Products/srew-cone-crusher-plant.png" },
+ { name: "Single-Cylinder Cone Crusher", desc: "Secondary, Tertiary", image: "/images/Products/srew-single-cylinder-cone-crusher.png" },
+ { name: "Multi-Cylinder Hydraulic Cone Crusher", desc: "Advanced, PLC Control", image: "/images/Products/srew-multi-cylinder-hydraulic-cone-crusher.png" },
+ { name: "Hydraulic Impact Crusher", desc: "Secondary, Cubical", image: "/images/Products/srew-hydraulic-impact-crusher.png" },
+ { name: "Hammer Crusher", desc: "Primary/Secondary", image: "/images/Products/srew-hammer-crusher.png" },
+ { name: "Roller Crusher", desc: "Tertiary, Fine Crushing", image: "/images/Products/srew-roller-crusher.jpg" },
+ { name: "Vertical Shaft Impactor (VSI)", desc: "Tertiary, 30-400 TPH", image: "/images/Products/srew-vertical-shaft-crusher.png" },
+ { name: "Vibrating Screen", desc: "2-Deck, Circular", image: "/images/Products/srew-triple-shaft-vibrating-screen.png" },
+ { name: "3 Deck Vibrating Screen", desc: "Triple Classification", image: "/images/Products/Vibrating-Screen-3-deck.png" },
+ { name: "Damping Vibrating Screen", desc: "Reduced Vibration", image: "/images/Products/srew-Damping-vibrating-screen.png" },
+ { name: "Triple Shaft Vibrating Screen", desc: "Heavy-Duty, 3 Shaft", image: "/images/Products/srew-triple-shaft-vibrating-screen.png" },
+ { name: "Sand Washer", desc: "Screw Type", image: "/images/Products/srew-sand-washer.png" },
+ { name: "Series Sand Washer", desc: "Multi-Stage Washing", image: "/images/Products/srew-series-sand-washer.png" },
+ { name: "Fine Sand Recycling Machine", desc: "Recovery System", image: "/images/Products/srew-fine-sand-recycling-machine.png" },
+ { name: "Sand Dryer", desc: "Rotary Drying", image: "/images/Products/srew-sand-dryer.jpg" },
+ { name: "Mobile Crushing Plant", desc: "Crawler Tracked", image: "/images/Products/srew-mobile-crushing-plant.png" },
+ { name: "Modular Mobile Crusher", desc: "Semi-Mobile", image: "/images/Products/srew-modular-mobile-crusher.png" },
+ { name: "Tire Mobile Crusher", desc: "Wheel Mounted", image: "/images/Products/srew-tire-mobile-crusher.png" },
+ { name: "Tracked Screens", desc: "Mobile Screening", image: "/images/Products/srew-mobile-crushing-plant.png" },
+ { name: "Belt Conveyor", desc: "Material Transport", image: "/images/Products/srew-belt-conveyor.png" },
+ { name: "Loading Hopper", desc: "Feed System", image: "/images/Products/srew-hopper.jpg" },
+ { name: "Silo Storage System", desc: "Bulk Storage", image: "/images/Products/srew-silo.jpg" },
+ { name: "Control Panel Board", desc: "PLC Automation", image: "/images/Products/srew-panel-board.jpg" },
+ { name: "C&D Recycling Plant", desc: "Construction Waste", image: "/images/Products/srew-cd-recycling.jpg" }
 ];
 
-const CATALOG_FOOTNOTE = "*Prices are indicative ex-works and vary based on capacity, motor brand, electricals, steel grade, automation, and customer specifications. GST, freight, installation, and commissioning are extra where applicable.";
-
-const ProductCard = ({ p }: { p: typeof catalogProducts[0] }) => (
-  <div className="bg-white rounded-sm border border-gray-200 shadow-[0_2px_4px_rgba(0,0,0,0.02)] flex flex-col h-full overflow-hidden">
-    <div className="p-3 pb-0 flex-grow">
-      <h4 className="font-black text-[#0A2342] text-[10px] mb-2 uppercase tracking-wide leading-tight">{p.name}</h4>
-      <div className="flex gap-1 items-center h-[90px]">
-        {/* Image */}
-        <div className="w-[55%] h-full flex items-center justify-center relative">
-          <div className="absolute bottom-1 w-[80%] h-1.5 bg-[rgba(0,0,0,0.06)] rounded-[100%]"></div>
-          <img src={p.image} alt={p.name} className="absolute inset-0 w-full h-full object-contain scale-[1.3] origin-center z-10" onError={(e) => { e.currentTarget.style.display = 'none'; }} />
-        </div>
-        {/* Specs */}
-        <div className="w-[45%] flex flex-col gap-1.5 justify-center py-1 pl-2 z-20">
-          {p.details.map((d, i) => (
-            <div key={i}>
-              <div className="text-[6.5px] font-black text-[#0A2342] uppercase tracking-wider mb-[1px]">{d.label}</div>
-              <div className="text-[7.5px] text-[#4B5563] leading-[1.1] font-medium">{d.value}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-    {/* Price Bar */}
-    <div className="mt-2 bg-[#F8F9FA] px-3 py-1.5 flex justify-between items-center rounded-b-sm border-t-[0.5px] border-gray-100">
-      <span className="text-[7px] font-black text-[#0A2342] uppercase tracking-wider">PRICE RANGE</span>
-      <span className="text-[11px] font-black text-[#D4AF37] tracking-tight">{p.price}</span>
-    </div>
-  </div>
-);
-
 const ProductCatalogPage1 = () => {
-  return (
-    <BrochurePage className="p-12 flex flex-col bg-white">
-      <SectionHeader title="CRUSHING EQUIPMENT" />
+ return (
+ <BrochurePage className="p-16 flex flex-col bg-white">
+ <div className="flex items-center mb-4">
+ <span className="section-accent"></span>
+ <span className="section-label">02 / COMPLETE PRODUCT RANGE</span>
+ </div>
 
-      <div className="flex-grow flex flex-col">
-        <div className="grid grid-cols-3 gap-4 content-start">
-          {catalogProducts.slice(0, 9).map((p, i) => (
-            <ProductCard key={i} p={p} />
-          ))}
-        </div>
-      </div>
+ <h2 className="text-[36px] font-black text-[#0A2342] mb-6 uppercase tracking-tight leading-none">
+ SREW EQUIPMENT CATALOG
+ </h2>
+ <div className="editorial-divider"></div>
 
-      <p className="text-[6.5px] text-[#9CA3AF] leading-snug mt-4 italic">{CATALOG_FOOTNOTE}</p>
-      <div className="flex justify-between items-end mt-2 text-[9px] text-[#9CA3AF] font-bold tracking-[0.2em] uppercase border-t border-[#F3F4F6] pt-3">
-        <span>SREW Projects — PRODUCT CATALOG</span>
-        <span>PAGE 03</span>
-      </div>
-    </BrochurePage>
-  );
+ <div className="flex-grow flex flex-col">
+ <div className="grid grid-cols-2 md:grid-cols-3 gap-6 content-start">
+ {catalogProducts.slice(0, 9).map((p, i) => (
+ <div key={i} className="premium-card flex flex-col group relative">
+ <div className="aspect-[4/3] w-full mb-5 flex items-center justify-center p-2 relative">
+ {/* Floor Shadow */}
+ <div className="absolute bottom-2 w-3/4 h-3 bg-[rgba(0,0,0,0.1)] rounded-[100%]"></div>
+ <img
+ src={p.image}
+ alt={p.name}
+ className="w-[110%] h-[110%] object-contain relative z-10 border-none outline-none ring-0 shadow-none"
+ onError={(e) => {
+ e.currentTarget.style.display = 'none';
+ }}
+ />
+ </div>
+ <h4 className="font-bold text-[#0A2342] text-[14px] mb-2 leading-snug">{p.name}</h4>
+ <p className="text-[14px] text-[#1A1A1A] opacity-75 tracking-wide line-clamp-2">{p.desc}</p>
+ </div>
+ ))}
+ </div>
+ </div>
+
+ <div className="flex justify-between items-end mt-12 text-[9px] text-[#9CA3AF] font-bold tracking-[0.2em] uppercase border-t border-[#F3F4F6] pt-8">
+ <span>SREW Projects — PRODUCT CATALOG</span>
+ <span>PAGE 03</span>
+ </div>
+ </BrochurePage>
+ );
 };
 
 const ProductCatalogPage2 = () => {
-  return (
-    <BrochurePage className="p-12 flex flex-col bg-white">
-      <SectionHeader title="SCREENING & WASHING EQUIPMENT" />
+ return (
+ <BrochurePage className="p-16 flex flex-col bg-white">
+ <div className="flex items-center mb-4">
+ <span className="section-accent"></span>
+ <span className="section-label">02 / CONTINUED</span>
+ </div>
+ <div className="editorial-divider"></div>
 
-      <div className="flex-grow flex flex-col justify-start mt-2">
-        <div className="grid grid-cols-3 gap-4 content-start">
-          {catalogProducts.slice(9, 18).map((p, i) => (
-            <ProductCard key={i} p={p} />
-          ))}
-        </div>
-      </div>
+ <div className="flex-grow flex flex-col justify-start mt-6">
+ <div className="grid grid-cols-2 md:grid-cols-3 gap-6 content-start">
+ {catalogProducts.slice(9, 18).map((p, i) => (
+ <div key={i} className="premium-card flex flex-col group relative">
+ <div className="aspect-[4/3] w-full mb-5 flex items-center justify-center p-2 relative">
+ <div className="absolute bottom-2 w-3/4 h-3 bg-[rgba(0,0,0,0.1)] rounded-[100%]"></div>
+ <img
+ src={p.image}
+ alt={p.name}
+ className="w-[110%] h-[110%] object-contain relative z-10 border-none outline-none ring-0 shadow-none"
+ onError={(e) => {
+ e.currentTarget.style.display = 'none';
+ }}
+ />
+ </div>
+ <h4 className="font-bold text-[#0A2342] text-[14px] mb-2 leading-snug">{p.name}</h4>
+ <p className="text-[14px] text-[#1A1A1A] opacity-75 tracking-wide line-clamp-2">{p.desc}</p>
+ </div>
+ ))}
+ </div>
+ </div>
 
-      <p className="text-[6.5px] text-[#9CA3AF] leading-snug mt-4 italic">{CATALOG_FOOTNOTE}</p>
-      <div className="flex justify-between items-end mt-2 text-[9px] text-[#9CA3AF] font-bold tracking-[0.2em] uppercase border-t border-[#F3F4F6] pt-3">
-        <span>SREW Projects — PRODUCT CATALOG</span>
-        <span>PAGE 04</span>
-      </div>
-    </BrochurePage>
-  );
+ <div className="flex justify-between items-end mt-12 text-[9px] text-[#9CA3AF] font-bold tracking-[0.2em] uppercase border-t border-[#F3F4F6] pt-8">
+ <span>SREW Projects — PRODUCT CATALOG</span>
+ <span>PAGE 04</span>
+ </div>
+ </BrochurePage>
+ );
 }
 
 const ProductCatalogPage3 = () => {
-  return (
-    <BrochurePage className="p-12 flex flex-col bg-white">
-      <SectionHeader title="OTHER EQUIPMENT" />
+ return (
+ <BrochurePage className="p-16 flex flex-col bg-white">
+ <div className="flex items-center mb-4">
+ <span className="section-accent"></span>
+ <span className="section-label">02 / CONTINUED</span>
+ </div>
+ <div className="editorial-divider"></div>
 
-      <div className="flex-grow flex flex-col justify-start mt-2">
-        <div className="grid grid-cols-3 gap-4 content-start">
-          {catalogProducts.slice(18, 27).map((p, i) => (
-            <ProductCard key={i} p={p} />
-          ))}
-        </div>
-      </div>
+ <div className="flex-grow flex flex-col justify-start mt-6">
+ <div className="grid grid-cols-2 md:grid-cols-3 gap-6 content-start">
+ {catalogProducts.slice(18, 27).map((p, i) => (
+ <div key={i} className="premium-card flex flex-col group relative">
+ <div className="aspect-[4/3] w-full mb-5 flex items-center justify-center p-2 relative">
+ <div className="absolute bottom-2 w-3/4 h-3 bg-[rgba(0,0,0,0.1)] rounded-[100%]"></div>
+ <img
+ src={p.image}
+ alt={p.name}
+ className="w-[110%] h-[110%] object-contain relative z-10 border-none outline-none ring-0 shadow-none"
+ onError={(e) => {
+ e.currentTarget.style.display = 'none';
+ }}
+ />
+ </div>
+ <h4 className="font-bold text-[#0A2342] text-[14px] mb-2 leading-snug">{p.name}</h4>
+ <p className="text-[14px] text-[#1A1A1A] opacity-75 tracking-wide line-clamp-2">{p.desc}</p>
+ </div>
+ ))}
+ </div>
+ </div>
 
-      <p className="text-[6.5px] text-[#9CA3AF] leading-snug mt-4 italic">{CATALOG_FOOTNOTE}</p>
-      <div className="flex justify-between items-end mt-2 text-[9px] text-[#9CA3AF] font-bold tracking-[0.2em] uppercase border-t border-[#F3F4F6] pt-3">
-        <span>SREW Projects — PRODUCT CATALOG</span>
-        <span>PAGE 05</span>
-      </div>
-    </BrochurePage>
-  );
+ <div className="flex justify-between items-end mt-12 text-[9px] text-[#9CA3AF] font-bold tracking-[0.2em] uppercase border-t border-[#F3F4F6] pt-8">
+ <span>SREW Projects — PRODUCT CATALOG</span>
+ <span>PAGE 05</span>
+ </div>
+ </BrochurePage>
+ );
 }
 
 const ProjectProfilePage1 = () => {
@@ -965,93 +753,72 @@ const EngineeringExcellencePage = () => {
 
 const BackCoverPage = () => {
  return (
- <BrochurePage className="relative overflow-hidden">
- {/* Layer 0: Grayscale photo — full bleed background */}
- <img
- src="/images/hero-background.jpg"
- alt="Industrial Plant"
- className="absolute inset-0 w-full h-full object-cover grayscale opacity-90 border-none outline-none ring-0 shadow-none z-0"
- />
-
- {/* Layer 1: SVG geometric overlays — mirrored version of cover page */}
- <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full z-10">
- {/* White left side area */}
- <polygon points="0,0 52,0 38,100 0,100" fill="#FFFFFF" />
- {/* Yellow diagonal band */}
- <polygon points="52,0 62,0 48,100 38,100" fill="#F2B233" />
- {/* Navy bottom-right area */}
- <polygon points="75,0 100,0 100,100 58,100" fill="#0F172A" />
+ <BrochurePage className="relative overflow-hidden flex flex-col justify-between">
+ {/* Reliable SVG Background for html2canvas */}
+ <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full z-0">
+ <polygon points="0,0 35,0 0,35" fill="#0F172A" />
+ <polygon points="45,0 100,0 100,80" fill="#F2B233" />
+ <polygon points="100,80 100,100 65,100" fill="#0F172A" />
  </svg>
 
- {/* Layer 2: Content */}
- <div className="relative z-40 w-full h-full flex">
+ {/* Content Layer */}
+ <div className="relative z-40 w-full h-full p-16 flex flex-col justify-center">
 
- {/* Left side: THANK YOU + Contact info — on white area */}
- <div className="absolute top-[8%] left-[4%] w-[42%]">
- <h1 className="text-[48px] font-black text-[#0F172A] leading-[1.05] mb-4 tracking-tight">
+ <div className="w-[55%] flex flex-col items-start pl-8 mt-4">
+ <h1 className="text-[72px] font-black text-[#0F172A] leading-[1.05] mb-5 tracking-tight">
  THANK<br />YOU!
  </h1>
- <p className="text-[#0F172A] text-[13px] leading-relaxed mb-5 font-normal max-w-[340px]">
- We appreciate your time and consideration. We look forward to the opportunity to <span className="font-bold italic">work together.</span>
+ <p className="text-[#0F172A] text-[20px] leading-relaxed mb-6 font-medium max-w-[460px]">
+ We appreciate your time and<br />
+ consideration. We look forward<br />
+ to the opportunity to <span className="font-bold">work<br />together.</span>
  </p>
+ <div className="w-16 h-[4px] bg-[#F2B233] mb-10"></div>
 
  {/* Contact Info */}
- <div className="flex flex-col gap-4 text-[12px] font-medium text-[#0F172A]">
- <div className="flex items-center gap-3">
- <div className="w-8 h-8 rounded-full bg-[#0F172A] flex items-center justify-center flex-shrink-0">
- <Phone size={14} className="text-white" />
+ <div className="flex flex-col gap-6 text-[16px] font-medium text-[#0F172A]">
+ <div className="flex items-center gap-5">
+ <div className="w-10 h-10 rounded-full bg-[#0F172A] flex items-center justify-center flex-shrink-0">
+ <Phone size={18} className="text-white" />
  </div>
+ <div className="w-[1px] h-12 bg-gray-300"></div>
  <div className="leading-snug">
  +91 8790759460<br />
  +91 7997076361
  </div>
  </div>
- <div className="flex items-center gap-3">
- <div className="w-8 h-8 rounded-full bg-[#0F172A] flex items-center justify-center flex-shrink-0">
- <Mail size={14} className="text-white" />
+
+ <div className="flex items-center gap-5">
+ <div className="w-10 h-10 rounded-full bg-[#0F172A] flex items-center justify-center flex-shrink-0">
+ <Mail size={18} className="text-white" />
  </div>
+ <div className="w-[1px] h-8 bg-gray-300"></div>
  <div className="leading-snug">
- info@srewprojects.com<br />
- sales@srewprojects.com
+ contact@srewprojects.com
  </div>
  </div>
- <div className="flex items-center gap-3">
- <div className="w-8 h-8 rounded-full bg-[#0F172A] flex items-center justify-center flex-shrink-0">
- <Globe size={14} className="text-white" />
+
+ <div className="flex items-center gap-5">
+ <div className="w-10 h-10 rounded-full bg-[#0F172A] flex items-center justify-center flex-shrink-0">
+ <Globe size={18} className="text-white" />
  </div>
+ <div className="w-[1px] h-8 bg-gray-300"></div>
  <div className="leading-snug">
  www.srewprojects.com
  </div>
  </div>
- <div className="flex items-center gap-3">
- <div className="w-8 h-8 rounded-full bg-[#0F172A] flex items-center justify-center flex-shrink-0">
- <MapPin size={14} className="text-white" />
- </div>
- <div className="leading-snug">
- Dulapally, Hyderabad,<br />
- Telangana - 500100, India.
- </div>
- </div>
- </div>
- </div>
 
- {/* Right side: Tagline + Logo — on navy area */}
- <div className="absolute bottom-[8%] right-[3%] w-[22%] flex flex-col items-start">
- <p className="text-[16px] text-white font-medium leading-[1.3] mb-0 tracking-wide">
- TOGETHER,<br />
- WE BUILD
- </p>
- <p className="text-[22px] font-black text-white leading-[1.1] mb-4 tracking-tight">
- STRONGER<br />
- FOUNDATIONS.
- </p>
- <div className="w-10 h-[3px] bg-[#F2B233] mb-5"></div>
- <img
- src="/images/srew%20projects-logo.png"
- alt="SREW PROJECTS"
- className="w-40 object-contain border-none outline-none ring-0 shadow-none"
- onError={(e) => { e.currentTarget.style.display = 'none'; }}
- />
+ <div className="flex items-center gap-5">
+ <div className="w-10 h-10 rounded-full bg-[#0F172A] flex items-center justify-center flex-shrink-0">
+ <MapPin size={18} className="text-white" />
+ </div>
+ <div className="w-[1px] h-12 bg-gray-300"></div>
+ <div className="leading-snug">
+ 155/A, Dulapally Road,<br />
+ Hyderabad, TG. 500100
+ </div>
+ </div>
+ </div>
  </div>
 
  </div>
