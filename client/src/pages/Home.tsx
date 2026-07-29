@@ -143,33 +143,33 @@ const AboutPage = () => (
 );
 
 const catalogProducts = [
- { name: "Jaw Crusher", desc: "Primary, 30-400 TPH", image: "/images/Products/srew-jaw-crusher.png" },
- { name: "European Type Jaw Crusher", desc: "Advanced, Hydraulic Wedge", image: "/images/Products/srew-european-type-jaw-crusher.png" },
- { name: "Grease Jaw Crusher", desc: "Primary, Grease Lubricated", image: "/images/Products/srew-grease-jaw-crusher.png" },
- { name: "Cone Crusher Plant", desc: "Secondary, Tertiary", image: "/images/Products/srew-cone-crusher-plant.png" },
- { name: "Single-Cylinder Cone Crusher", desc: "Secondary, Tertiary", image: "/images/Products/srew-single-cylinder-cone-crusher.png" },
- { name: "Multi-Cylinder Hydraulic Cone Crusher", desc: "Advanced, PLC Control", image: "/images/Products/srew-multi-cylinder-hydraulic-cone-crusher.png" },
- { name: "Hydraulic Impact Crusher", desc: "Secondary, Cubical", image: "/images/Products/srew-hydraulic-impact-crusher.png" },
- { name: "Hammer Crusher", desc: "Primary/Secondary", image: "/images/Products/srew-hammer-crusher.png" },
- { name: "Roller Crusher", desc: "Tertiary, Fine Crushing", image: "/images/Products/srew-roller-crusher.jpg" },
- { name: "Vertical Shaft Impactor (VSI)", desc: "Tertiary, 30-400 TPH", image: "/images/Products/srew-vertical-shaft-crusher.png" },
- { name: "Vibrating Screen", desc: "2-Deck, Circular", image: "/images/Products/srew-triple-shaft-vibrating-screen.png" },
- { name: "3 Deck Vibrating Screen", desc: "Triple Classification", image: "/images/Products/Vibrating-Screen-3-deck.png" },
- { name: "Damping Vibrating Screen", desc: "Reduced Vibration", image: "/images/Products/srew-Damping-vibrating-screen.png" },
- { name: "Triple Shaft Vibrating Screen", desc: "Heavy-Duty, 3 Shaft", image: "/images/Products/srew-triple-shaft-vibrating-screen.png" },
- { name: "Sand Washer", desc: "Screw Type", image: "/images/Products/srew-sand-washer.png" },
- { name: "Series Sand Washer", desc: "Multi-Stage Washing", image: "/images/Products/srew-series-sand-washer.png" },
- { name: "Fine Sand Recycling Machine", desc: "Recovery System", image: "/images/Products/srew-fine-sand-recycling-machine.png" },
- { name: "Sand Dryer", desc: "Rotary Drying", image: "/images/Products/srew-sand-dryer.jpg" },
- { name: "Mobile Crushing Plant", desc: "Crawler Tracked", image: "/images/Products/srew-mobile-crushing-plant.png" },
- { name: "Modular Mobile Crusher", desc: "Semi-Mobile", image: "/images/Products/srew-modular-mobile-crusher.png" },
- { name: "Tire Mobile Crusher", desc: "Wheel Mounted", image: "/images/Products/srew-tire-mobile-crusher.png" },
- { name: "Tracked Screens", desc: "Mobile Screening", image: "/images/Products/srew-mobile-crushing-plant.png" },
- { name: "Belt Conveyor", desc: "Material Transport", image: "/images/Products/srew-belt-conveyor.png" },
- { name: "Loading Hopper", desc: "Feed System", image: "/images/Products/srew-hopper.jpg" },
- { name: "Silo Storage System", desc: "Bulk Storage", image: "/images/Products/srew-silo.jpg" },
- { name: "Control Panel Board", desc: "PLC Automation", image: "/images/Products/srew-panel-board.jpg" },
- { name: "C&D Recycling Plant", desc: "Construction Waste", image: "/images/Products/srew-cd-recycling.jpg" }
+  { name: "Jaw Crusher", desc: "Primary, 30-400 TPH", image: "/images/Products/srew-jaw-crusher.png", price: "₹ 12L - 45L", specs: "Capacity: 30-400 TPH" },
+  { name: "European Type Jaw Crusher", desc: "Advanced, Hydraulic Wedge", image: "/images/Products/srew-european-type-jaw-crusher.png", price: "₹ 18L - 60L", specs: "High Crushing Ratio" },
+  { name: "Grease Jaw Crusher", desc: "Primary, Grease Lubricated", image: "/images/Products/srew-grease-jaw-crusher.png", price: "₹ 10L - 35L", specs: "Easy Maintenance" },
+  { name: "Cone Crusher Plant", desc: "Secondary, Tertiary", image: "/images/Products/srew-cone-crusher-plant.png", price: "₹ 25L - 80L", specs: "Capacity: 50-300 TPH" },
+  { name: "Single-Cylinder Cone Crusher", desc: "Secondary, Tertiary", image: "/images/Products/srew-single-cylinder-cone-crusher.png", price: "₹ 30L - 90L", specs: "Hydraulic System" },
+  { name: "Multi-Cylinder Hydraulic Cone Crusher", desc: "Advanced, PLC Control", image: "/images/Products/srew-multi-cylinder-hydraulic-cone-crusher.png", price: "₹ 45L - 1.2Cr", specs: "High Yield & Fine Shape" },
+  { name: "Hydraulic Impact Crusher", desc: "Secondary, Cubical", image: "/images/Products/srew-hydraulic-impact-crusher.png", price: "₹ 20L - 55L", specs: "Excellent Particle Shape" },
+  { name: "Hammer Crusher", desc: "Primary/Secondary", image: "/images/Products/srew-hammer-crusher.png", price: "₹ 8L - 25L", specs: "High Reduction Ratio" },
+  { name: "Roller Crusher", desc: "Tertiary, Fine Crushing", image: "/images/Products/srew-roller-crusher.jpg", price: "₹ 6L - 18L", specs: "Precise Sizing" },
+  { name: "Vertical Shaft Impactor (VSI)", desc: "Tertiary, 30-400 TPH", image: "/images/Products/srew-vertical-shaft-crusher.png", price: "₹ 18L - 45L", specs: "Premium Sand Making" },
+  { name: "Vibrating Screen", desc: "2-Deck, Circular", image: "/images/Products/srew-triple-shaft-vibrating-screen.png", price: "₹ 4L - 12L", specs: "Screening Area: Various" },
+  { name: "3 Deck Vibrating Screen", desc: "Triple Classification", image: "/images/Products/Vibrating-Screen-3-deck.png", price: "₹ 6L - 15L", specs: "High Efficiency" },
+  { name: "Damping Vibrating Screen", desc: "Reduced Vibration", image: "/images/Products/srew-Damping-vibrating-screen.png", price: "₹ 8L - 18L", specs: "Low Noise & Wear" },
+  { name: "Triple Shaft Vibrating Screen", desc: "Heavy-Duty, 3 Shaft", image: "/images/Products/srew-triple-shaft-vibrating-screen.png", price: "₹ 12L - 25L", specs: "High Capacity Processing" },
+  { name: "Sand Washer", desc: "Screw Type", image: "/images/Products/srew-sand-washer.png", price: "₹ 5L - 15L", specs: "Water & Power Efficient" },
+  { name: "Series Sand Washer", desc: "Multi-Stage Washing", image: "/images/Products/srew-series-sand-washer.png", price: "₹ 8L - 22L", specs: "Deep Cleaning" },
+  { name: "Fine Sand Recycling Machine", desc: "Recovery System", image: "/images/Products/srew-fine-sand-recycling-machine.png", price: "₹ 3.5L - 10L", specs: "Max Sand Recovery" },
+  { name: "Sand Dryer", desc: "Rotary Drying", image: "/images/Products/srew-sand-dryer.jpg", price: "₹ 15L - 40L", specs: "Moisture < 1%" },
+  { name: "Mobile Crushing Plant", desc: "Crawler Tracked", image: "/images/Products/srew-mobile-crushing-plant.png", price: "₹ 1.2Cr - 3.5Cr", specs: "Turnkey Mobility" },
+  { name: "Modular Mobile Crusher", desc: "Semi-Mobile", image: "/images/Products/srew-modular-mobile-crusher.png", price: "₹ 85L - 2.5Cr", specs: "Quick Setup Design" },
+  { name: "Tire Mobile Crusher", desc: "Wheel Mounted", image: "/images/Products/srew-tire-mobile-crusher.png", price: "₹ 75L - 2.2Cr", specs: "Highway Towable" },
+  { name: "Tracked Screens", desc: "Mobile Screening", image: "/images/Products/srew-mobile-crushing-plant.png", price: "₹ 45L - 1.5Cr", specs: "Self-Propelled Unit" },
+  { name: "Belt Conveyor", desc: "Material Transport", image: "/images/Products/srew-belt-conveyor.png", price: "₹ 1.5L - 8L", specs: "Width: 600-1200mm" },
+  { name: "Loading Hopper", desc: "Feed System", image: "/images/Products/srew-hopper.jpg", price: "₹ 2L - 6L", specs: "Custom Volumes" },
+  { name: "Silo Storage System", desc: "Bulk Storage", image: "/images/Products/srew-silo.jpg", price: "₹ 5L - 20L", specs: "50-500 Ton Capacity" },
+  { name: "Control Panel Board", desc: "PLC Automation", image: "/images/Products/srew-panel-board.jpg", price: "₹ 1.5L - 8L", specs: "Smart Digital Control" },
+  { name: "C&D Recycling Plant", desc: "Construction Waste", image: "/images/Products/srew-cd-recycling.jpg", price: "₹ 95L - 3Cr", specs: "Integrated Sorting & Crushing" }
 ];
 
 const ProductCatalogPage1 = () => {
@@ -201,8 +201,18 @@ const ProductCatalogPage1 = () => {
  }}
  />
  </div>
- <h4 className="font-bold text-[#0A2342] text-[14px] mb-2 leading-snug">{p.name}</h4>
- <p className="text-[14px] text-[#1A1A1A] opacity-75 tracking-wide line-clamp-2">{p.desc}</p>
+ <h4 className="font-bold text-[#0A2342] text-[14px] mb-1 leading-snug">{p.name}</h4>
+ <p className="text-[12px] text-[#1A1A1A] opacity-75 tracking-wide line-clamp-1 mb-3">{p.desc}</p>
+ <div className="flex flex-col gap-1 mt-auto border-t border-[#F3F4F6] pt-2">
+ <div className="flex justify-between items-center text-[10px]">
+ <span className="font-bold text-[#6B7280] uppercase tracking-wider">Specs</span>
+ <span className="font-bold text-[#0A2342]">{p.specs}</span>
+ </div>
+ <div className="flex justify-between items-center text-[10px]">
+ <span className="font-bold text-[#6B7280] uppercase tracking-wider">Price</span>
+ <span className="font-bold text-[#CA8A04]">{p.price}</span>
+ </div>
+ </div>
  </div>
  ))}
  </div>
@@ -240,8 +250,18 @@ const ProductCatalogPage2 = () => {
  }}
  />
  </div>
- <h4 className="font-bold text-[#0A2342] text-[14px] mb-2 leading-snug">{p.name}</h4>
- <p className="text-[14px] text-[#1A1A1A] opacity-75 tracking-wide line-clamp-2">{p.desc}</p>
+ <h4 className="font-bold text-[#0A2342] text-[14px] mb-1 leading-snug">{p.name}</h4>
+ <p className="text-[12px] text-[#1A1A1A] opacity-75 tracking-wide line-clamp-1 mb-3">{p.desc}</p>
+ <div className="flex flex-col gap-1 mt-auto border-t border-[#F3F4F6] pt-2">
+ <div className="flex justify-between items-center text-[10px]">
+ <span className="font-bold text-[#6B7280] uppercase tracking-wider">Specs</span>
+ <span className="font-bold text-[#0A2342]">{p.specs}</span>
+ </div>
+ <div className="flex justify-between items-center text-[10px]">
+ <span className="font-bold text-[#6B7280] uppercase tracking-wider">Price</span>
+ <span className="font-bold text-[#CA8A04]">{p.price}</span>
+ </div>
+ </div>
  </div>
  ))}
  </div>
@@ -279,8 +299,18 @@ const ProductCatalogPage3 = () => {
  }}
  />
  </div>
- <h4 className="font-bold text-[#0A2342] text-[14px] mb-2 leading-snug">{p.name}</h4>
- <p className="text-[14px] text-[#1A1A1A] opacity-75 tracking-wide line-clamp-2">{p.desc}</p>
+ <h4 className="font-bold text-[#0A2342] text-[14px] mb-1 leading-snug">{p.name}</h4>
+ <p className="text-[12px] text-[#1A1A1A] opacity-75 tracking-wide line-clamp-1 mb-3">{p.desc}</p>
+ <div className="flex flex-col gap-1 mt-auto border-t border-[#F3F4F6] pt-2">
+ <div className="flex justify-between items-center text-[10px]">
+ <span className="font-bold text-[#6B7280] uppercase tracking-wider">Specs</span>
+ <span className="font-bold text-[#0A2342]">{p.specs}</span>
+ </div>
+ <div className="flex justify-between items-center text-[10px]">
+ <span className="font-bold text-[#6B7280] uppercase tracking-wider">Price</span>
+ <span className="font-bold text-[#CA8A04]">{p.price}</span>
+ </div>
+ </div>
  </div>
  ))}
  </div>
