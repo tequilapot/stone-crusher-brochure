@@ -31,9 +31,6 @@ const CoverPage = () => (
  
  {/* Thick Diagonal Yellow Band (Perfectly Parallel, touching right edge) */}
  <polygon points="0,10 100,95 100,100 35.3,100 0,70" fill="#F2B233" />
- 
- {/* Bottom-Right White Triangle */}
- <polygon points="100,85 100,100 70,100" fill="#FFFFFF" />
  </svg>
 
  {/* Content Layer */}
