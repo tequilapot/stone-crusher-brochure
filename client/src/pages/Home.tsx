@@ -15,35 +15,26 @@ const BrochurePage = ({ children, className = '' }) => (
 const CoverPage = () => (
  <BrochurePage className="relative overflow-hidden flex flex-col justify-between">
 
- {/* Layer 1: True Background */}
- <div className="absolute inset-0 bg-[#0F172A] z-[-1]"></div>
-
- {/* Layer 2: Top-right Grayscale Image */}
- <div
- className="absolute inset-0 z-0 bg-[#E5E7EB]"
- style={{ clipPath: 'polygon(0 0, 100% 0, 100% 60%, 0 85%)' }}
- >
+ {/* Background Image Layer (Unclipped) */}
+ <div className="absolute inset-0 z-0 bg-[#E5E7EB]">
  <img src="/images/hero-background.jpg" alt="Industrial Plant" className="w-full h-full object-cover grayscale opacity-90 border-none outline-none ring-0 shadow-none" />
- <div className="absolute inset-0 bg-[#0F172A]/20 "></div>
+ <div className="absolute inset-0 bg-[#0F172A]/20"></div>
  </div>
 
- {/* Layer 3: Top-Left Dark Blue Triangle (Spine continuation) */}
- <div
- className="absolute top-0 left-0 w-[45%] h-[25%] bg-[#0F172A] z-10"
- style={{ clipPath: 'polygon(0 0, 100% 0, 0 100%)' }}
- ></div>
-
- {/* Layer 4: Diagonal Yellow Band */}
- <div
- className="absolute inset-0 z-20 bg-[#F2B233]"
- style={{ clipPath: 'polygon(0 10%, 100% 95%, 60% 100%, 0 85%)' }}
- ></div>
-
- {/* Layer 5: Bottom-Right White Triangle */}
- <div
- className="absolute bottom-0 right-0 w-[30%] h-[15%] bg-white z-30"
- style={{ clipPath: 'polygon(100% 0, 100% 100%, 0 100%)' }}
- ></div>
+ {/* Reliable SVG Overlay for html2canvas */}
+ <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full z-10">
+ {/* Dark Blue wedge to hide bottom of image (simulating original image clip-path) */}
+ <polygon points="0,85 100,60 100,100 0,100" fill="#0F172A" />
+ 
+ {/* Top-Left Dark Blue Triangle */}
+ <polygon points="0,0 45,0 0,25" fill="#0F172A" />
+ 
+ {/* Thick Diagonal Yellow Band (Perfectly Parallel) */}
+ <polygon points="0,10 90,100 30,100 0,70" fill="#F2B233" />
+ 
+ {/* Bottom-Right White Triangle */}
+ <polygon points="100,85 100,100 70,100" fill="#FFFFFF" />
+ </svg>
 
  {/* Content Layer */}
  <div className="relative z-40 w-full h-full p-16 flex flex-col justify-between">
