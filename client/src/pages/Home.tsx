@@ -17,7 +17,7 @@ const CoverPage = () => (
 
  {/* Background Image Layer (Unclipped) */}
  <div className="absolute inset-0 z-0 bg-[#E5E7EB]">
- <img src="/images/hero-background.jpg" alt="Industrial Plant" className="w-full h-full object-cover grayscale opacity-90 border-none outline-none ring-0 shadow-none" />
+ <img src="/images/hero-background.jpg" alt="Industrial Plant" className="w-full h-full object-cover object-[center_80%] grayscale opacity-90 border-none outline-none ring-0 shadow-none" />
  <div className="absolute inset-0 bg-[#0F172A]/20"></div>
  </div>
 
