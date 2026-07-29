@@ -6,7 +6,7 @@ const A4_ASPECT_RATIO = 297 / 210; // Height / Width for A4 landscape
 const BrochurePage = ({ children, className = '' }) => (
  <div
  className={`bg-white w-full max-w-[1200px] shadow-2xl relative overflow-hidden mx-auto ${className}`}
- style={{ aspectRatio: A4_ASPECT_RATIO }} // Force A4 landscape aspect ratio
+ style={{ aspectRatio: `1 / ${A4_ASPECT_RATIO}` }} // Force A4 landscape aspect ratio
  >
  {children}
  </div>
@@ -16,7 +16,7 @@ const CoverPage = () => (
  <BrochurePage className="relative overflow-hidden flex flex-col justify-between">
 
  {/* Layer 1: True Background */}
- <div className="absolute inset-0 bg-[#0F172A] z-0"></div>
+ <div className="absolute inset-0 bg-[#0F172A] z-[-1]"></div>
 
  {/* Layer 2: Top-right Grayscale Image */}
  <div
@@ -754,88 +754,66 @@ const EngineeringExcellencePage = () => {
 const BackCoverPage = () => {
  return (
  <BrochurePage className="relative overflow-hidden flex flex-col justify-between">
- {/* Layer 1: True Background for the page */}
- <div className="absolute inset-0 bg-white z-0"></div>
-
- {/* Layer 2: Top-Left Dark Blue Triangle */}
- <div
- className="absolute top-0 left-0 w-[30%] h-[30%] bg-[#0F172A] z-10"
- style={{ clipPath: 'polygon(0 0, 100% 0, 0 100%)' }}
- ></div>
-
- {/* Layer 3: Bottom-Left Dark Blue Triangle */}
- <div
- className="absolute bottom-0 left-0 w-[30%] h-[30%] bg-[#0F172A] z-10"
- style={{ clipPath: 'polygon(0 0, 100% 100%, 0 100%)' }}
- ></div>
-
- {/* Layer 4: Top-Right Dark Blue Triangle */}
- <div
- className="absolute top-0 right-0 w-[25%] h-[25%] bg-[#0F172A] z-10"
- style={{ clipPath: 'polygon(100% 0, 100% 100%, 0 0)' }}
- ></div>
-
- {/* Layer 5: Bottom-Right Dark Blue Triangle */}
- <div
- className="absolute bottom-0 right-0 w-[30%] h-[30%] bg-[#0F172A] z-10"
- style={{ clipPath: 'polygon(100% 0, 100% 100%, 0 100%)' }}
- ></div>
-
- {/* Layer 6: Diagonal Yellow Band */}
- <div
- className="absolute inset-0 z-20 bg-[#F2B233]"
- style={{ clipPath: 'polygon(30% 0, 75% 0, 100% 25%, 100% 70%)' }}
- ></div>
+ {/* Reliable SVG Background for html2canvas */}
+ <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full z-0">
+ <polygon points="0,0 35,0 0,35" fill="#0F172A" />
+ <polygon points="45,0 100,0 100,80" fill="#F2B233" />
+ <polygon points="100,80 100,100 65,100" fill="#0F172A" />
+ </svg>
 
  {/* Content Layer */}
  <div className="relative z-40 w-full h-full p-16 flex flex-col justify-center">
 
- <div className="w-[45%] flex flex-col items-start pl-8 mt-12">
- <h1 className="text-[45px] font-black text-[#0F172A] leading-none mb-6 tracking-tight">
+ <div className="w-[55%] flex flex-col items-start pl-8 mt-4">
+ <h1 className="text-[54px] font-black text-[#0F172A] leading-[1.05] mb-5 tracking-tight">
  THANK<br />YOU!
  </h1>
- <p className="text-[#0F172A] text-[13px] leading-relaxed mb-8 font-medium">
+ <p className="text-[#0F172A] text-[15px] leading-relaxed mb-6 font-medium max-w-[380px]">
  We appreciate your time and<br />
  consideration. We look forward<br />
  to the opportunity to <span className="font-bold">work<br />together.</span>
  </p>
- <div className="w-10 h-[3px] bg-[#F2B233] mb-12"></div>
+ <div className="w-12 h-[4px] bg-[#F2B233] mb-10"></div>
 
  {/* Contact Info */}
- <div className="flex flex-col gap-5 text-[10px] font-bold text-[#0F172A]">
- <div className="flex items-center gap-4">
- <div className="w-6 h-6 rounded-full bg-[#0F172A] flex items-center justify-center flex-shrink-0">
- <Phone size={12} className="text-white" />
+ <div className="flex flex-col gap-6 text-[13px] font-medium text-[#0F172A]">
+ <div className="flex items-center gap-5">
+ <div className="w-9 h-9 rounded-full bg-[#0F172A] flex items-center justify-center flex-shrink-0">
+ <Phone size={16} className="text-white" />
  </div>
- <div className="leading-tight">
- +91 87907 59460<br />
- +91 79970 76361
+ <div className="w-[1px] h-10 bg-gray-300"></div>
+ <div className="leading-snug">
+ +91 8790759460<br />
+ +91 7997076361
  </div>
  </div>
 
- <div className="flex items-center gap-4">
- <div className="w-6 h-6 rounded-full bg-[#0F172A] flex items-center justify-center flex-shrink-0">
- <Mail size={12} className="text-white" />
+ <div className="flex items-center gap-5">
+ <div className="w-9 h-9 rounded-full bg-[#0F172A] flex items-center justify-center flex-shrink-0">
+ <Mail size={16} className="text-white" />
  </div>
- <div className="leading-tight">
+ <div className="w-[1px] h-7 bg-gray-300"></div>
+ <div className="leading-snug">
  contact@srewprojects.com
  </div>
  </div>
 
- <div className="flex items-center gap-4">
- <div className="w-6 h-6 rounded-full bg-[#0F172A] flex items-center justify-center flex-shrink-0">
- <Globe size={12} className="text-white" />
+ <div className="flex items-center gap-5">
+ <div className="w-9 h-9 rounded-full bg-[#0F172A] flex items-center justify-center flex-shrink-0">
+ <Globe size={16} className="text-white" />
  </div>
- <div className="leading-tight mt-0.5">
+ <div className="w-[1px] h-7 bg-gray-300"></div>
+ <div className="leading-snug">
  www.srewprojects.com
  </div>
  </div>
 
- <div className="flex items-start gap-4">
- <div className="w-6 h-6 rounded-full bg-[#0F172A] flex items-center justify-center flex-shrink-0 mt-0.5">
- <MapPin size={12} className="text-white" />
+ <div className="flex items-center gap-5">
+ <div className="w-9 h-9 rounded-full bg-[#0F172A] flex items-center justify-center flex-shrink-0">
+ <MapPin size={16} className="text-white" />
  </div>
- <div className="leading-tight">
+ <div className="w-[1px] h-10 bg-gray-300"></div>
+ <div className="leading-snug">
  155/A, Dulapally Road,<br />
  Hyderabad, TG. 500100
  </div>
