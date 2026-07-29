@@ -14,67 +14,27 @@ const BrochurePage = ({ children, className = '' }) => (
 
 const CoverPage = () => (
  <BrochurePage className="relative overflow-hidden flex flex-col justify-between">
-
- {/* Layer 1: True Background */}
- <div className="absolute inset-0 bg-[#0F172A] z-[-1]"></div>
-
- {/* Layer 2: Top-right Grayscale Image */}
- <div
- className="absolute inset-0 z-0 bg-[#E5E7EB]"
- style={{ clipPath: 'polygon(0 0, 100% 0, 100% 60%, 0 85%)' }}
- >
+ {/* Background Image Layer */}
+ <div className="absolute inset-0 z-0">
  <img src="/images/hero-background.jpg" alt="Industrial Plant" className="w-full h-full object-cover grayscale opacity-90 border-none outline-none ring-0 shadow-none" />
- <div className="absolute inset-0 bg-[#0F172A]/20 "></div>
  </div>
 
- {/* Layer 3: Top-Left Dark Blue Triangle (Spine continuation) */}
- <div
- className="absolute top-0 left-0 w-[45%] h-[25%] bg-[#0F172A] z-10"
- style={{ clipPath: 'polygon(0 0, 100% 0, 0 100%)' }}
- ></div>
-
- {/* Layer 4: Diagonal Yellow Band */}
- <div
- className="absolute inset-0 z-20 bg-[#F2B233]"
- style={{ clipPath: 'polygon(0 25%, 85% 100%, 35% 100%, 0 70%)' }}
- ></div>
-
- {/* Layer 5: Bottom-Right White Triangle */}
- <div
- className="absolute bottom-0 right-0 w-[30%] h-[15%] bg-white z-30"
- style={{ clipPath: 'polygon(100% 0, 100% 100%, 0 100%)' }}
- ></div>
+ {/* SVG Yellow Polygon */}
+ <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full z-10">
+ <polygon points="0,0 45,0 75,100 0,100" fill="#F2B233" />
+ </svg>
 
  {/* Content Layer */}
- <div className="relative z-40 w-full h-full p-16 flex flex-col justify-between">
- <div></div>
-
- <div className="flex justify-between items-end mb-8 relative">
- {/* Left Text centered inside Yellow Band */}
- <div className="text-[#0F172A] flex flex-col justify-end absolute bottom-0 left-[38%] w-[40%] z-50">
- <h1 className="text-[28px] md:text-[34px] leading-[1.15] tracking-tight mb-2 font-medium">
- TOGETHER,<br />
- WE BUILD<br />
- <span className="font-black">STRONGER</span><br />
- <span className="font-black">FOUNDATIONS.</span>
+ <div className="relative z-20 w-[45%] h-full p-16 flex flex-col justify-center">
+ <h1 className="text-[48px] font-light text-[#0F172A] leading-[1.05] mb-2 tracking-tight">
+ COMPANY<br />
+ BROCHURE<br />
+ <span className="font-black">TEMPLATE</span>
  </h1>
- <div className="w-10 h-[3px] bg-[#0F172A] mt-6"></div>
- </div>
-
- {/* Right Logo inside Dark Blue Area */}
- <div className="w-[100%] flex justify-end pb-8">
- <img
- src="/images/srew%20projects-logo.png"
- alt="SREW PROJECTS"
- className="w-64 object-contain relative z-50 border-none outline-none ring-0 shadow-none"
- onError={(e) => { e.currentTarget.style.display = 'none'; }}
- />
- </div>
- </div>
-
- <div className="absolute bottom-8 right-8 text-[9px] text-[#0F172A] font-bold tracking-[0.2em] uppercase z-50 ">
- <span>PAGE 01</span>
- </div>
+ <div className="w-16 h-[3px] bg-[#0F172A] mb-8 mt-6"></div>
+ <p className="text-[#0F172A] text-[13px] leading-relaxed font-medium max-w-[300px]">
+ Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+ </p>
  </div>
  </BrochurePage>
 );
@@ -754,17 +714,18 @@ const EngineeringExcellencePage = () => {
 const BackCoverPage = () => {
  return (
  <BrochurePage className="relative overflow-hidden flex flex-col justify-between">
- {/* Reliable SVG Background for html2canvas */}
+ {/* SVG Background Layer */}
  <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full z-0">
  <polygon points="0,0 35,0 0,35" fill="#0F172A" />
- <polygon points="45,0 100,0 100,80" fill="#F2B233" />
- <polygon points="100,80 100,100 65,100" fill="#0F172A" />
+ <polygon points="45,0 100,0 100,80 70,100" fill="#F2B233" />
+ <polygon points="100,80 100,100 70,100" fill="#0F172A" />
  </svg>
 
  {/* Content Layer */}
- <div className="relative z-40 w-full h-full p-16 flex flex-col justify-center">
-
- <div className="w-[55%] flex flex-col items-start pl-8 mt-4">
+ <div className="relative z-40 w-full h-full p-16 flex justify-between items-center">
+ 
+ {/* Left Side: Thank You */}
+ <div className="w-[45%] flex flex-col items-start pl-8 mt-12">
  <h1 className="text-[72px] font-black text-[#0F172A] leading-[1.05] mb-5 tracking-tight">
  THANK<br />YOU!
  </h1>
@@ -773,52 +734,24 @@ const BackCoverPage = () => {
  consideration. We look forward<br />
  to the opportunity to <span className="font-bold">work<br />together.</span>
  </p>
- <div className="w-16 h-[4px] bg-[#F2B233] mb-10"></div>
-
- {/* Contact Info */}
- <div className="flex flex-col gap-6 text-[16px] font-medium text-[#0F172A]">
- <div className="flex items-center gap-5">
- <div className="w-10 h-10 rounded-full bg-[#0F172A] flex items-center justify-center flex-shrink-0">
- <Phone size={18} className="text-white" />
- </div>
- <div className="w-[1px] h-12 bg-gray-300"></div>
- <div className="leading-snug">
- +91 8790759460<br />
- +91 7997076361
- </div>
  </div>
 
- <div className="flex items-center gap-5">
- <div className="w-10 h-10 rounded-full bg-[#0F172A] flex items-center justify-center flex-shrink-0">
- <Mail size={18} className="text-white" />
- </div>
- <div className="w-[1px] h-8 bg-gray-300"></div>
- <div className="leading-snug">
- contact@srewprojects.com
- </div>
- </div>
-
- <div className="flex items-center gap-5">
- <div className="w-10 h-10 rounded-full bg-[#0F172A] flex items-center justify-center flex-shrink-0">
- <Globe size={18} className="text-white" />
- </div>
- <div className="w-[1px] h-8 bg-gray-300"></div>
- <div className="leading-snug">
- www.srewprojects.com
- </div>
- </div>
-
- <div className="flex items-center gap-5">
- <div className="w-10 h-10 rounded-full bg-[#0F172A] flex items-center justify-center flex-shrink-0">
- <MapPin size={18} className="text-white" />
- </div>
- <div className="w-[1px] h-12 bg-gray-300"></div>
- <div className="leading-snug">
- 155/A, Dulapally Road,<br />
- Hyderabad, TG. 500100
- </div>
- </div>
- </div>
+ {/* Right Side: Together we build... */}
+ <div className="w-[45%] h-full flex flex-col justify-end items-start pb-8 pl-16">
+ <h2 className="text-[28px] text-[#0F172A] leading-[1.15] mb-4 font-medium tracking-tight">
+ TOGETHER,<br />
+ WE BUILD<br />
+ <span className="font-black">STRONGER</span><br />
+ <span className="font-black">FOUNDATIONS.</span>
+ </h2>
+ <div className="w-12 h-[3px] bg-[#0F172A] mb-8"></div>
+ 
+ <img
+ src="/images/srew%20projects-logo.png"
+ alt="SREW PROJECTS"
+ className="w-48 object-contain border-none outline-none ring-0 shadow-none"
+ onError={(e) => { e.currentTarget.style.display = 'none'; }}
+ />
  </div>
 
  </div>
