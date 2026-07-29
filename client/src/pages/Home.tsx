@@ -55,9 +55,7 @@ const CoverPage = () => (
  {/* Right Logo removed as requested */}
  </div>
 
- <div className="absolute bottom-8 right-8 text-[9px] text-[#0F172A] font-bold tracking-[0.2em] uppercase z-50 ">
- <span>PAGE 01</span>
- </div>
+ {/* Page number removed from CoverPage */}
  </div>
  </BrochurePage>
 );
