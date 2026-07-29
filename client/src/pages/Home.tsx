@@ -163,154 +163,384 @@ const AboutPage = () => (
  </BrochurePage>
 );
 
+const SectionHeader = ({ title }: { title: string }) => (
+  <div className="flex items-center mb-4 mt-2 w-full">
+    <div className="bg-[#0A2342] text-white text-[12px] font-bold px-4 py-1.5 uppercase tracking-wide" style={{ clipPath: 'polygon(0 0, 100% 0, 96% 100%, 0 100%)' }}>
+      {title}
+    </div>
+    <div className="flex-grow h-[1px] bg-[#0A2342] -ml-2 z-[-1]"></div>
+    <div className="w-1.5 h-1.5 bg-[#0A2342] rounded-full ml-1"></div>
+  </div>
+);
+
 const catalogProducts = [
-  { name: "Jaw Crusher", image: "/images/Products/srew-jaw-crusher.png", price: "₹18L - ₹55L*", specs: "Feed: 125-1200 mm \u2022 Capacity: 30-400 TPH", tag: "Best Seller", apps: ["Granite", "Basalt", "Limestone"] },
-  { name: "European Jaw Crusher", image: "/images/Products/srew-european-type-jaw-crusher.png", price: "₹35L - ₹85L*", specs: "Feed: 480-1200 mm \u2022 Capacity: 80-500 TPH", tag: "Export Model", apps: ["Mining", "Granite", "Basalt"] },
-  { name: "Grease Jaw Crusher", image: "/images/Products/srew-grease-jaw-crusher.png", price: "₹8L - ₹28L*", specs: "Feed: 200-750 mm \u2022 Capacity: 20-150 TPH", tag: "Made in India", apps: ["Limestone", "River Stone"] },
-  { name: "Cone Crusher Plant", image: "/images/Products/srew-cone-crusher-plant.png", price: "₹2.2Cr - ₹7Cr*", specs: "50-350 TPH \u2022 2/3 Stage Plant", tag: "Best Seller", apps: ["Aggregate", "Mining"] },
-  { name: "Single Cylinder Cone Crusher", image: "/images/Products/srew-single-cylinder-cone-crusher.png", price: "₹28L - ₹85L*", specs: "80-350 TPH \u2022 Hydraulic", tag: "High Efficiency", apps: ["Granite", "Basalt"] },
-  { name: "Multi Cylinder Cone Crusher", image: "/images/Products/srew-multi-cylinder-hydraulic-cone-crusher.png", price: "₹45L - ₹1.2Cr*", specs: "80-600 TPH \u2022 PLC Control", tag: "Export Model", apps: ["Mining", "Aggregate"] },
-  { name: "Hydraulic Impact Crusher", image: "/images/Products/srew-hydraulic-impact-crusher.png", price: "₹14L - ₹48L*", specs: "Feed: 350 mm \u2022 Capacity: 50-350 TPH", tag: "High Efficiency", apps: ["Limestone", "Aggregate"] },
-  { name: "Hammer Crusher", image: "/images/Products/srew-hammer-crusher.png", price: "₹4.5L - ₹18L*", specs: "Feed: 150 mm \u2022 Capacity: 10-150 TPH", tag: "Made in India", apps: ["Limestone", "Coal"] },
-  { name: "Roller Crusher", image: "/images/Products/srew-roller-crusher.jpg", price: "₹3.5L - ₹14L*", specs: "Output: 2-50 mm \u2022 Capacity: 15-100 TPH", tag: "", apps: ["River Stone", "Coal"] },
-  { name: "Vertical Shaft Impactor (VSI)", image: "/images/Products/srew-vertical-shaft-crusher.png", price: "₹16L - ₹48L*", specs: "M-Sand \u2022 30-400 TPH", tag: "Best Seller", apps: ["M-Sand", "Aggregate"] },
-  { name: "Vibrating Screen", image: "/images/Products/srew-triple-shaft-vibrating-screen.png", price: "₹3.5L - ₹9L*", specs: "2 Deck \u2022 Area: 6-20 m\u00B2", tag: "", apps: ["Aggregate", "Mining"] },
-  { name: "3 Deck Vibrating Screen", image: "/images/Products/Vibrating-Screen-3-deck.png", price: "₹5L - ₹12L*", specs: "3 Product Sizes", tag: "High Efficiency", apps: ["Aggregate"] },
-  { name: "Damping Vibrating Screen", image: "/images/Products/srew-Damping-vibrating-screen.png", price: "₹6L - ₹15L*", specs: "Low Noise \u2022 Rubber Mount", tag: "", apps: ["Mining", "Aggregate"] },
-  { name: "Triple Shaft Screen", image: "/images/Products/srew-triple-shaft-vibrating-screen.png", price: "₹9L - ₹22L*", specs: "100-500 TPH", tag: "High Efficiency", apps: ["Aggregate", "Mining"] },
-  { name: "Sand Washer", image: "/images/Products/srew-sand-washer.png", price: "₹3.5L - ₹10L*", specs: "Screw Dia: 750-1200 mm", tag: "", apps: ["M-Sand", "River Stone"] },
-  { name: "Series Sand Washer", image: "/images/Products/srew-series-sand-washer.png", price: "₹7L - ₹16L*", specs: "Dual Screw \u2022 Deep Cleaning", tag: "", apps: ["M-Sand"] },
-  { name: "Fine Sand Recycling Machine", image: "/images/Products/srew-fine-sand-recycling-machine.png", price: "₹4L - ₹11L*", specs: "Recovery: 85-95%", tag: "High Efficiency", apps: ["M-Sand"] },
-  { name: "Sand Dryer", image: "/images/Products/srew-sand-dryer.jpg", price: "₹12L - ₹32L*", specs: "LPG/Diesel \u2022 Moisture <1%", tag: "Made in India", apps: ["M-Sand", "Construction"] },
-  { name: "Mobile Crushing Plant", image: "/images/Products/srew-mobile-crushing-plant.png", price: "₹85L - ₹2.8Cr*", specs: "Crawler \u2022 60-300 TPH", tag: "Best Seller", apps: ["Mining", "Construction"] },
-  { name: "Modular Mobile Crusher", image: "/images/Products/srew-modular-mobile-crusher.png", price: "₹55L - ₹1.8Cr*", specs: "Skid Mount \u2022 Quick Deployment", tag: "Export Model", apps: ["Construction", "Mining"] },
-  { name: "Tire Mobile Crusher", image: "/images/Products/srew-tire-mobile-crusher.png", price: "₹48L - ₹1.5Cr*", specs: "Wheel Mount \u2022 Towable", tag: "", apps: ["Construction"] },
-  { name: "Tracked Screen", image: "/images/Products/srew-mobile-crushing-plant.png", price: "₹32L - ₹95L*", specs: "Self Propelled \u2022 3 Deck", tag: "", apps: ["Mining", "Aggregate"] },
-  { name: "Belt Conveyor", image: "/images/Products/srew-belt-conveyor.png", price: "₹1.2L - ₹5L*", specs: "Width: 500-1400 mm", tag: "", apps: ["Aggregate"] },
-  { name: "Loading Hopper", image: "/images/Products/srew-hopper.jpg", price: "₹15L - ₹45L*", specs: "Capacity: 5-25 m\u00B3", tag: "", apps: ["Aggregate", "Mining"] },
-  { name: "Silo Storage System", image: "/images/Products/srew-silo.jpg", price: "₹4L - ₹18L*", specs: "50-500 Ton", tag: "", apps: ["Aggregate", "Construction"] },
-  { name: "Control Panel Board", image: "/images/Products/srew-panel-board.jpg", price: "₹1.8L - ₹6L*", specs: "PLC/VFD \u2022 Auto Interlock", tag: "Made in India", apps: ["Automation"] },
-  { name: "C&D Recycling Plant", image: "/images/Products/srew-cd-recycling.jpg", price: "₹65L - ₹2Cr*", specs: "Turnkey \u2022 50-200 TPH", tag: "Best Seller", apps: ["Construction", "Recycling"] }
+  {
+    name: "JAW CRUSHER",
+    image: "/images/Products/srew-jaw-crusher.png",
+    price: "₹ 18L - 55L*",
+    details: [
+      { label: "APPLICATION", value: "Primary Crushing" },
+      { label: "CAPACITY", value: "30 - 400 TPH" },
+      { label: "FEED SIZE", value: "125 - 1200 mm" }
+    ]
+  },
+  {
+    name: "EUROPEAN JAW CRUSHER",
+    image: "/images/Products/srew-european-type-jaw-crusher.png",
+    price: "₹ 35L - 85L*",
+    details: [
+      { label: "APPLICATION", value: "Primary Crushing" },
+      { label: "CAPACITY", value: "80 - 500 TPH" },
+      { label: "FEED SIZE", value: "480 - 1200 mm" }
+    ]
+  },
+  {
+    name: "GREASE JAW CRUSHER",
+    image: "/images/Products/srew-grease-jaw-crusher.png",
+    price: "₹ 8L - 28L*",
+    details: [
+      { label: "APPLICATION", value: "Primary Crushing" },
+      { label: "CAPACITY", value: "20 - 150 TPH" },
+      { label: "FEED SIZE", value: "200 - 750 mm" }
+    ]
+  },
+  {
+    name: "CONE CRUSHER PLANT",
+    image: "/images/Products/srew-cone-crusher-plant.png",
+    price: "₹ 2.2Cr - 7Cr*",
+    details: [
+      { label: "APPLICATION", value: "Secondary, Tertiary" },
+      { label: "CAPACITY", value: "50 - 350 TPH" },
+      { label: "FEATURE", value: "2/3 Stage Plant" }
+    ]
+  },
+  {
+    name: "SINGLE CYLINDER CONE CRUSHER",
+    image: "/images/Products/srew-single-cylinder-cone-crusher.png",
+    price: "₹ 28L - 85L*",
+    details: [
+      { label: "APPLICATION", value: "Secondary, Tertiary" },
+      { label: "CAPACITY", value: "80 - 350 TPH" },
+      { label: "FEATURE", value: "Hydraulic System" }
+    ]
+  },
+  {
+    name: "MULTI CYLINDER CONE CRUSHER",
+    image: "/images/Products/srew-multi-cylinder-hydraulic-cone-crusher.png",
+    price: "₹ 45L - 1.2Cr*",
+    details: [
+      { label: "APPLICATION", value: "High Capacity" },
+      { label: "CAPACITY", value: "80 - 600 TPH" },
+      { label: "FEATURE", value: "PLC Control" }
+    ]
+  },
+  {
+    name: "HYDRAULIC IMPACT CRUSHER",
+    image: "/images/Products/srew-hydraulic-impact-crusher.png",
+    price: "₹ 14L - 48L*",
+    details: [
+      { label: "APPLICATION", value: "Secondary Crushing" },
+      { label: "CAPACITY", value: "50 - 350 TPH" },
+      { label: "FEED SIZE", value: "Up to 350 mm" }
+    ]
+  },
+  {
+    name: "HAMMER CRUSHER",
+    image: "/images/Products/srew-hammer-crusher.png",
+    price: "₹ 4.5L - 18L*",
+    details: [
+      { label: "APPLICATION", value: "Primary/Secondary" },
+      { label: "CAPACITY", value: "10 - 150 TPH" },
+      { label: "FEED SIZE", value: "Up to 150 mm" }
+    ]
+  },
+  {
+    name: "ROLLER CRUSHER",
+    image: "/images/Products/srew-roller-crusher.jpg",
+    price: "₹ 3.5L - 14L*",
+    details: [
+      { label: "APPLICATION", value: "Tertiary, Fine" },
+      { label: "CAPACITY", value: "15 - 100 TPH" },
+      { label: "OUTPUT", value: "2 - 50 mm" }
+    ]
+  },
+  {
+    name: "VERTICAL SHAFT IMPACTOR (VSI)",
+    image: "/images/Products/srew-vertical-shaft-crusher.png",
+    price: "₹ 16L - 48L*",
+    details: [
+      { label: "APPLICATION", value: "Sand Making" },
+      { label: "CAPACITY", value: "30 - 400 TPH" },
+      { label: "MATERIAL", value: "M-Sand, Aggregate" }
+    ]
+  },
+  {
+    name: "VIBRATING SCREEN",
+    image: "/images/Products/srew-triple-shaft-vibrating-screen.png",
+    price: "₹ 3.5L - 9L*",
+    details: [
+      { label: "APPLICATION", value: "Material Screening" },
+      { label: "LAYER", value: "2 Deck" },
+      { label: "SCREEN AREA", value: "6 - 20 m²" }
+    ]
+  },
+  {
+    name: "3 DECK VIBRATING SCREEN",
+    image: "/images/Products/Vibrating-Screen-3-deck.png",
+    price: "₹ 5L - 12L*",
+    details: [
+      { label: "APPLICATION", value: "Triple Classification" },
+      { label: "LAYER", value: "3 Deck" },
+      { label: "FEATURE", value: "3 Product Sizes" }
+    ]
+  },
+  {
+    name: "DAMPING VIBRATING SCREEN",
+    image: "/images/Products/srew-Damping-vibrating-screen.png",
+    price: "₹ 6L - 15L*",
+    details: [
+      { label: "APPLICATION", value: "Low Noise Screening" },
+      { label: "MOUNT", value: "Rubber Mount" },
+      { label: "FEATURE", value: "Reduced Vibration" }
+    ]
+  },
+  {
+    name: "TRIPLE SHAFT SCREEN",
+    image: "/images/Products/srew-triple-shaft-vibrating-screen.png",
+    price: "₹ 9L - 22L*",
+    details: [
+      { label: "APPLICATION", value: "Heavy-Duty Screening" },
+      { label: "CAPACITY", value: "100 - 500 TPH" },
+      { label: "FEATURE", value: "High Efficiency" }
+    ]
+  },
+  {
+    name: "SAND WASHER",
+    image: "/images/Products/srew-sand-washer.png",
+    price: "₹ 3.5L - 10L*",
+    details: [
+      { label: "APPLICATION", value: "Sand Washing" },
+      { label: "SCREW DIA", value: "750 - 1200 mm" },
+      { label: "FEATURE", value: "Water Efficient" }
+    ]
+  },
+  {
+    name: "SERIES SAND WASHER",
+    image: "/images/Products/srew-series-sand-washer.png",
+    price: "₹ 7L - 16L*",
+    details: [
+      { label: "APPLICATION", value: "Multi-Stage Washing" },
+      { label: "FEATURE", value: "Dual Screw" },
+      { label: "PERFORMANCE", value: "Deep Cleaning" }
+    ]
+  },
+  {
+    name: "FINE SAND RECYCLING",
+    image: "/images/Products/srew-fine-sand-recycling-machine.png",
+    price: "₹ 4L - 11L*",
+    details: [
+      { label: "APPLICATION", value: "Sand Recovery" },
+      { label: "RECOVERY RATE", value: "85 - 95%" },
+      { label: "FEATURE", value: "Max Sand Recovery" }
+    ]
+  },
+  {
+    name: "SAND DRYER",
+    image: "/images/Products/srew-sand-dryer.jpg",
+    price: "₹ 12L - 32L*",
+    details: [
+      { label: "APPLICATION", value: "Rotary Drying" },
+      { label: "FUEL", value: "LPG / Diesel" },
+      { label: "MOISTURE", value: "< 1%" }
+    ]
+  },
+  {
+    name: "MOBILE CRUSHING PLANT",
+    image: "/images/Products/srew-mobile-crushing-plant.png",
+    price: "₹ 85L - 2.8Cr*",
+    details: [
+      { label: "APPLICATION", value: "Turnkey Mobility" },
+      { label: "MOUNT", value: "Crawler Tracked" },
+      { label: "CAPACITY", value: "60 - 300 TPH" }
+    ]
+  },
+  {
+    name: "MODULAR MOBILE CRUSHER",
+    image: "/images/Products/srew-modular-mobile-crusher.png",
+    price: "₹ 55L - 1.8Cr*",
+    details: [
+      { label: "APPLICATION", value: "Semi-Mobile Setup" },
+      { label: "MOUNT", value: "Skid Mount" },
+      { label: "FEATURE", value: "Quick Deployment" }
+    ]
+  },
+  {
+    name: "TIRE MOBILE CRUSHER",
+    image: "/images/Products/srew-tire-mobile-crusher.png",
+    price: "₹ 48L - 1.5Cr*",
+    details: [
+      { label: "APPLICATION", value: "Highway Towable" },
+      { label: "MOUNT", value: "Wheel Mounted" },
+      { label: "FEATURE", value: "High Mobility" }
+    ]
+  },
+  {
+    name: "TRACKED SCREEN",
+    image: "/images/Products/srew-mobile-crushing-plant.png",
+    price: "₹ 32L - 95L*",
+    details: [
+      { label: "APPLICATION", value: "Mobile Screening" },
+      { label: "FEATURE", value: "Self Propelled" },
+      { label: "LAYER", value: "3 Deck" }
+    ]
+  },
+  {
+    name: "BELT CONVEYOR",
+    image: "/images/Products/srew-belt-conveyor.png",
+    price: "₹ 1.2L - 5L*",
+    details: [
+      { label: "APPLICATION", value: "Material Transport" },
+      { label: "BELT WIDTH", value: "500 - 1400 mm" },
+      { label: "LENGTH", value: "As per requirement" }
+    ]
+  },
+  {
+    name: "LOADING HOPPER",
+    image: "/images/Products/srew-hopper.jpg",
+    price: "₹ 15L - 45L*",
+    details: [
+      { label: "APPLICATION", value: "Feed System" },
+      { label: "CAPACITY", value: "5 - 25 m³" },
+      { label: "FEATURE", value: "Custom Volumes" }
+    ]
+  },
+  {
+    name: "SILO STORAGE SYSTEM",
+    image: "/images/Products/srew-silo.jpg",
+    price: "₹ 4L - 18L*",
+    details: [
+      { label: "APPLICATION", value: "Bulk Storage" },
+      { label: "CAPACITY", value: "50 - 500 Ton" },
+      { label: "MATERIAL", value: "Bolted Steel" }
+    ]
+  },
+  {
+    name: "CONTROL PANEL BOARD",
+    image: "/images/Products/srew-panel-board.jpg",
+    price: "₹ 1.8L - 6L*",
+    details: [
+      { label: "APPLICATION", value: "PLC Automation" },
+      { label: "CONTROL", value: "PLC / VFD" },
+      { label: "FEATURE", value: "Auto Interlock" }
+    ]
+  },
+  {
+    name: "C&D RECYCLING PLANT",
+    image: "/images/Products/srew-cd-recycling.jpg",
+    price: "₹ 65L - 2Cr*",
+    details: [
+      { label: "APPLICATION", value: "Construction Waste" },
+      { label: "CAPACITY", value: "50 - 200 TPH" },
+      { label: "TYPE", value: "Turnkey Solution" }
+    ]
+  }
 ];
 
 const CATALOG_FOOTNOTE = "*Prices are indicative ex-works and vary based on capacity, motor brand, electricals, steel grade, automation, and customer specifications. GST, freight, installation, and commissioning are extra where applicable.";
 
 const ProductCard = ({ p }: { p: typeof catalogProducts[0] }) => (
- <div className="premium-card flex flex-col group relative">
- {/* Tag */}
- {p.tag && (
- <span className="absolute top-2 right-2 z-20 text-[7px] font-black uppercase tracking-[0.15em] px-2 py-0.5 bg-[#0F172A] text-[#F2B233]">
- {p.tag}
- </span>
- )}
- <div className="aspect-[4/3] w-full mb-3 flex items-center justify-center p-2 relative">
- <div className="absolute bottom-2 w-3/4 h-3 bg-[rgba(0,0,0,0.1)] rounded-[100%]"></div>
- <img
- src={p.image}
- alt={p.name}
- className="w-[110%] h-[110%] object-contain relative z-10 border-none outline-none ring-0 shadow-none"
- onError={(e) => { e.currentTarget.style.display = 'none'; }}
- />
- </div>
- <h4 className="font-bold text-[#0A2342] text-[12px] mb-1 leading-snug">{p.name}</h4>
- {/* Specs with icon */}
- <div className="flex items-start gap-1.5 mb-1.5">
- <svg className="w-3 h-3 text-[#6B7280] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" /></svg>
- <p className="text-[9px] text-[#4B5563] leading-snug">{p.specs}</p>
- </div>
- {/* Application tags */}
- <div className="flex flex-wrap gap-1 mb-2">
- {p.apps.map((app, j) => (
- <span key={j} className="text-[7px] font-bold uppercase tracking-wider text-[#6B7280] bg-[#F3F4F6] px-1.5 py-0.5">{app}</span>
- ))}
- </div>
- {/* Price */}
- <div className="mt-auto border-t border-[#F3F4F6] pt-2">
- <span className="text-[11px] font-black text-[#D4AF37]">{p.price}</span>
- </div>
- </div>
+  <div className="bg-white rounded-sm border border-gray-200 shadow-[0_2px_4px_rgba(0,0,0,0.02)] flex flex-col h-full overflow-hidden">
+    <div className="p-3 pb-0 flex-grow">
+      <h4 className="font-black text-[#0A2342] text-[10px] mb-2 uppercase tracking-wide leading-tight">{p.name}</h4>
+      <div className="flex gap-2">
+        {/* Image */}
+        <div className="w-[45%] flex items-center justify-center relative">
+          <div className="absolute bottom-2 w-[80%] h-1.5 bg-[rgba(0,0,0,0.06)] rounded-[100%]"></div>
+          <img src={p.image} alt={p.name} className="w-[120%] h-[120%] object-contain relative z-10 -ml-2" onError={(e) => { e.currentTarget.style.display = 'none'; }} />
+        </div>
+        {/* Specs */}
+        <div className="w-[55%] flex flex-col gap-1.5 justify-center py-1">
+          {p.details.map((d, i) => (
+            <div key={i}>
+              <div className="text-[6.5px] font-black text-[#0A2342] uppercase tracking-wider mb-[1px]">{d.label}</div>
+              <div className="text-[7.5px] text-[#4B5563] leading-[1.1] font-medium">{d.value}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+    {/* Price Bar */}
+    <div className="mt-2 bg-[#F8F9FA] px-3 py-1.5 flex justify-between items-center rounded-b-sm border-t-[0.5px] border-gray-100">
+      <span className="text-[7px] font-black text-[#0A2342] uppercase tracking-wider">PRICE RANGE</span>
+      <span className="text-[11px] font-black text-[#D4AF37] tracking-tight">{p.price}</span>
+    </div>
+  </div>
 );
 
 const ProductCatalogPage1 = () => {
- return (
- <BrochurePage className="p-12 flex flex-col bg-white">
- <div className="flex items-center mb-3">
- <span className="section-accent"></span>
- <span className="section-label">02 / COMPLETE PRODUCT RANGE</span>
- </div>
+  return (
+    <BrochurePage className="p-12 flex flex-col bg-white">
+      <SectionHeader title="CRUSHING EQUIPMENT" />
 
- <h2 className="text-[28px] font-black text-[#0A2342] mb-4 uppercase tracking-tight leading-none">
- SREW EQUIPMENT CATALOG
- </h2>
- <div className="editorial-divider" style={{ marginTop: '0.5rem', marginBottom: '0.5rem' }}></div>
+      <div className="flex-grow flex flex-col">
+        <div className="grid grid-cols-3 gap-4 content-start">
+          {catalogProducts.slice(0, 9).map((p, i) => (
+            <ProductCard key={i} p={p} />
+          ))}
+        </div>
+      </div>
 
- <div className="flex-grow flex flex-col">
- <div className="grid grid-cols-3 gap-4 content-start">
- {catalogProducts.slice(0, 9).map((p, i) => (
- <ProductCard key={i} p={p} />
- ))}
- </div>
- </div>
-
- <p className="text-[6.5px] text-[#9CA3AF] leading-snug mt-4 italic">{CATALOG_FOOTNOTE}</p>
- <div className="flex justify-between items-end mt-2 text-[9px] text-[#9CA3AF] font-bold tracking-[0.2em] uppercase border-t border-[#F3F4F6] pt-3">
- <span>SREW Projects — PRODUCT CATALOG</span>
- <span>PAGE 03</span>
- </div>
- </BrochurePage>
- );
+      <p className="text-[6.5px] text-[#9CA3AF] leading-snug mt-4 italic">{CATALOG_FOOTNOTE}</p>
+      <div className="flex justify-between items-end mt-2 text-[9px] text-[#9CA3AF] font-bold tracking-[0.2em] uppercase border-t border-[#F3F4F6] pt-3">
+        <span>SREW Projects — PRODUCT CATALOG</span>
+        <span>PAGE 03</span>
+      </div>
+    </BrochurePage>
+  );
 };
 
 const ProductCatalogPage2 = () => {
- return (
- <BrochurePage className="p-12 flex flex-col bg-white">
- <div className="flex items-center mb-3">
- <span className="section-accent"></span>
- <span className="section-label">02 / CONTINUED</span>
- </div>
- <div className="editorial-divider" style={{ marginTop: '0.5rem', marginBottom: '0.5rem' }}></div>
+  return (
+    <BrochurePage className="p-12 flex flex-col bg-white">
+      <SectionHeader title="SCREENING & WASHING EQUIPMENT" />
 
- <div className="flex-grow flex flex-col justify-start mt-2">
- <div className="grid grid-cols-3 gap-4 content-start">
- {catalogProducts.slice(9, 18).map((p, i) => (
- <ProductCard key={i} p={p} />
- ))}
- </div>
- </div>
+      <div className="flex-grow flex flex-col justify-start mt-2">
+        <div className="grid grid-cols-3 gap-4 content-start">
+          {catalogProducts.slice(9, 18).map((p, i) => (
+            <ProductCard key={i} p={p} />
+          ))}
+        </div>
+      </div>
 
- <p className="text-[6.5px] text-[#9CA3AF] leading-snug mt-4 italic">{CATALOG_FOOTNOTE}</p>
- <div className="flex justify-between items-end mt-2 text-[9px] text-[#9CA3AF] font-bold tracking-[0.2em] uppercase border-t border-[#F3F4F6] pt-3">
- <span>SREW Projects — PRODUCT CATALOG</span>
- <span>PAGE 04</span>
- </div>
- </BrochurePage>
- );
+      <p className="text-[6.5px] text-[#9CA3AF] leading-snug mt-4 italic">{CATALOG_FOOTNOTE}</p>
+      <div className="flex justify-between items-end mt-2 text-[9px] text-[#9CA3AF] font-bold tracking-[0.2em] uppercase border-t border-[#F3F4F6] pt-3">
+        <span>SREW Projects — PRODUCT CATALOG</span>
+        <span>PAGE 04</span>
+      </div>
+    </BrochurePage>
+  );
 }
 
 const ProductCatalogPage3 = () => {
- return (
- <BrochurePage className="p-12 flex flex-col bg-white">
- <div className="flex items-center mb-3">
- <span className="section-accent"></span>
- <span className="section-label">02 / CONTINUED</span>
- </div>
- <div className="editorial-divider" style={{ marginTop: '0.5rem', marginBottom: '0.5rem' }}></div>
+  return (
+    <BrochurePage className="p-12 flex flex-col bg-white">
+      <SectionHeader title="OTHER EQUIPMENT" />
 
- <div className="flex-grow flex flex-col justify-start mt-2">
- <div className="grid grid-cols-3 gap-4 content-start">
- {catalogProducts.slice(18, 27).map((p, i) => (
- <ProductCard key={i} p={p} />
- ))}
- </div>
- </div>
+      <div className="flex-grow flex flex-col justify-start mt-2">
+        <div className="grid grid-cols-3 gap-4 content-start">
+          {catalogProducts.slice(18, 27).map((p, i) => (
+            <ProductCard key={i} p={p} />
+          ))}
+        </div>
+      </div>
 
- <p className="text-[6.5px] text-[#9CA3AF] leading-snug mt-4 italic">{CATALOG_FOOTNOTE}</p>
- <div className="flex justify-between items-end mt-2 text-[9px] text-[#9CA3AF] font-bold tracking-[0.2em] uppercase border-t border-[#F3F4F6] pt-3">
- <span>SREW Projects — PRODUCT CATALOG</span>
- <span>PAGE 05</span>
- </div>
- </BrochurePage>
- );
+      <p className="text-[6.5px] text-[#9CA3AF] leading-snug mt-4 italic">{CATALOG_FOOTNOTE}</p>
+      <div className="flex justify-between items-end mt-2 text-[9px] text-[#9CA3AF] font-bold tracking-[0.2em] uppercase border-t border-[#F3F4F6] pt-3">
+        <span>SREW Projects — PRODUCT CATALOG</span>
+        <span>PAGE 05</span>
+      </div>
+    </BrochurePage>
+  );
 }
 
 const ProjectProfilePage1 = () => {
