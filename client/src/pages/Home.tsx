@@ -741,9 +741,9 @@ const BackCoverPage = () => {
  return (
  <BrochurePage className="relative overflow-hidden flex flex-col justify-between">
  {/* Reliable SVG Background for html2canvas */}
- <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full z-0">
- <polygon points="0,0 35,0 0,35" fill="#0F172A" />
- <polygon points="45,0 100,0 100,80" fill="#F2B233" />
+ <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full z-10">
+ <polygon points="0,0 40,0 0,35" fill="#0F172A" />
+ <polygon points="40,0 100,0 100,80" fill="#F2B233" />
  <polygon points="100,80 100,100 65,100" fill="#0F172A" />
  </svg>
 
