@@ -29,8 +29,8 @@ const CoverPage = () => (
  {/* Top-Left Dark Blue Triangle */}
  <polygon points="0,0 45,0 0,25" fill="#0F172A" />
  
- {/* Thick Diagonal Yellow Band (Perfectly Parallel) */}
- <polygon points="0,10 90,100 30,100 0,70" fill="#F2B233" />
+ {/* Thick Diagonal Yellow Band (Perfectly Parallel, touching right edge) */}
+ <polygon points="0,10 100,95 100,100 35.3,100 0,70" fill="#F2B233" />
  
  {/* Bottom-Right White Triangle */}
  <polygon points="100,85 100,100 70,100" fill="#FFFFFF" />
