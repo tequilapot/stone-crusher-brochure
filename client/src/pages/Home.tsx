@@ -765,23 +765,23 @@ const BackCoverPage = () => {
  <div className="relative z-40 w-full h-full p-16 flex flex-col justify-center">
 
  <div className="w-[55%] flex flex-col items-start pl-8 mt-4">
- <h1 className="text-[54px] font-black text-[#0F172A] leading-[1.05] mb-5 tracking-tight">
+ <h1 className="text-[72px] font-black text-[#0F172A] leading-[1.05] mb-5 tracking-tight">
  THANK<br />YOU!
  </h1>
- <p className="text-[#0F172A] text-[15px] leading-relaxed mb-6 font-medium max-w-[380px]">
+ <p className="text-[#0F172A] text-[20px] leading-relaxed mb-6 font-medium max-w-[460px]">
  We appreciate your time and<br />
  consideration. We look forward<br />
  to the opportunity to <span className="font-bold">work<br />together.</span>
  </p>
- <div className="w-12 h-[4px] bg-[#F2B233] mb-10"></div>
+ <div className="w-16 h-[4px] bg-[#F2B233] mb-10"></div>
 
  {/* Contact Info */}
- <div className="flex flex-col gap-6 text-[13px] font-medium text-[#0F172A]">
+ <div className="flex flex-col gap-6 text-[16px] font-medium text-[#0F172A]">
  <div className="flex items-center gap-5">
- <div className="w-9 h-9 rounded-full bg-[#0F172A] flex items-center justify-center flex-shrink-0">
- <Phone size={16} className="text-white" />
+ <div className="w-10 h-10 rounded-full bg-[#0F172A] flex items-center justify-center flex-shrink-0">
+ <Phone size={18} className="text-white" />
  </div>
- <div className="w-[1px] h-10 bg-gray-300"></div>
+ <div className="w-[1px] h-12 bg-gray-300"></div>
  <div className="leading-snug">
  +91 8790759460<br />
  +91 7997076361
@@ -789,30 +789,30 @@ const BackCoverPage = () => {
  </div>
 
  <div className="flex items-center gap-5">
- <div className="w-9 h-9 rounded-full bg-[#0F172A] flex items-center justify-center flex-shrink-0">
- <Mail size={16} className="text-white" />
+ <div className="w-10 h-10 rounded-full bg-[#0F172A] flex items-center justify-center flex-shrink-0">
+ <Mail size={18} className="text-white" />
  </div>
- <div className="w-[1px] h-7 bg-gray-300"></div>
+ <div className="w-[1px] h-8 bg-gray-300"></div>
  <div className="leading-snug">
  contact@srewprojects.com
  </div>
  </div>
 
  <div className="flex items-center gap-5">
- <div className="w-9 h-9 rounded-full bg-[#0F172A] flex items-center justify-center flex-shrink-0">
- <Globe size={16} className="text-white" />
+ <div className="w-10 h-10 rounded-full bg-[#0F172A] flex items-center justify-center flex-shrink-0">
+ <Globe size={18} className="text-white" />
  </div>
- <div className="w-[1px] h-7 bg-gray-300"></div>
+ <div className="w-[1px] h-8 bg-gray-300"></div>
  <div className="leading-snug">
  www.srewprojects.com
  </div>
  </div>
 
  <div className="flex items-center gap-5">
- <div className="w-9 h-9 rounded-full bg-[#0F172A] flex items-center justify-center flex-shrink-0">
- <MapPin size={16} className="text-white" />
+ <div className="w-10 h-10 rounded-full bg-[#0F172A] flex items-center justify-center flex-shrink-0">
+ <MapPin size={18} className="text-white" />
  </div>
- <div className="w-[1px] h-10 bg-gray-300"></div>
+ <div className="w-[1px] h-12 bg-gray-300"></div>
  <div className="leading-snug">
  155/A, Dulapally Road,<br />
  Hyderabad, TG. 500100
