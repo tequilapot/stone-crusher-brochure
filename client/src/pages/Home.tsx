@@ -19,25 +19,47 @@ const CoverPage = () => (
  
  {/* SVG Overlay for reliable html2canvas rendering */}
  <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full z-10">
- {/* Yellow Wedge covering left and bottom */}
- <polygon points="0,0 45,0 100,65 30,100 0,100" fill="#F2B233" />
- {/* Navy Triangle covering bottom-right */}
- <polygon points="100,65 100,100 30,100" fill="#0F172A" />
+ {/* 1. Bottom Navy (Covers bottom of image) */}
+ <polygon points="0,85 100,60 100,100 0,100" fill="#0F172A" />
+ 
+ {/* 2. Top-Left Navy */}
+ <polygon points="0,0 20,0 0,15" fill="#0F172A" />
+ 
+ {/* 3. Top-Left White */}
+ <polygon points="20,0 35,0 0,30 0,15" fill="#FFFFFF" />
+ 
+ {/* 4. Yellow Band */}
+ <polygon points="35,0 55,0 75,100 15,100 0,85 0,30" fill="#F2B233" />
+ 
+ {/* 5. Bottom-Right White */}
+ <polygon points="85,100 100,85 100,100" fill="#FFFFFF" />
  </svg>
 
- {/* Content Layer */}
- <div className="relative z-40 w-full h-full p-16 flex flex-col justify-end">
- <div className="w-[60%] ml-[20%] mb-12">
- <h2 className="text-[34px] text-[#0F172A] font-medium leading-[1.1] mb-2 tracking-wide">
+ {/* Content Layer - Text */}
+ <div className="absolute left-16 bottom-20 z-40">
+ <h2 className="text-[28px] text-[#0F172A] font-medium leading-[1.2] mb-1 tracking-wide">
  TOGETHER,<br />
  WE BUILD
  </h2>
- <h1 className="text-[48px] font-black text-[#0F172A] leading-[1.05] mb-6 tracking-tighter">
+ <h1 className="text-[44px] font-black text-[#0F172A] leading-[1.05] mb-5 tracking-tight">
  STRONGER<br />
  FOUNDATIONS.
  </h1>
- <div className="w-20 h-[5px] bg-[#0F172A]"></div>
+ <div className="w-16 h-[4px] bg-[#0F172A]"></div>
  </div>
+
+ {/* Content Layer - Logo */}
+ <div className="absolute right-16 bottom-28 z-40">
+ <img
+ src="/images/srew%20projects-logo.png"
+ alt="SREW PROJECTS"
+ className="w-72 object-contain border-none outline-none ring-0 shadow-none"
+ onError={(e) => { e.currentTarget.style.display = 'none'; }}
+ />
+ </div>
+
+ <div className="absolute bottom-6 right-6 text-[9px] text-[#0F172A] font-bold tracking-[0.2em] uppercase z-50">
+ <span>PAGE 01</span>
  </div>
  </BrochurePage>
 );
