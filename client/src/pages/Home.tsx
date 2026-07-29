@@ -21,38 +21,40 @@ const CoverPage = () => (
  className="absolute inset-0 w-full h-full object-cover grayscale opacity-90 border-none outline-none ring-0 shadow-none z-0"
  />
 
- {/* Layer 1: SVG geometric overlays — Yellow band, White area, Navy area */}
+ {/* Layer 1: SVG geometric overlays matching brochure template exactly */}
  <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full z-10">
- {/* Yellow diagonal band */}
- <polygon points="0,28 0,44 55,100 42,100" fill="#F2B233" />
- {/* White bottom-left area */}
- <polygon points="0,44 42,100 0,100" fill="#FFFFFF" />
+ {/* Navy top-left triangle */}
+ <polygon points="0,0 40,0 0,55" fill="#0F172A" />
+ {/* Yellow diagonal band (parallelogram) */}
+ <polygon points="40,0 52,0 14,100 0,55" fill="#F2B233" />
+ {/* White bottom-left triangle */}
+ <polygon points="0,55 14,100 0,100" fill="#FFFFFF" />
  {/* Navy bottom-right area */}
- <polygon points="55,100 100,100 100,65" fill="#0F172A" />
+ <polygon points="24,100 65,0 100,0 100,100" fill="#0F172A" />
  </svg>
 
- {/* Layer 2: Content — Text on white area, Logo on navy area */}
+ {/* Layer 2: Content */}
  <div className="relative z-40 w-full h-full flex">
 
- {/* Bottom-left text block — sits on the white area */}
- <div className="absolute bottom-[8%] left-[5%] w-[38%]">
- <p className="text-[20px] text-[#0F172A] font-medium leading-[1.3] mb-0 tracking-wide">
+ {/* Bottom-left text block — on the white area */}
+ <div className="absolute bottom-[6%] left-[3%] w-[14%]">
+ <p className="text-[14px] text-[#0F172A] font-medium leading-[1.3] mb-0 tracking-wide">
  TOGETHER,<br />
  WE BUILD
  </p>
- <p className="text-[32px] font-black text-[#0F172A] leading-[1.1] mb-4 tracking-tight">
+ <p className="text-[22px] font-black text-[#0F172A] leading-[1.1] mb-3 tracking-tight">
  STRONGER<br />
  FOUNDATIONS.
  </p>
- <div className="w-14 h-[4px] bg-[#0F172A]"></div>
+ <div className="w-10 h-[3px] bg-[#0F172A]"></div>
  </div>
 
- {/* Bottom-right SREW logo — sits on the navy area */}
- <div className="absolute bottom-[10%] right-[6%] w-[28%] flex justify-center">
+ {/* Bottom-right SREW logo — on the navy area */}
+ <div className="absolute bottom-[6%] right-[4%] flex flex-col items-center">
  <img
  src="/images/srew%20projects-logo.png"
  alt="SREW PROJECTS"
- className="w-56 object-contain border-none outline-none ring-0 shadow-none"
+ className="w-48 object-contain border-none outline-none ring-0 shadow-none"
  onError={(e) => { e.currentTarget.style.display = 'none'; }}
  />
  </div>
@@ -162,33 +164,33 @@ const AboutPage = () => (
 );
 
 const catalogProducts = [
-  { name: "Jaw Crusher", desc: "Primary, 30-400 TPH", image: "/images/Products/srew-jaw-crusher.png", price: "₹ 12L - 45L", specs: "Capacity: 30-400 TPH" },
-  { name: "European Type Jaw Crusher", desc: "Advanced, Hydraulic Wedge", image: "/images/Products/srew-european-type-jaw-crusher.png", price: "₹ 18L - 60L", specs: "High Crushing Ratio" },
-  { name: "Grease Jaw Crusher", desc: "Primary, Grease Lubricated", image: "/images/Products/srew-grease-jaw-crusher.png", price: "₹ 10L - 35L", specs: "Easy Maintenance" },
-  { name: "Cone Crusher Plant", desc: "Secondary, Tertiary", image: "/images/Products/srew-cone-crusher-plant.png", price: "₹ 25L - 80L", specs: "Capacity: 50-300 TPH" },
-  { name: "Single-Cylinder Cone Crusher", desc: "Secondary, Tertiary", image: "/images/Products/srew-single-cylinder-cone-crusher.png", price: "₹ 30L - 90L", specs: "Hydraulic System" },
-  { name: "Multi-Cylinder Hydraulic Cone Crusher", desc: "Advanced, PLC Control", image: "/images/Products/srew-multi-cylinder-hydraulic-cone-crusher.png", price: "₹ 45L - 1.2Cr", specs: "High Yield & Fine Shape" },
-  { name: "Hydraulic Impact Crusher", desc: "Secondary, Cubical", image: "/images/Products/srew-hydraulic-impact-crusher.png", price: "₹ 20L - 55L", specs: "Excellent Particle Shape" },
-  { name: "Hammer Crusher", desc: "Primary/Secondary", image: "/images/Products/srew-hammer-crusher.png", price: "₹ 8L - 25L", specs: "High Reduction Ratio" },
-  { name: "Roller Crusher", desc: "Tertiary, Fine Crushing", image: "/images/Products/srew-roller-crusher.jpg", price: "₹ 6L - 18L", specs: "Precise Sizing" },
-  { name: "Vertical Shaft Impactor (VSI)", desc: "Tertiary, 30-400 TPH", image: "/images/Products/srew-vertical-shaft-crusher.png", price: "₹ 18L - 45L", specs: "Premium Sand Making" },
-  { name: "Vibrating Screen", desc: "2-Deck, Circular", image: "/images/Products/srew-triple-shaft-vibrating-screen.png", price: "₹ 4L - 12L", specs: "Screening Area: Various" },
-  { name: "3 Deck Vibrating Screen", desc: "Triple Classification", image: "/images/Products/Vibrating-Screen-3-deck.png", price: "₹ 6L - 15L", specs: "High Efficiency" },
-  { name: "Damping Vibrating Screen", desc: "Reduced Vibration", image: "/images/Products/srew-Damping-vibrating-screen.png", price: "₹ 8L - 18L", specs: "Low Noise & Wear" },
-  { name: "Triple Shaft Vibrating Screen", desc: "Heavy-Duty, 3 Shaft", image: "/images/Products/srew-triple-shaft-vibrating-screen.png", price: "₹ 12L - 25L", specs: "High Capacity Processing" },
-  { name: "Sand Washer", desc: "Screw Type", image: "/images/Products/srew-sand-washer.png", price: "₹ 5L - 15L", specs: "Water & Power Efficient" },
-  { name: "Series Sand Washer", desc: "Multi-Stage Washing", image: "/images/Products/srew-series-sand-washer.png", price: "₹ 8L - 22L", specs: "Deep Cleaning" },
-  { name: "Fine Sand Recycling Machine", desc: "Recovery System", image: "/images/Products/srew-fine-sand-recycling-machine.png", price: "₹ 3.5L - 10L", specs: "Max Sand Recovery" },
-  { name: "Sand Dryer", desc: "Rotary Drying", image: "/images/Products/srew-sand-dryer.jpg", price: "₹ 15L - 40L", specs: "Moisture < 1%" },
-  { name: "Mobile Crushing Plant", desc: "Crawler Tracked", image: "/images/Products/srew-mobile-crushing-plant.png", price: "₹ 1.2Cr - 3.5Cr", specs: "Turnkey Mobility" },
-  { name: "Modular Mobile Crusher", desc: "Semi-Mobile", image: "/images/Products/srew-modular-mobile-crusher.png", price: "₹ 85L - 2.5Cr", specs: "Quick Setup Design" },
-  { name: "Tire Mobile Crusher", desc: "Wheel Mounted", image: "/images/Products/srew-tire-mobile-crusher.png", price: "₹ 75L - 2.2Cr", specs: "Highway Towable" },
-  { name: "Tracked Screens", desc: "Mobile Screening", image: "/images/Products/srew-mobile-crushing-plant.png", price: "₹ 45L - 1.5Cr", specs: "Self-Propelled Unit" },
-  { name: "Belt Conveyor", desc: "Material Transport", image: "/images/Products/srew-belt-conveyor.png", price: "₹ 1.5L - 8L", specs: "Width: 600-1200mm" },
-  { name: "Loading Hopper", desc: "Feed System", image: "/images/Products/srew-hopper.jpg", price: "₹ 2L - 6L", specs: "Custom Volumes" },
-  { name: "Silo Storage System", desc: "Bulk Storage", image: "/images/Products/srew-silo.jpg", price: "₹ 5L - 20L", specs: "50-500 Ton Capacity" },
-  { name: "Control Panel Board", desc: "PLC Automation", image: "/images/Products/srew-panel-board.jpg", price: "₹ 1.5L - 8L", specs: "Smart Digital Control" },
-  { name: "C&D Recycling Plant", desc: "Construction Waste", image: "/images/Products/srew-cd-recycling.jpg", price: "₹ 95L - 3Cr", specs: "Integrated Sorting & Crushing" }
+  { name: "Jaw Crusher", desc: "Primary, 30-400 TPH", image: "/images/Products/srew-jaw-crusher.png", price: "₹ 8L - 35L", specs: "Feed: 125-1200mm | 30-400 TPH" },
+  { name: "European Type Jaw Crusher", desc: "Advanced, Hydraulic Wedge", image: "/images/Products/srew-european-type-jaw-crusher.png", price: "₹ 15L - 55L", specs: "Feed: 480-1200mm | Wedge Adjust" },
+  { name: "Grease Jaw Crusher", desc: "Primary, Grease Lubricated", image: "/images/Products/srew-grease-jaw-crusher.png", price: "₹ 6L - 28L", specs: "Feed: 200-750mm | Auto Grease" },
+  { name: "Cone Crusher Plant", desc: "Secondary, Tertiary", image: "/images/Products/srew-cone-crusher-plant.png", price: "₹ 22L - 72L", specs: "50-350 TPH | Laminated Crushing" },
+  { name: "Single-Cylinder Cone Crusher", desc: "Secondary, Tertiary", image: "/images/Products/srew-single-cylinder-cone-crusher.png", price: "₹ 28L - 85L", specs: "Hydraulic Overload Protection" },
+  { name: "Multi-Cylinder Hydraulic Cone Crusher", desc: "Advanced, PLC Control", image: "/images/Products/srew-multi-cylinder-hydraulic-cone-crusher.png", price: "₹ 45L - 1.1Cr", specs: "PLC | Multi-Cavity | 80-600 TPH" },
+  { name: "Hydraulic Impact Crusher", desc: "Secondary, Cubical", image: "/images/Products/srew-hydraulic-impact-crusher.png", price: "₹ 14L - 48L", specs: "Cubical Output | 50-350 TPH" },
+  { name: "Hammer Crusher", desc: "Primary/Secondary", image: "/images/Products/srew-hammer-crusher.png", price: "₹ 4.5L - 18L", specs: "High Ratio | 10-150 TPH" },
+  { name: "Roller Crusher", desc: "Tertiary, Fine Crushing", image: "/images/Products/srew-roller-crusher.jpg", price: "₹ 3.5L - 14L", specs: "Output: 2-50mm | 5-100 TPH" },
+  { name: "Vertical Shaft Impactor (VSI)", desc: "Tertiary, 30-400 TPH", image: "/images/Products/srew-vertical-shaft-crusher.png", price: "₹ 16L - 48L", specs: "M-Sand Grade | 30-400 TPH" },
+  { name: "Vibrating Screen", desc: "2-Deck, Circular", image: "/images/Products/srew-triple-shaft-vibrating-screen.png", price: "₹ 3.5L - 9L", specs: "2-Deck | Area: 6-20 sqm" },
+  { name: "3 Deck Vibrating Screen", desc: "Triple Classification", image: "/images/Products/Vibrating-Screen-3-deck.png", price: "₹ 5L - 12L", specs: "3-Deck | 4 Product Sizes" },
+  { name: "Damping Vibrating Screen", desc: "Reduced Vibration", image: "/images/Products/srew-Damping-vibrating-screen.png", price: "₹ 6L - 15L", specs: "Low Noise | Rubber Mount" },
+  { name: "Triple Shaft Vibrating Screen", desc: "Heavy-Duty, 3 Shaft", image: "/images/Products/srew-triple-shaft-vibrating-screen.png", price: "₹ 9L - 22L", specs: "3-Shaft HD | 100-500 TPH" },
+  { name: "Sand Washer", desc: "Screw Type", image: "/images/Products/srew-sand-washer.png", price: "₹ 3.5L - 10L", specs: "Screw Dia: 750-1200mm" },
+  { name: "Series Sand Washer", desc: "Multi-Stage Washing", image: "/images/Products/srew-series-sand-washer.png", price: "₹ 6L - 16L", specs: "Dual-Screw | Deep Clean" },
+  { name: "Fine Sand Recycling Machine", desc: "Recovery System", image: "/images/Products/srew-fine-sand-recycling-machine.png", price: "₹ 4L - 11L", specs: "Recovery Rate: 85-95%" },
+  { name: "Sand Dryer", desc: "Rotary Drying", image: "/images/Products/srew-sand-dryer.jpg", price: "₹ 12L - 32L", specs: "LPG/Diesel | Moisture <1%" },
+  { name: "Mobile Crushing Plant", desc: "Crawler Tracked", image: "/images/Products/srew-mobile-crushing-plant.png", price: "₹ 85L - 2.8Cr", specs: "Crawler | 60-300 TPH" },
+  { name: "Modular Mobile Crusher", desc: "Semi-Mobile", image: "/images/Products/srew-modular-mobile-crusher.png", price: "₹ 55L - 1.8Cr", specs: "Skid Mount | Quick Deploy" },
+  { name: "Tire Mobile Crusher", desc: "Wheel Mounted", image: "/images/Products/srew-tire-mobile-crusher.png", price: "₹ 48L - 1.5Cr", specs: "Wheel Mount | Towable" },
+  { name: "Tracked Screens", desc: "Mobile Screening", image: "/images/Products/srew-mobile-crushing-plant.png", price: "₹ 32L - 95L", specs: "Self-Propelled | 3-Deck" },
+  { name: "Belt Conveyor", desc: "Material Transport", image: "/images/Products/srew-belt-conveyor.png", price: "₹ 1.2L - 5L", specs: "Width: 500-1400mm" },
+  { name: "Loading Hopper", desc: "Feed System", image: "/images/Products/srew-hopper.jpg", price: "₹ 1.5L - 4.5L", specs: "Cap: 5-25 cum | Grizzly" },
+  { name: "Silo Storage System", desc: "Bulk Storage", image: "/images/Products/srew-silo.jpg", price: "₹ 4L - 18L", specs: "50-500 Ton | Bolted Steel" },
+  { name: "Control Panel Board", desc: "PLC Automation", image: "/images/Products/srew-panel-board.jpg", price: "₹ 1.8L - 6L", specs: "PLC/VFD | Auto Interlock" },
+  { name: "C&D Recycling Plant", desc: "Construction Waste", image: "/images/Products/srew-cd-recycling.jpg", price: "₹ 65L - 2.2Cr", specs: "Turnkey | 50-200 TPH" }
 ];
 
 const ProductCatalogPage1 = () => {
@@ -765,72 +767,93 @@ const EngineeringExcellencePage = () => {
 
 const BackCoverPage = () => {
  return (
- <BrochurePage className="relative overflow-hidden flex flex-col justify-between">
- {/* Reliable SVG Background for html2canvas */}
- <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full z-0">
- <polygon points="0,0 35,0 0,35" fill="#0F172A" />
- <polygon points="45,0 100,0 100,80" fill="#F2B233" />
- <polygon points="100,80 100,100 65,100" fill="#0F172A" />
+ <BrochurePage className="relative overflow-hidden">
+ {/* Layer 0: Grayscale photo — full bleed background */}
+ <img
+ src="/images/hero-background.jpg"
+ alt="Industrial Plant"
+ className="absolute inset-0 w-full h-full object-cover grayscale opacity-90 border-none outline-none ring-0 shadow-none z-0"
+ />
+
+ {/* Layer 1: SVG geometric overlays — mirrored version of cover page */}
+ <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full z-10">
+ {/* White left side area */}
+ <polygon points="0,0 52,0 38,100 0,100" fill="#FFFFFF" />
+ {/* Yellow diagonal band */}
+ <polygon points="52,0 62,0 48,100 38,100" fill="#F2B233" />
+ {/* Navy bottom-right area */}
+ <polygon points="75,0 100,0 100,100 58,100" fill="#0F172A" />
  </svg>
 
- {/* Content Layer */}
- <div className="relative z-40 w-full h-full p-16 flex flex-col justify-center">
+ {/* Layer 2: Content */}
+ <div className="relative z-40 w-full h-full flex">
 
- <div className="w-[55%] flex flex-col items-start pl-8 mt-4">
- <h1 className="text-[72px] font-black text-[#0F172A] leading-[1.05] mb-5 tracking-tight">
+ {/* Left side: THANK YOU + Contact info — on white area */}
+ <div className="absolute top-[8%] left-[4%] w-[42%]">
+ <h1 className="text-[48px] font-black text-[#0F172A] leading-[1.05] mb-4 tracking-tight">
  THANK<br />YOU!
  </h1>
- <p className="text-[#0F172A] text-[20px] leading-relaxed mb-6 font-medium max-w-[460px]">
- We appreciate your time and<br />
- consideration. We look forward<br />
- to the opportunity to <span className="font-bold">work<br />together.</span>
+ <p className="text-[#0F172A] text-[13px] leading-relaxed mb-5 font-normal max-w-[340px]">
+ We appreciate your time and consideration. We look forward to the opportunity to <span className="font-bold italic">work together.</span>
  </p>
- <div className="w-16 h-[4px] bg-[#F2B233] mb-10"></div>
 
  {/* Contact Info */}
- <div className="flex flex-col gap-6 text-[16px] font-medium text-[#0F172A]">
- <div className="flex items-center gap-5">
- <div className="w-10 h-10 rounded-full bg-[#0F172A] flex items-center justify-center flex-shrink-0">
- <Phone size={18} className="text-white" />
+ <div className="flex flex-col gap-4 text-[12px] font-medium text-[#0F172A]">
+ <div className="flex items-center gap-3">
+ <div className="w-8 h-8 rounded-full bg-[#0F172A] flex items-center justify-center flex-shrink-0">
+ <Phone size={14} className="text-white" />
  </div>
- <div className="w-[1px] h-12 bg-gray-300"></div>
  <div className="leading-snug">
  +91 8790759460<br />
  +91 7997076361
  </div>
  </div>
-
- <div className="flex items-center gap-5">
- <div className="w-10 h-10 rounded-full bg-[#0F172A] flex items-center justify-center flex-shrink-0">
- <Mail size={18} className="text-white" />
+ <div className="flex items-center gap-3">
+ <div className="w-8 h-8 rounded-full bg-[#0F172A] flex items-center justify-center flex-shrink-0">
+ <Mail size={14} className="text-white" />
  </div>
- <div className="w-[1px] h-8 bg-gray-300"></div>
  <div className="leading-snug">
- contact@srewprojects.com
+ info@srewprojects.com<br />
+ sales@srewprojects.com
  </div>
  </div>
-
- <div className="flex items-center gap-5">
- <div className="w-10 h-10 rounded-full bg-[#0F172A] flex items-center justify-center flex-shrink-0">
- <Globe size={18} className="text-white" />
+ <div className="flex items-center gap-3">
+ <div className="w-8 h-8 rounded-full bg-[#0F172A] flex items-center justify-center flex-shrink-0">
+ <Globe size={14} className="text-white" />
  </div>
- <div className="w-[1px] h-8 bg-gray-300"></div>
  <div className="leading-snug">
  www.srewprojects.com
  </div>
  </div>
-
- <div className="flex items-center gap-5">
- <div className="w-10 h-10 rounded-full bg-[#0F172A] flex items-center justify-center flex-shrink-0">
- <MapPin size={18} className="text-white" />
+ <div className="flex items-center gap-3">
+ <div className="w-8 h-8 rounded-full bg-[#0F172A] flex items-center justify-center flex-shrink-0">
+ <MapPin size={14} className="text-white" />
  </div>
- <div className="w-[1px] h-12 bg-gray-300"></div>
  <div className="leading-snug">
- 155/A, Dulapally Road,<br />
- Hyderabad, TG. 500100
+ Dulapally, Hyderabad,<br />
+ Telangana - 500100, India.
  </div>
  </div>
  </div>
+ </div>
+
+ {/* Right side: Tagline + Logo — on navy area */}
+ <div className="absolute bottom-[8%] right-[3%] w-[22%] flex flex-col items-start">
+ <p className="text-[16px] text-white font-medium leading-[1.3] mb-0 tracking-wide">
+ TOGETHER,<br />
+ WE BUILD
+ </p>
+ <p className="text-[22px] font-black text-white leading-[1.1] mb-4 tracking-tight">
+ STRONGER<br />
+ FOUNDATIONS.
+ </p>
+ <div className="w-10 h-[3px] bg-[#F2B233] mb-5"></div>
+ <img
+ src="/images/srew%20projects-logo.png"
+ alt="SREW PROJECTS"
+ className="w-40 object-contain border-none outline-none ring-0 shadow-none"
+ onError={(e) => { e.currentTarget.style.display = 'none'; }}
+ />
  </div>
 
  </div>
