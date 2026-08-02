@@ -104,14 +104,13 @@
   color: var(--foreground);
 }
 
-/* Premium card — 1px border, soft shadow, 4px radius */
+/* Premium card — 1px border, no shadow, 8px radius */
 .premium-card {
   background: #FFFFFF;
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  padding: 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-  transition: box-shadow 0.2s ease;
+  border: 1px solid #D9DEE5;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: none !important;
 }
 
 .premium-card-navy {
@@ -132,35 +131,189 @@
 /* Section accent line (Vertical yellow line for section headers) */
 .section-accent {
   width: 3px;
-  height: 24px;
+  height: 28px;
   background-color: var(--primary);
   display: inline-block;
   margin-right: 12px;
+  flex-shrink: 0;
+}
+
+/* Brochure page — printed catalogue feel, no shadows */
+.brochure-page,
+.brochure-page * {
+  box-shadow: none !important;
+}
+
+.brochure-page-header {
+  margin-bottom: 0.75rem;
+}
+
+.brochure-page-header .section-label {
+  margin-bottom: 0.625rem;
+}
+
+.brochure-main-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30pt;
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: var(--navy);
+}
+
+.brochure-subtitle {
+  font-size: 13pt;
+  line-height: 1.35;
+  color: #64748B;
+  font-weight: 500;
+  margin-top: 0.75rem;
+}
+
+.brochure-body {
+  font-size: 10pt;
+  line-height: 1.5;
+  color: #334155;
+}
+
+.brochure-caption {
+  font-size: 9pt;
+  line-height: 1.4;
+  color: #64748B;
+}
+
+.brochure-footer {
+  font-size: 9pt;
+  line-height: 1.4;
+  color: #64748B;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.brochure-stat-card {
+  background: #FFFFFF;
+  border: 1px solid #D9DEE5;
+  border-radius: 9px;
+  padding: 0.875rem 0.75rem;
+}
+
+.brochure-logo-panel {
+  background: #FFFFFF;
+  border: 1px solid #D9DEE5;
+  border-radius: 9px;
+  padding: 0.875rem 1rem;
+}
+
+.brochure-logo-cell {
+  background: #FFFFFF;
+  border: 1px solid #D9DEE5;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4.25rem;
+  padding: 0.75rem;
+}
+
+.brochure-logo-cell img {
+  max-height: 3.1rem;
+  max-width: 94%;
+  object-fit: contain;
+}
+
+.brochure-image-frame {
+  background: #FFFFFF;
+  border: 1px solid #D9DEE5;
+  border-radius: 9px;
+  overflow: hidden;
+}
+
+.brochure-caption-bar {
+  background: rgba(10, 35, 66, 0.92);
+  border-top: 1px solid #D9DEE5;
 }
 
 /* Typography styles */
 .section-label {
   font-family: 'Inter', sans-serif;
-  font-size: 0.75rem;
+  font-size: 13pt;
+  line-height: 1.25;
   font-weight: 600;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--navy);
 }
 
 .data-label {
   font-family: 'Inter', sans-serif;
-  font-size: 0.7rem;
-  letter-spacing: 0.25em;
+  font-size: 9px;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-weight: 500;
-  color: var(--foreground);
+  font-weight: 600;
+  color: #64748B;
 }
 
 .stat-number {
   font-family: 'Montserrat', sans-serif;
   font-weight: 900; /* Black */
   color: var(--navy);
+}
+
+/* Printed catalogue hierarchy: crisp type, thin rules, and no web-style effects. */
+.brochure-page h2 {
+  font-size: 30pt;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+}
+
+.brochure-page h3 {
+  font-size: 13pt;
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+}
+
+.brochure-page img {
+  object-fit: contain;
+}
+
+.brochure-page img.cover-photo {
+  object-fit: cover;
+}
+
+.brochure-page .bg-gradient-to-r {
+  background-image: none !important;
+}
+
+.catalog-product-grid {
+  align-content: stretch;
+}
+
+.product-card {
+  min-height: 0;
+}
+
+.product-card .product-image-frame {
+  min-height: 0;
+}
+
+.case-study-layout {
+  min-height: 0;
+}
+
+.case-study-equipment > * {
+  flex: 1 1 0;
+  min-height: 0;
+  aspect-ratio: auto !important;
+}
+
+.case-study-equipment > :first-child {
+  flex: 1.4 1 0;
+}
+
+.case-study-equipment img,
+.project-equipment-banner img {
+  object-fit: contain !important;
+  padding: 0.5rem;
 }
 
 /* Spec table styling */
@@ -178,11 +331,9 @@
   font-size: 0.75rem;
   padding: 12px 16px;
   text-align: left;
-  border: 1px solid var(--border);
 }
 .editorial-table td {
   padding: 12px 16px;
-  border: 1px solid var(--border);
   font-family: 'Inter', sans-serif;
   font-size: 0.85rem;
   color: var(--foreground);
@@ -219,27 +370,33 @@ html {
   }
 }
 
-/* Print-friendly A4 Layout Rules */
-.page-a4 {
-  width: 297mm;
-  height: 210mm;
+/* Print-friendly A4 portrait layout rules */
+.page-a4, .brochure-page {
+  width: 210mm;
+  height: 297mm;
+  max-width: 794px;
   position: relative;
   overflow: hidden;
   background-color: white;
   margin: 2rem auto;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  box-shadow: none !important;
+  border: 1px solid #D9DEE5;
+  border-radius: 9px;
   break-after: page;
   page-break-after: always;
+  break-inside: avoid;
+  page-break-inside: avoid;
+  box-sizing: border-box;
 }
 
 @media print {
   @page {
-    size: A4 landscape;
+    size: A4 portrait;
     margin: 0;
   }
   
   html, body {
-    width: 297mm;
+    width: 210mm;
     height: 100%;
     margin: 0;
     padding: 0;
@@ -248,9 +405,194 @@ html {
     print-color-adjust: exact;
   }
 
-  .page-a4 {
+  .page-a4, .brochure-page {
+    width: 210mm !important;
+    height: 297mm !important;
+    max-width: none !important;
     margin: 0 !important;
     box-shadow: none !important;
     border: none !important;
+    border-radius: 0 !important;
+    break-after: page !important;
+    page-break-after: always !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+}
+
+/* Premium editorial pass: keep the brochure feeling printed, not dashboard-like. */
+.brochure-page {
+  background: #FFFFFF !important;
+  border-color: #D9DEE5;
+}
+
+.brochure-image-frame {
+  background: #F5F6F8;
+  border: 0;
+  border-radius: 0;
+}
+
+.brochure-stat-card {
+  border: 0;
+  border-right: 1px solid #D9DEE5;
+  border-radius: 0;
+  padding: 0.75rem 0.4rem;
+}
+
+.brochure-stat-card:last-child {
+  border-right: 0;
+}
+
+.brochure-logo-panel {
+  border: 0;
+  border-top: 1px solid #E8ECF1;
+  border-bottom: 1px solid #E8ECF1;
+  border-radius: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.brochure-logo-cell {
+  border: 0;
+  border-radius: 0;
+  height: 3.6rem;
+}
+
+.brochure-caption-bar {
+  display: none !important;
+}
+
+.case-study-caption-bar {
+  background: rgba(10, 35, 66, 0.85) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  display: flex !important;
+}
+
+/* Product catalogue: preserve the grid, remove the nested web-card treatment. */
+.product-card {
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  padding: 0.25rem 0.5rem !important; /* Proper horizontal padding */
+}
+
+.product-card .product-image-frame {
+  height: 115px !important;
+  margin-bottom: 0.25rem !important;
+  padding: 0.2rem !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-bottom: 1px solid #E8ECF1 !important;
+  border-radius: 0 !important;
+}
+
+.product-card > div:nth-child(2) {
+  border-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.product-card h4 {
+  min-height: 0 !important;
+  margin-bottom: 0.25rem !important;
+  font-size: 9.5px !important;
+  line-height: 1.15 !important;
+}
+
+.product-card .product-specs {
+  gap: 0.1rem !important;
+  margin-bottom: 0.25rem !important;
+}
+
+.product-card .product-spec-row {
+  border-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  min-height: 12px !important;
+}
+
+.product-card .product-price {
+  padding-top: 0.25rem !important;
+  font-size: 7.5px !important;
+}
+
+/* Project spreads: let imagery and copy breathe as one composition. */
+.case-study-layout .case-study-equipment {
+  gap: 0.6rem;
+}
+
+.case-study-layout .case-study-equipment > * {
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+}
+
+.case-study-layout .case-study-equipment > * + * {
+  border-top: 1px solid #E8ECF1 !important;
+  padding-top: 0.55rem;
+}
+
+.case-study-layout .case-study-equipment img,
+.case-study-layout .project-equipment-banner img {
+  padding: 0 !important;
+}
+
+.case-study-layout > :last-child > .bg-white.border {
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+}
+
+.case-study-layout > :last-child > .bg-white.border > .bg-white.border {
+  background: transparent !important;
+  border: 0 !important;
+  border-top: 1px solid #E8ECF1 !important;
+  border-bottom: 1px solid #E8ECF1 !important;
+  border-radius: 0 !important;
+  padding: 0.8rem 0 !important;
+}
+
+.editorial-table {
+  border-top: 1px solid #E8ECF1;
+}
+
+.editorial-table tr,
+.editorial-table tr:nth-child(odd),
+.editorial-table tr:nth-child(even) {
+  background: transparent !important;
+}
+
+.editorial-table th,
+.editorial-table td {
+  background: transparent !important;
+  border-bottom: 1px solid #E8ECF1;
+  padding: 0.38rem 0 !important;
+}
+
+.editorial-table th {
+  color: #64748B;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+}
+
+.editorial-table td {
+  color: #1F2937;
+  font-size: 0.68rem;
+}
+
+/* Global override for Tailwind D9DEE5 border utility class names */
+.border-\\[\\#D9DEE5\\] {
+  border-color: #E8ECF1 !important;
+}
+
+@media screen {
+  .brochure-page {
+    box-shadow: 0 16px 40px rgba(11, 31, 58, 0.08) !important;
+  }
+}
+
+@media print {
+  .brochure-page {
+    box-shadow: none !important;
+    border: 0 !important;
   }
 }
